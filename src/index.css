@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply  text-white;
+    font-family: "Montserrat", serif;
+    background-color:#080808;
+  }
+}
+
+body, html, * {
+  font-family: "Montserrat", serif !important;
+}
+
+:root {
+  --gradient-start: #ff6b00;
+  --gradient-end: #9333ea;
+}
+
+@layer components {
+  .scrollbar {
+    &::-webkit-scrollbar {
+      @apply w-2.5;
+    }
+
+    &::-webkit-scrollbar-track {
+      @apply bg-black;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @apply bg-gradient-to-b from-orange-500 to-purple-600 rounded-full;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      @apply bg-gradient-to-b from-orange-600 to-purple-700;
+    }
+  }
+}
+
+.hero-banner{
+  background-image: url("./assest/image/hero-banner.svg");
+  background-repeat: no-repeat;
+  background-color: #171717;
+}
+
+.bg-primery{
+  background-color: #171717;
+}
+
+.cta-bg {
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden; /* Ensures no spillover */
+}
+
+.cta-bg::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position relative to the parent */
+  top: 0;
+  left: 0;
+  width: 100%; /* Covers the parent */
+  height: 100%;
+  background-image: url('./assest/image/cta.svg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the area */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  z-index: 1; /* Places the pseudo-element behind other content */
+}
+
+.counter-bg{
+  position: relative; /* Required for absolute positioning of the pseudo-element */
+  overflow: hidden
+  
+}
+.counter-bg::before{
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position relative to the parent */
+  top: 0;
+  left: 0;
+  width: 100%; /* Covers the parent */
+  height: 100%;
+  background-image: url('./assest/image/counter.svg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the area */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents image repetition */
+  z-index: 1; /* Places the pseudo-element behind other content */
+}
+
+.gradient-text {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+.nav-gradient {
+  background: linear-gradient(to right, rgba(255, 107, 0, 0.1), rgba(147, 51, 234, 0.1));
+}
+
+.nav-bg{
+  background-color: #393244;
+}
+/* .nav-container a {
+  padding: 0.7rem 1.25rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+} */
+ .contact-btn {
+    width: 205px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.nav-container a{
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 24px;
+}
+.nav-container a:hover {
+  /* background: linear-gradient(to right, var(--gradient-start), var(--gradient-end)); */
+  text-decoration: underline;
+}
+
+.industry-card {
+  border: 1px solid transparent; /* Initially set a transparent border */
+  /* transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease; */
+  padding: 60px;
+  padding-top: 0;
+}
+
+.industry-card:hover {
+  --e-con-transform-scale: 1.1;
+  border: 1px solid transparent; 
+  border-image: linear-gradient(90deg, #F57A00, #7103A4) 1;
+  -webkit-mask: none;
+  mask: none;
+  transform: scale(1.1);
+  border-radius: 20px;
+  box-shadow: none;
+}
+img.industry-icon {
+  margin-top: -60px;
+}
+.industries-grid {
+  gap: 90px 60px;
+}
+
+
+.industries-main{
+  padding-top: 40px;
+  padding-bottom: 50px;
+}
+.main-text-bold {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+}
+.text-main-light {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 10px 0;
+  font-weight: 400;
+  color: #cfc9c9;
+}
+
+
+bg-main-back{
+
+}
+
+/* .p-6.main-pad {
+    padding: 50px 35px;
+} */
+
+
+
+
+.service-card {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px 35px;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  border: 1px solid transparent;
+  cursor: pointer;
+  
+}
+
+.service-card:hover {
+  transform: translateY(-0.5rem);
+  transform: scale(1.1);
+  border-image: linear-gradient(90deg, #F57A00, #7103A4) 1;
+  border-radius: 1rem;
+  
+}
+
+
+.service-card img {
+  width: 4rem;  
+  height: 4rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease; 
+  
+}
+
+
+.service-card:hover img {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(87%) saturate(1010%) hue-rotate(1deg) brightness(95%) contrast(106%);
+  transition: all 0.3s ease;
+
+}
+
+button.px-4.py-2 {
+  padding: 15px;
+}
+.main-icon-col {
+  color: #ffc107;
+}
+
+
+.nav-container .active{
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+}
+
+
+.py-24 {
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
+}
+.md\:px-12 {
+  padding-left: 6.25rem;
+  padding-right: 6.25rem;
+}
+
+.cta-bg {
+  justify-content: space-around;
+}
+.lg\:w-full {
+  width: 80%;
+}
+@media (max-width: 1024px){
+  .lg\:text-6xl {
+    font-size: 2.75rem;
+  }
+  .lg\:px-8 {
+    padding-left: 6.25rem;
+    padding-right: 6.25rem;
+}
+.sm\:px-6{
+  padding-left: 6.25rem;
+    padding-right: 6.25rem;
+}
+
+
+
+#support {
+  padding: 6.25rem;
+} 
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  .industries-main {
+    gap: 80px;
+  }
+  .py-20 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.px-4 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+.py-24 {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.text-4xl {
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+}
+.industries-container {
+  padding: 20px;
+}
+.industries-main {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+h1.text-3xl {
+  margin: 20px 0;
+  font-size: 30px;
+  line-height: 40px;
+}
+.px-\[6\.25rem\] {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.flex-col-reverse {
+  flex-direction: column;
+}
+.grid-cols-2 {
+  grid-template-columns: auto;
+}
+
+
+.industry-card {
+  padding: 20px;
+}
+
+#support {
+  padding: 1.25rem;
+} 
+.md\:px-12 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
+.counter-list {
+  font-size: 40px !important;
+}
+}
+
+.heading-h1-main{
+  line-height: normal !important;
+}
+
+html {
+  scroll-padding-top: 80px; /* Default for desktop */
+}
+
+/* Mobile ke liye adjust karein */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 100px; /* Mobile navbar height ke hisaab se */
+  }
+  .heading42-main {
+    font-size: 40px !important;
+    line-height: 50px !important;
+  }
+  .nav-container a {
+    padding: 0.7rem 0.7rem;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+  }
+  .hero-heading {
+    padding-top: 70px;
+}
+.image-hero-main {
+  width: 100%;
+  max-width: 570px !important;
+}
+.hero-heading {
+  padding-top: 130px !important;
+}
+.our-service-main{
+  flex-direction: column !important;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+
+@media screen and (max-width: 520px) {
+  .hero-heading {
+    padding-top: 0px !important;
+  }
+}
+
+
+
+
+/* Small Laptops (11-inch, 13-inch) */
+@media (max-width: 1280px) {
+  .heading-main {
+    font-size: 50px !important;
+    line-height: 60px !important;
+  }
+  .image-hero-main {
+    width: 100%;
+    max-width: 370px;
+}
+.heading-call-to{
+  font-size: 25px !important;
+  line-height: normal !important;
+
+}
+/* .column-one{
+  width: 100%;
+  max-width: 52%;
+  padding-right: 0 !important;
+
+
+}
+.column-two{
+  width: 100%;
+  max-width: 42%;
+} */
+}
+
+/* Medium Laptops (15-inch) */
+@media (max-width: 1440px) {
+  .heading-main {
+    font-size: 50px !important;
+    line-height: 60px !important;
+  }
+  .image-hero-main {
+    width: 100%;
+    max-width: 370px;
+}
+.heading-call-to{
+  font-size: 25px !important;
+  line-height: normal !important;
+
+}
+}
+
+/* Large Screens (Desktop & 17-inch laptops) */
+@media (min-width: 1441px) {
+}
+
+.footer-bottom-text {
+    font-size: 14px;
+}
+
+.paragraphcommon{
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff; 
+  font-weight: 400;
+}
+ .headingh2{
+  font-size: 38px;
+  line-height: 45px;
+  font-weight: bold;
+}
+@media (max-width:767px){
+  .headingh2{
+    font-size: 32px;
+  line-height: 40px;
+  }
+}
+
+.tabs-heading{
+  font-size: 32px;
+  line-height: 40px;
+  color: #F57A00;
+}
+@media (max-width: 768px) {
+  .tabs-heading{
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.gradient-separator {
+  background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+  height: 1px;
+  margin-bottom: 2rem;
+}
+
+.banner-image{
+  background: url('./assest/image/bg-new.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Add to your global styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #F57A00;
+  border-radius: 3px;
+}
