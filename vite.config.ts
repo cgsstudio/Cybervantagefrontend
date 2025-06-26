@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
-
-// https://vitejs.dev/config/
+// ⚠️ Replace 'my-vite-app' with your actual GitHub repo name
 export default defineConfig({
+  base: '/cgsstudio.github.io/',
   plugins: [
     react(),
     svgr(), // Add SVGR plugin here
