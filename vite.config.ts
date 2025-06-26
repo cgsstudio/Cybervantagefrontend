@@ -4,7 +4,7 @@ import svgr from 'vite-plugin-svgr';
 
 // ⚠️ Replace 'my-vite-app' with your actual GitHub repo name
 export default defineConfig({
-  base: '/cgsstudio.github.io/',
+  base: '/Cybervantage/',
   plugins: [
     react(),
     svgr(), // Add SVGR plugin here
