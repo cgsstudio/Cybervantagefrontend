@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Target, Shield, Brain, RotateCcw, Users } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import ServiceTabs from './ServiceTabs';
 import ServiceCard from './ServiceCard';
 // import { ReactComponent as Ser1 } from '../../assest/image/services/ser1.svg';
@@ -7,34 +8,35 @@ import ServiceCard from './ServiceCard';
 // import { ReactComponent as Ser3 } from '../../assest/image/services/ser3.svg';
 // import { ReactComponent as Ser4 } from '../../assest/image/services/ser4.svg';
 // import { ReactComponent as Ser6 } from '../../assest/image/services/ser6.svg';
-import Ser1 from '../../assest/image/services/ser1.svg'
-import Ser2 from '../../assest/image/services/ser2.svg'
-import Ser3 from '../../assest/image/services/ser3.svg'
-import Ser4 from '../../assest/image/services/ser4.svg'
+import Ser1 from '../../assest/image/digitalfinanceicon/fraud.svg'
+import Ser2 from '../../assest/image/digitalfinanceicon/openbanking.svg'
+import Ser3 from '../../assest/image/digitalfinanceicon/atm.svg'
+import Ser4 from '../../assest/image/digitalfinanceicon/iot.svg'
 import Ser6 from '../../assest/image/services/ser6.svg'
-import Ser5 from '../../assest/image/services/ser5.svg'
-import Ser7 from '../../assest/image/services/ser7.svg'
-import Ser8 from '../../assest/image/services/ser8.svg'
-import Ser9 from '../../assest/image/services/ser9.svg'
+import Ser5 from '../../assest/image/services/tab-1.svg'
+import Ser7 from '../../assest/image/services/tab-2.svg'
+import Ser8 from '../../assest/image/services/tab-3.svg'
+import Ser9 from '../../assest/image/services/tab-4.svg'
 import Ser10 from '../../assest/image/services/ser10.svg'
-import Ser11 from '../../assest/image/services/ser11.svg'
-import Ser12 from '../../assest/image/services/ser12.svg'
-import Ser13 from '../../assest/image/services/ser13.svg'
-import Ser14 from '../../assest/image/services/ser14.svg'
-import Ser15 from '../../assest/image/services/ser15.svg'
-import Ser16 from '../../assest/image/services/ser16.svg'
-import Ser17 from '../../assest/image/services/ser17.svg'
-import Ser18 from '../../assest/image/services/ser18.svg'
+import Ser11 from '../../assest/image/services/Networktab1.svg'
+import Ser12 from '../../assest/image/services/Networktab2.svg'
+import Ser13 from '../../assest/image/services/Networktab3.svg'
+import Ser14 from '../../assest/image/services/Networktab4.svg'
+import Ser15 from '../../assest/image/cloudsecuritytabicon/num01.svg'
+import Ser16 from '../../assest/image/cloudsecuritytabicon/num02.svg'
+import Ser17 from '../../assest/image/cloudsecuritytabicon/num03.svg'
+import Ser18 from '../../assest/image/cloudsecuritytabicon/num04.svg'
 import Ser19 from '../../assest/image/services/ser19.svg'
-import Ser20 from '../../assest/image/services/ser20.svg'
-import Ser21 from '../../assest/image/services/ser21.svg'
-import Ser22 from '../../assest/image/services/ser22.svg'
-import Ser23 from '../../assest/image/services/ser23.svg'
+import Ser20 from '../../assest/image/digitalfinanceicon/iot.svg'
+import Ser21 from '../../assest/image/digitalfinanceicon/openbanking.svg'
+import Ser22 from '../../assest/image/digitalfinanceicon/fraud.svg'
+import Ser23 from '../../assest/image/digitalfinanceicon/atm.svg'
 import Ser24 from '../../assest/image/services/ser24.svg'
 import Ser25 from '../../assest/image/services/ser25.svg'
 import Ser26 from '../../assest/image/services/ser26.svg'
 import Ser27 from '../../assest/image/services/ser27.svg'
 import Ser28 from '../../assest/image/services/ser28.svg'
+import 'aos/dist/aos.css';
 
 
 
@@ -46,132 +48,139 @@ const SERVICES = {
       title: 'Advanced Penetration Testing',
       description: 'Probing your defenses with expert-led testing to identify vulnerabilities',
       icon: Ser1,
-      
+      link: '/red-teaming#redteaming',
     },
     {
-      title: 'Fraud Red Teaming',
-      description: 'Simulating fraud scenarios to assess organization’s ability to detect and respond effectively',
+      title: 'DDOS Simulation',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser2,
       isHighlighted: true,
+      link: '/red-teaming#redteaming',
     },
     {
       title: 'AI Red teaming',
-      description: 'Challenging AI with adversarial testing to uncover vulnerabilities and biases',
+      description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser3,
-      
+      link: '/red-teaming#redteaming',
     },
     {
-      title: 'Hunting and reverse engineering',
-      description: 'Hunting 0-day threats and reversing exploits to stay ahead of evolving risks',
+      title: 'Zero Day Hunting',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser4,
       isHighlighted: true,
+      link: '/red-teaming#redteaming',
     },
-    {
-      title: 'Social Engineering',
-      description: 'Testing human and technical defenses against the most sophisticated attacks',
-      icon: Ser6,
-    },
+
   ],
   'Application Security': [
     {
-      title: 'Web & Mobile Application',
-      description: 'Web & Mobile Application',
+      title: 'Web Application Security',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser5,
+      link: '/application-security-assessment#applicationsecurity',
     },
     {
-      title: 'API Security review',
-      description: 'Securing API integrations to prevent data breaches and unauthorized access',
+      title: 'Mobile Application Security',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser7,
       isHighlighted: true,
+      link: '/application-security-assessment#applicationsecurity',
     },
     {
-      title: 'Source code review',
-      description: 'Detecting security flaws at the source by reviewing application and infrastructure code',
+      title: 'API Security',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser8,
+      link: '/application-security-assessment#applicationsecurity',
     },
     {
-      title: 'Windows and Mac Applications',
-      description: 'Ensuring Windows and Mac applications meet robust security standards',
+      title: 'Source Code Review',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser9,
+
+      link: '/application-security-assessment#applicationsecurity',
     },
-    {
-      title: 'OS and Virtual Desktops security',
-      description: 'Hardening operating systems and virtual desktops against cyber threats',
-      icon: Ser10,
-    },
+ 
   ],
   'Network Penetration Testing':[
     {
-      title: 'Advanced Perimeter Control',
-      description: 'Building robust protections to secure your network edge and Perimeter controls from evolving threats',
+      title: 'DNS Security',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser11,
+      link: '/network-penetration-testing#networksecurity',
     },
     {
-      title: 'DNS Security',
-      description: 'Securing DNS infrastructure to prevent hijacking, spoofing, stale records and data exfiltration',
+      title: 'Firewall and Edge Devices',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser12,
       isHighlighted: true,
+      link: '/network-penetration-testing#networksecurity',
     },
     {
-      title: 'Forward and Reverse Proxy',
-      description: 'Securing application delivery and access control with forward and reverse proxies',
+      title: 'Corporate Proxy & Captive Portals',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser13,
+      link: '/network-penetration-testing#networksecurity',
     },
     {
-      title: 'Firewall Review',
-      description: 'Optimizing firewall configurations to protect applications, hosts, and network layers',
+      title: 'Remote Access – VPN and ZTNA Infrastructure',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser14,
+      link: '/network-penetration-testing#networksecurity',
     }
   ],
   'Cloud Security': [
     {
-      title: 'Container & Kuberenetes',
+      title: 'Containers and Kubernetes Security',
       description: 'Securing containerized environments and Kubernetes clusters from internal and external threats.',
       icon: Ser15,
       isHighlighted: true,
+      link: '/cloud-security-assesment#cloudsecurity',
     },
     {
-      title: 'Virtualization Infrastructure',
+      title: 'Virtualization Infrastructure Security',
       description: 'Hardening virtualization platforms against misconfigurations and vulnerabilities',
       icon: Ser16,
+      link: '/cloud-security-assesment#cloudsecurity',
     },
     {
       title: 'Public Cloud Security',
       description: 'Securing cloud environments with tailored assessments for AWS, Azure, Oracle and GCP',
       icon: Ser17,
+      link: '/cloud-security-assesment#cloudsecurity',
     },
     {
-      title: 'SAAS Solutions',
+      title: 'SAAS Security',
       description: 'Optimizing SaaS security settings for compliance and reduced attack surface',
       icon: Ser18,
+      link: '/cloud-security-assesment#cloudsecurity',
     },
-    {
-      title: 'Posture Management',
-      description: 'Ensuring compliance and minimizing risks with proactive posture management',
-      icon: Ser19,
-    }
+ 
   ],
-  'Future Technology Security': [
+  'Digital Finance and Banking': [
     {
-      title: 'AI, LLM and Machine Learning',
-      description: 'Safeguarding AI and machine learning models against adversarial attacks',
+      title: 'Fraud Red Teaming',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser22,
       isHighlighted: true,
+      link: '/digital-finance-banking#digitalfinance',
     },
     {
-      title: '5G Network Security Assessments',
-      description: 'Mitigating risks in 5G architectures to enable secure, high-speed data exchange',
+      title: 'Open banking Security',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser21,
+      link: '/digital-finance-banking#digitalfinance',
     },
     {
-      title: 'Quantum Computing Security Readiness',
-      description: 'Preparing your organization for quantum-safe encryption and future-proof security',
+      title: 'ATM security Assessment',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser23,
+      link: '/digital-finance-banking#digitalfinance',
     },
     {
-      title: 'Digital Asset Security Assessments',
-      description: 'Building trust in the digital economy with expert security for emerging asset classes like NFT, Cryptocurrencies etc.',
+      title: 'IoT Security for Banking & Finance',
+      description: 'lorem Ipsum is simply dummy text of the printing and typesetting industry.',
       icon: Ser20,
+      link: '/digital-finance-banking#digitalfinance',
     },
     
   ],
@@ -207,20 +216,73 @@ const SERVICES = {
 
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState('Red Teaming');
+  const [activeTab, setActiveTab] = useState('Application Security Assessment');
 
   const getServicesData = () => SERVICES[activeTab] || [];
+
+  // Helper to wrap ServiceCard with Link if link exists
+  const renderServiceCard = (service, index) => {
+    const card = <ServiceCard {...service} />;
+    return service.link ? (
+      <Link
+        to={service.link}
+        key={index}
+        className="h-full w-full flex"
+        style={{ textDecoration: 'none' }}
+      >
+        {card}
+      </Link>
+    ) : (
+      <div key={index} className="h-full w-full flex">
+        {card}
+      </div>
+    );
+  };
+
+  // Create contentMap to pass to ServiceTabs
+  const contentMap = {
+    'Application Security Assessment': (
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 items-stretch">
+        {SERVICES['Application Security'].map(renderServiceCard)}
+      </div>
+    ),
+    'Network Penetration Testing': (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 items-stretch">
+        {SERVICES['Network Penetration Testing'].map(renderServiceCard)}
+      </div>
+    ),
+    'Red Teaming': (
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 items-stretch">
+        {SERVICES['Red Teaming'].map(renderServiceCard)}
+      </div>
+    ),
+    'Cloud Security Assessment': (
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 items-stretch">
+        {SERVICES['Cloud Security'].map(renderServiceCard)}
+      </div>
+    ),
+    'Digital Finance and Banking': (
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-6 items-stretch">
+        {SERVICES['Digital Finance and Banking'].map(renderServiceCard)}
+      </div>
+    ),
+    'Operational Technology Security (OT)': (
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 items-stretch">
+        {SERVICES['Operational Technology Security (OT)'].map(renderServiceCard)}
+      </div>
+    )
+  };
 
   return (
     <section id="services" className="py-20 relative bg-primery">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-start mb-12 our-service-main">
   <div className="basis-full md:basis-2/3 p-4">
-    <h2 className="text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight heading42-main">
+    <h2 className=" text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight heading42-main" data-aos="fade-right">
       Our Services And Offerings
     </h2>
   </div>
-  <div className="basis-full md:basis-1/3 p-4">
+  <div className="basis-full md:basis-1/3 p-4" data-aos="fade-left">
     <h3 className="text-2xl font-semibold text-white-500 mb-2">
       Why settle for 'secure enough'?
     </h3>
@@ -231,17 +293,15 @@ const Services = () => {
 </div>
 
 
-        <ServiceTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
-        <div
-  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ${
-    getServicesData().length === 4 ? 'xl:grid-cols-4' : 'xl:grid-cols-5'
-  } gap-6 `}
->
-  {getServicesData().map((service, index) => (
-    <ServiceCard key={index} {...service} />
-  ))}
-</div>
+     
+           <ServiceTabs 
+          activeTab={activeTab} 
+          setActiveTab={setActiveTab} 
+          contentMap={contentMap}
+        />
+
+    
 
       </div>
     </section>

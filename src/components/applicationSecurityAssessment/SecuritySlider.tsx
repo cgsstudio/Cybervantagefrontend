@@ -105,7 +105,7 @@ const SecuritySlider = () => {
               </div>
 
               {/* Scrollable Content Section */}
-              <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar max-h-[350px]" 
+              <div className="flex-1 pr-4 " 
                    style={{
                      scrollbarWidth: 'thin',
                      scrollbarColor: '#F57A00 transparent'
@@ -134,8 +134,8 @@ const SecuritySlider = () => {
                 </div>
               </div>
 
-              {/* Navigation */}
-              <div className="mt-6 flex items-center gap-4">
+              {/* Desktop Navigation */}
+              <div className="mt-auto hidden lg:flex items-center gap-4 pt-3">
                 <div className="flex items-center space-x-4">
                   <button
                     onClick={prevSlide}
@@ -183,11 +183,52 @@ const SecuritySlider = () => {
                   alt={`Security Bug ${currentSlideData.id}`}
                   className="w-full h-full object-contain"
                 />
-                {/* Cyber-themed overlay elements */}
-              
               </div>
             </div>
           </div>
+
+          {/* Mobile/Tablet Navigation */}
+          <div className="lg:hidden px-6 pb-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevSlide}
+                  style={{
+                    minWidth: '100px',
+                    borderRadius: 8,
+                    padding: 2,
+                    background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
+                  }}
+                >
+                  <div
+                    style={{
+                      borderRadius: 6,
+                      background: '#000000',
+                      padding: '0.5rem',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span className="text-white text-sm">Previous</span>
+                  </div>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="px-6 py-2 gradient-bg text-white rounded-lg transition-all duration-300 w-24 text-center text-sm"
+                >
+                  Next
+                </button>
+              </div>
+
+              <div className="text-gray-400 text-sm font-medium">
+                {currentSlide + 1} / {slides.length}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -197,17 +238,3 @@ const SecuritySlider = () => {
 export default SecuritySlider;
 
 /* Add this CSS to your global styles or component */
-`
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #F57A00;
-  border-radius: 3px;
-}
-`

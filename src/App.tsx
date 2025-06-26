@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -15,19 +15,48 @@ import TermsAndConditions from './components/TermsAndConditions';
 import ScrollToTop from './components/ScrollToTop';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import DigitalFinanceHero from './components/digitalFinanceBanking';
+import './styles/scrollbar.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import HeroDemo from './components/HeroDemo';
+import Audits from "../src/components/Audits/Audits"
+
+import { useLocation } from 'react-router-dom';
+
+function ScrollToHashElement() {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
+
+  return null;
+}
 
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div className="scrollbar">
       <BrowserRouter>
         <ScrollToTop />
         <Navbar />
+         <ScrollToHashElement />
         <Routes>
           <Route
             path="/"
             element={
               <>
+                {/* <HeroDemo /> */}
                 <Hero />
                 <Stats />
                 <Services />
@@ -64,6 +93,10 @@ function App() {
           <Route
             path="/privacy-policy"
             element={<PrivacyPolicy />}
+          />
+          <Route
+            path="/audits"
+            element={<Audits />}
           />
           
         </Routes>

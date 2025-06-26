@@ -225,7 +225,7 @@ const RedTeamingTabs = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab] || [], [activeTab]);
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-white" id='redteaming'>
       <div className="container mx-auto px-4 py-8 lg:py-20">
         {/* Header Section */}
         <div className="text-center mb-12">
@@ -246,7 +246,7 @@ const RedTeamingTabs = () => {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`flex flex-col items-center transition-all duration-300 relative z-0 ${
+                className={`flex flex-col items-center transition-all duration-300  relative z-0 ${
                   activeTab === tab 
                     ? 'text-white'
                     : 'text-gray-300 bg-black'

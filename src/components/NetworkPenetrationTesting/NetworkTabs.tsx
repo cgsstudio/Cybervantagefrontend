@@ -191,7 +191,7 @@ const SecurityTestingSection = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="min-h-screen  text-white">
+    <div className="min-h-screen  text-white" id='networksecurity'>
       <div className="container mx-auto px-4 py-8 lg:py-20">
         {/* Header Section */}
         <div className="text-center mb-12">

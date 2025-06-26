@@ -73,9 +73,9 @@ const SecuritySlider = () => {
   }, []);
 
   return (
-    <div className="w-full py-8 text-white">
-      <div className="w-full max-w-[1440px] mx-auto relative px-4">
-        <div className="relative overflow-hidden rounded-2xl" style={{
+    <div className="min-h-screen text-white p-4 md:p-8">
+      <div className="w-full max-w-[1440px] mx-auto relative px-2 md:px-0">
+        <div className="relative overflow-hidden" style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
         }}>
           <div
@@ -103,9 +103,8 @@ const SecuritySlider = () => {
               </div>
 
               {/* Scrollable Content Section */}
-              <div className="flex-1 overflow-y-auto pr-4 custom-scrollbar my-6" 
+              <div className="flex-1  pr-4 " 
                    style={{
-                     height: '350px',
                      scrollbarWidth: 'thin',
                      scrollbarColor: '#F57A00 transparent'
                    }}>
@@ -134,7 +133,7 @@ const SecuritySlider = () => {
               </div>
 
               {/* Navigation */}
-              <div className="mt-auto pt-4 flex items-center gap-4">
+              <div className="mt-auto hidden lg:flex items-center gap-4 pt-3">
                 <div className="flex items-center space-x-4">
                   <button
                     onClick={prevSlide}
@@ -167,17 +166,63 @@ const SecuritySlider = () => {
                     Next
                   </button>
                 </div>
+
+                <div className="text-gray-400 text-sm md:text-base font-medium">
+                  {currentSlide + 1} / {slides.length}
+                </div>
               </div>
             </div>
 
             {/* Right Side - Image */}
-            <div className="flex-1 p-6 md:p-8 lg:p-12 flex items-center justify-center">
-              <div className="relative w-full">
+            <div className="flex-1 flex items-center justify-center p-8">
+              <div className="relative w-full h-full">
                 <img
                   src={slides[currentSlide].image}
                   alt={`Security Bug ${slides[currentSlide].id}`}
-                  className="w-full object-contain max-h-[400px]"
+                  className="w-full h-full object-contain"
                 />
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Navigation */}
+          <div className="lg:hidden px-6 pb-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevSlide}
+                  style={{
+                    minWidth: '100px',
+                    borderRadius: 8,
+                    padding: 2,
+                    background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
+                  }}
+                >
+                  <div
+                    style={{
+                      borderRadius: 6,
+                      background: '#000000',
+                      padding: '0.5rem',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span className="text-white text-sm">Previous</span>
+                  </div>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="px-6 py-2 gradient-bg text-white rounded-lg transition-all duration-300 w-24 text-center text-sm"
+                >
+                  Next
+                </button>
+              </div>
+
+              <div className="text-gray-400 text-sm font-medium">
+                {currentSlide + 1} / {slides.length}
               </div>
             </div>
           </div>
@@ -188,3 +233,4 @@ const SecuritySlider = () => {
 };
 
 export default SecuritySlider;
+

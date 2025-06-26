@@ -174,7 +174,7 @@ export default function FinanceTabContent() {
   const isTabExpanded = (tab: string) => expandedTabs.includes(tab);
 
   return (
-    <div className="container mx-auto min-h-screen text-white py-20">
+    <div className="container mx-auto min-h-screen text-white py-20" id='digitalfinance'>
       {/* Header Section */}
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white line-heading-tight">

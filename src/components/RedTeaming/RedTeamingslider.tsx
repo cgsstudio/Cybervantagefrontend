@@ -86,13 +86,11 @@ const RedTeamingslider = () => {
   }, []);
 
   return (
-    <div className="w-full py-10 md:px-4 2xl:px-0" >
-      <div className="w-full max-w-[1440px] mx-auto relative px-2 md:px-0" style={{
-        background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
-      }}>
-        {/* Main Slider Container */}
-        <div className="relative h-[700px]  lg:h-[750px] overflow-hidden">
-          {/* Fixed Border */}
+    <div className="min-h-screen text-white p-4 md:p-8">
+      <div className="w-full max-w-[1440px] mx-auto relative px-2 md:px-0">
+        <div className="relative overflow-hidden" style={{
+          background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
+        }}>
           <div
             className="absolute inset-0 z-20 pointer-events-none rounded-2xl"
             style={{
@@ -100,99 +98,147 @@ const RedTeamingslider = () => {
               borderImage: "linear-gradient(90deg, #F57A00 0%, #7103A4 100%) 1"
             }}
           ></div>
-          {/* Fixed Heading (inside border, absolutely positioned at top) */}
-          <div className="absolute top-0 left-0 w-full lg:w-[750px] z-30 px-4 sm:px-6 lg:px-12 pt-8">
-            <h1 className="text-2xl md:text-3xl lg:text-[50px] lg:leading-[55px] font-bold leading-tight text-white">
-              Innovative Security Bugs & Business Impact
-            </h1>
-          </div>
+          <div className="flex flex-col lg:flex-row">
+            {/* Left Side - Content */}
+            <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col">
+              {/* Header */}
+              <div className="mb-6">
+                <h1 className="text-2xl md:text-3xl lg:text-[50px] lg:leading-[55px] font-bold leading-tight text-white">
+                  Innovative Security Bugs & Business Impact
+                </h1>
+              </div>
 
-          {slides.map((slide, index) => (
-            <div
-              key={slide.id}
-              className={`absolute inset-0 transition-transform duration-700 ease-in-out ${
-                index === currentSlide ? 'translate-x-0' : 
-                index < currentSlide ? '-translate-x-full' : 'translate-x-full'
-              }`}
-            >
-              {/* Background Gradient */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${slide.bgGradient} opacity-10`}></div>
-              {/* Content Grid */}
-              <div className="relative z-10 h-full grid grid-cols-1 lg:grid-cols-2 gap-0 p-0 pt-20 sm:pt-24">
-                {/* Left Content */}
-                <div className="flex flex-col justify-center space-y-6 text-white px-4 lg:px-0  lg:pl-12 pb-6 lg:pb-12">
-                  <div className="space-y-4">
-                    <h2
-                      className="text-base sm:text-lg lg:text-xl font-semibold mt-5"
-                      style={{ color: "#CA6200" }}
-                    >
-                      {slide.subtitle}
-                    </h2>
-                  </div>
-                  {/* Content Sections */}
-                  <div className="space-y-4 text-xs sm:text-sm lg:text-base">
-                    <div>
-                      <h3 className="font-bold text-white-400 mb-2">What we found:</h3>
-                      <p className="text-gray-300 leading-relaxed">{slide.content.whatWeFound}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white-400 mb-2">How we found it:</h3>
-                      <p className="text-gray-300 leading-relaxed">{slide.content.howWeFound}</p>
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-white-400 mb-2">Impact:</h3>
-                      <p className="text-gray-300 leading-relaxed">{slide.content.impact}</p>
-                    </div>
-                  </div>
-                </div>
+              {/* Subtitle */}
+              <div className="mb-4">
+                <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-[#CA6200]">
+                  {slides[currentSlide].subtitle}
+                </h3>
+              </div>
 
-                {/* Right Image/Visual */}
-                <div className="hidden lg:flex items-center justify-center p-0 h-full">
-                  <div className="relative w-full h-[220px] sm:h-[350px] md:h-[450px] lg:h-[600px] flex items-center justify-center">
-                    <img
-                      src={slide.image}
-                      alt="Security Visual"
-                      className="w-full h-full object-contain"
-                    />
+              {/* Scrollable Content Section */}
+              <div className="flex-1 pr-4 " 
+                   style={{
+                     scrollbarWidth: 'thin',
+                     scrollbarColor: '#F57A00 transparent'
+                   }}>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-white-400 mb-2">What we found:</h4>
+                    <p className="text-gray-300 leading-relaxed">
+                      {slides[currentSlide].content.whatWeFound}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-white-400 mb-2">How we found it:</h4>
+                    <p className="text-gray-300 leading-relaxed">
+                      {slides[currentSlide].content.howWeFound}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-white-400 mb-2">Impact:</h4>
+                    <p className="text-gray-300 leading-relaxed">
+                      {slides[currentSlide].content.impact}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
 
-        {/* Fixed Navigation Buttons */}
-        <div className="absolute bottom-3 2xl:bottom-[3rem] left-1/2 transform -translate-x-1/2 lg:left-10 lg:transform-none flex items-center space-x-4">
-          <button
-            onClick={prevSlide}
-            style={{
-              minWidth: '128px',
-              borderRadius: 8,
-              padding: 2,
-              background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
-            }}
-          >
-            <div
-              style={{
-                borderRadius: 6,
-                background: '#000000',
-                padding: '0.75rem',
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              <span className="text-white">Previous</span>
+              {/* Desktop Navigation */}
+              <div className="mt-auto hidden lg:flex items-center gap-4 pt-3">
+                <div className="flex items-center space-x-4">
+                  <button
+                    onClick={prevSlide}
+                    style={{
+                      minWidth: '128px',
+                      borderRadius: 8,
+                      padding: 2,
+                      background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
+                    }}
+                  >
+                    <div
+                      style={{
+                        borderRadius: 6,
+                        background: '#000000',
+                        padding: '0.75rem',
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <span className="text-white">Previous</span>
+                    </div>
+                  </button>
+                  <button
+                    onClick={nextSlide}
+                    className="px-8 py-3 gradient-bg text-white rounded-lg transition-all duration-300 w-32 text-center"
+                  >
+                    Next
+                  </button>
+                </div>
+
+                <div className="text-gray-400 text-sm md:text-base font-medium">
+                  {currentSlide + 1} / {slides.length}
+                </div>
+              </div>
             </div>
-          </button>
-          <button
-            onClick={nextSlide}
-            className="px-8 py-3 gradient-bg text-white rounded-lg transition-all duration-300 w-32 text-center"
-          >
-            Next
-          </button>
+
+            {/* Right Side - Image */}
+            <div className="flex-1 flex items-center justify-center p-8">
+              <div className="relative w-full h-full">
+                <img
+                  src={slides[currentSlide].image}
+                  alt={`Security Bug ${slides[currentSlide].id}`}
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Navigation */}
+          <div className="lg:hidden px-6 pb-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevSlide}
+                  style={{
+                    minWidth: '100px',
+                    borderRadius: 8,
+                    padding: 2,
+                    background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
+                  }}
+                >
+                  <div
+                    style={{
+                      borderRadius: 6,
+                      background: '#000000',
+                      padding: '0.5rem',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span className="text-white text-sm">Previous</span>
+                  </div>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="px-6 py-2 gradient-bg text-white rounded-lg transition-all duration-300 w-24 text-center text-sm"
+                >
+                  Next
+                </button>
+              </div>
+
+              <div className="text-gray-400 text-sm font-medium">
+                {currentSlide + 1} / {slides.length}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

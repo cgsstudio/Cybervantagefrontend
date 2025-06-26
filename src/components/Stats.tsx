@@ -1,6 +1,7 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import 'aos/dist/aos.css';
 
 const Stats = () => {
   const stats = [
@@ -13,7 +14,7 @@ const Stats = () => {
 
   return (
     <section id="about" className='py-20 bg-primery'>
-         <h2 className="text-4xl md:text-6xl lg:text-6xl font-semibold text-white text-center mb-12 heading42-main">
+         <h2 className="fade-up-element text-4xl md:text-6xl lg:text-6xl font-semibold text-white text-center mb-12 heading42-main" data-aos="fade-up" >
           Experience and Trust
         </h2>
        <div className="bg-gradient-to-r from-orange-500 to-purple-600 py-20 counter-bg">

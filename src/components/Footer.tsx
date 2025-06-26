@@ -81,28 +81,28 @@ const Footer = () => {
 
           {/* Quick Links Duplicate - 20% */}
           <div className="w-full md:basis-[20%]">
-            <h3 className="text-xl font-semibold text-orange-500">Advisory Category</h3>
+            <h3 className="text-xl font-semibold text-orange-500">Audit</h3>
             <ul className="mt-4 space-y-2 mb-4">
               <li>
                 <a href="#about" className="text-white-400 hover:text-orange-500">
-                  Security Architecture
+                  ISO 27001
                 </a>
               </li>
               <li>
                 <a href="#services" className="text-white-400 hover:text-orange-500">
-                  Security Automation
+                  PCI DSS
                 </a>
               </li>
               <li>
                 <a href="#support" className="text-white-400 hover:text-orange-500">
-                  Regulatory Gap Assessment
+                  SOC 2
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#contact" className="text-white-400 hover:text-orange-500">
                   Product Hunting
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

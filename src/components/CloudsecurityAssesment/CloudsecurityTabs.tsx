@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Shield, Smartphone, Database, Code, ChevronRight } from 'lucide-react';
-import Networktabs from '../../assest/image/services/Networktab1.svg';
-import Networktabs1 from '../../assest/image/services/Networktab2.svg';
-import Networktabs2 from '../../assest/image/services/Networktab3.svg';
-import Networktabs3 from '../../assest/image/services/Networktab4.svg';
+import Networktabs from '../../assest/image/cloudsecuritytabicon/num01.svg';
+import Networktabs1 from '../../assest/image/cloudsecuritytabicon/num02.svg';
+import Networktabs2 from '../../assest/image/cloudsecuritytabicon/num03.svg';
+import Networktabs3 from '../../assest/image/cloudsecuritytabicon/num04.svg';
 import tab11 from '../../assest/image/services/tab7.png';
 import cks1 from '../../assest/image/Containers-and-Kubernetes-Security/Group 1259.svg';
 import cks2 from '../../assest/image/Containers-and-Kubernetes-Security/Group 1266.svg';
@@ -302,7 +302,7 @@ const CloudsecurityTabs = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="min-h-screen text-white">
+    <div className="min-h-screen text-white" id='cloudsecurity'>
       <div className="container mx-auto px-4 py-8 lg:py-20">
         {/* Header Section - visible on all screens */}
         <div className="text-center mb-12">

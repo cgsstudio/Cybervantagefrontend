@@ -48,7 +48,7 @@ function Navbar() {
 
           {/* Center: Menu (desktop only) */}
           <div className="hidden lg:flex justify-center w-3/5">
-            <div className="nav-container nav-menu py-5 px-3 space-x-6 flex items-center justify-center w-full">
+            <div className="nav-container nav-menu py-5 px-3 lg:space-x-3 2xl:space-x-6 flex items-center justify-center w-full">
               <Link
                 to="/"
                 className={`text-white font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "home" ? "" : ""}`}
@@ -121,26 +121,45 @@ function Navbar() {
                   className={`flex items-center space-x-1 font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "audit" ? "text-orange-500 " : "text-white"}`}
                 >
                   <span>Advisory Services</span>
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180' : ''}`} />
+                  {/* <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180' : ''}`} /> */}
                 </button>
-                {activeDropdown === 'audit' && (
-                  <div className="absolute top-full left-0  w-48 bg-gray-800/90 backdrop-blur-sm rounded-md shadow-lg z-50">
+       
+              </div>
+
+                 <div
+                className="relative inline-block"
+                onMouseEnter={() => setActiveDropdown('audits')}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
+                <button
+                  onClick={() => toggleDropdown('audits')}
+                  className={`flex items-center space-x-1 font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "audits" ? "text-orange-500 " : "text-white"}`}
+                >
+                  <Link to={"/audits"}>
+                  <span> Audits</span>
+                  </Link>
+                  
+                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'audits' ? 'rotate-180' : ''}`} />
+                </button>
+                {activeDropdown === 'audits' && (
+                  <div className="absolute top-full left-0 mt-0 w-52 bg-gray-800/90 backdrop-blur-sm rounded-md shadow-lg z-50">
                     <div className="py-2">
-                      <Link to="#internal-audits" 
-                         className="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-orange-500"
-                         onClick={() => handleMenuClick("audit")}>
-                        Internal Audits
+                      <Link to="/audits#iso27001" 
+                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                         onClick={() => handleMenuClick("audits")}>
+                        ISO 27001
                       </Link>
-                      <Link to="#external-audits" 
-                         className="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-orange-500"
-                         onClick={() => handleMenuClick("audit")}>
-                        External Audits
+                      <Link to="/audits#pci-dss" 
+                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                         onClick={() => handleMenuClick("audits")}>
+                        PCI DSS
                       </Link>
-                      <Link to="#audit-reports" 
-                         className="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:text-orange-500"
-                         onClick={() => handleMenuClick("audit")}>
-                        Audit Reports
+                      <Link to="/audits#soc2" 
+                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                         onClick={() => handleMenuClick("audits")}>
+                       SOC 2
                       </Link>
+                     
                     </div>
                   </div>
                 )}

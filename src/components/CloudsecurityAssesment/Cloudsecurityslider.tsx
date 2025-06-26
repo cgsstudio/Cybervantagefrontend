@@ -88,7 +88,7 @@ const Cloudsecurityslider = () => {
   return (
     <div className="min-h-screen text-white p-4 md:p-8">
       <div className="w-full max-w-[1440px] mx-auto relative px-2 md:px-0">
-        <div className="relative overflow-hidden h-[700px]" style={{
+        <div className="relative overflow-hidden " style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
         }}>
           <div
@@ -147,7 +147,7 @@ const Cloudsecurityslider = () => {
               </div>
 
               {/* Navigation */}
-              <div className="mt-6 flex items-center gap-4">
+              <div className="mt-auto hidden lg:flex items-center gap-4 pt-3">
                 <div className="flex items-center space-x-4">
                   <button
                     onClick={prevSlide}
@@ -195,8 +195,48 @@ const Cloudsecurityslider = () => {
                   alt={`Security Bug ${slides[currentSlide].id}`}
                   className="w-full h-full object-contain"
                 />
-                {/* Cyber-themed overlay elements */}
-               
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile/Tablet Navigation */}
+          <div className="lg:hidden px-6 pb-6">
+            <div className="flex items-center justify-between gap-4">
+              <div className="flex items-center space-x-4">
+                <button
+                  onClick={prevSlide}
+                  style={{
+                    minWidth: '100px',
+                    borderRadius: 8,
+                    padding: 2,
+                    background: 'linear-gradient(90deg, #F57A00 0%, #7103A4 100%)',
+                  }}
+                >
+                  <div
+                    style={{
+                      borderRadius: 6,
+                      background: '#000000',
+                      padding: '0.5rem',
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <span className="text-white text-sm">Previous</span>
+                  </div>
+                </button>
+                <button
+                  onClick={nextSlide}
+                  className="px-6 py-2 gradient-bg text-white rounded-lg transition-all duration-300 w-24 text-center text-sm"
+                >
+                  Next
+                </button>
+              </div>
+
+              <div className="text-gray-400 text-sm font-medium">
+                {currentSlide + 1} / {slides.length}
               </div>
             </div>
           </div>

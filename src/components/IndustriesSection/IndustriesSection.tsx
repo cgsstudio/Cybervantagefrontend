@@ -8,6 +8,7 @@ import icon5 from "../../assest/image/PowerSector .svg";
 import icon6 from "../../assest/image/DigitalandCrypto.svg";
 import icon7 from "../../assest/image/Technology.svg";
 import icon8 from "../../assest/image/bg-service.png";
+import 'aos/dist/aos.css';
 
 
 const IndustriesSection = () => {
@@ -67,32 +68,41 @@ const IndustriesSection = () => {
       backgroundRepeat: "no-repeat",    
     }}>
       <div className="industries-container container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-wrap industries-main">
-  {/* Left Column: Heading and Description (67%) */}
-  <div className="w-full md:w-2/3 lg:pr-[18rem] column-one ">
-    <h2 className="text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight text-left heading42-main ">
-      Industries We Support
-    </h2>
-    <p className="text-gray-300 mb-7 text-left">
-      We are one of the fastest growing companies with a footprint in India,
-      Middle East & North America. Our clientele base spans Banks, PSUs,
-      Fortune 1000 companies, IT/ITES, Logistics, Start-ups, and SMBs.
-    </p>
-  </div>
+        <div
+          className="industries-main industries-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3  items-start"
+        >
+          {/* Left Column: Heading and Description (spans 2 columns) */}
+          <div
+            className="col-span-1 2xl:col-span-2 max-w-2xl "
+            data-aos="fade-right"
+          >
+            <h2 className="text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight text-left heading42-main ">
+              Industries We Support
+            </h2>
+            <p className="text-gray-300 mb-7 text-center xl:text-left">
+              We are one of the fastest growing companies with a footprint in India,
+              Middle East & North America. Our clientele base spans Banks, PSUs,
+              Fortune 1000 companies, IT/ITES, Logistics, Start-ups, and SMBs.
+            </p>
+          </div>
 
-  {/* Right Column: Single Icon Box (33%) */}
-  <div className="w-full md:w-1/3  column-two">
-    <div className="industry-card mb-4">
-      <img className="industry-icon mb-2" src={firstIndustry.icon} alt={firstIndustry.title} />
-      <h3 className="text-lg font-bold text-white main-text-bold">{firstIndustry.title}</h3>
-      <p className="text-gray-300 text-sm text-main-light">{firstIndustry.description}</p>
-    </div>
-  </div>
-</div>
+          {/* Right Column: Single Icon Box */}
+          <div
+            className="col-span-1 "
+            data-aos="fade"
+            data-aos-delay="300"
+          >
+            <div className="industry-card mb-4">
+              <img className="industry-icon mb-2" src={firstIndustry.icon} alt={firstIndustry.title} />
+              <h3 className="text-lg font-bold text-white main-text-bold">{firstIndustry.title}</h3>
+              <p className="text-gray-300 text-sm text-main-light">{firstIndustry.description}</p>
+            </div>
+          </div>
+        </div>
 
 
         {/* Remaining Icon Boxes Below */}
-        <div className="industries-grid mt-8">
+        <div className="industries-grid mt-8" data-aos="fade" data-aos-delay="300">
           {remainingIndustries.map((industry, index) => (
             <div key={index} className="industry-card mb-4">
               <img className="industry-icon mb-2" src={industry.icon} alt={industry.title} />

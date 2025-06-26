@@ -330,7 +330,7 @@ export default function SecurityTestingSection() {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="container mx-auto min-h-screen text-white py-20">
+    <div className="container mx-auto min-h-screen text-white py-20" id='applicationsecurity'>
       {/* Header Section */}
       <div className="text-center mb-12 px-4">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white line-heading-tight">
@@ -401,7 +401,7 @@ export default function SecurityTestingSection() {
                       {index + 1}
                     </div>
                   </div>
-                  <div className={`flex-1 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-start pl-20 md:pl-0`}>
+                  <div className={`flex-1 flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} items-center pl-20 md:pl-0`}>
                     <div className="w-full md:w-1/2 flex justify-center mb-6 md:mb-0">
                       <div className="w-full md:w-[100%] h-[250px] items-center justify-center">
                         <img src={item.image} alt="" className="object-contain w-full h-full" />
