@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
 
-// ⚠️ Replace 'my-vite-app' with your actual GitHub repo name
+
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Cybervantage',
   plugins: [
     react(),
     svgr(), // Add SVGR plugin here

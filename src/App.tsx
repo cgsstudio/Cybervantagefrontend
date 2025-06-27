@@ -47,10 +47,10 @@ function App() {
 
   return (
     <div className="scrollbar">
-      <BrowserRouter>
+      <BrowserRouter basename="/Cybervantage">
         <ScrollToTop />
         <Navbar />
-         <ScrollToHashElement />
+        <ScrollToHashElement />
         <Routes>
           <Route
             path="/"
