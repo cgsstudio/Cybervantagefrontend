@@ -47,7 +47,8 @@ function App() {
 
   return (
     <div className="scrollbar">
-      <BrowserRouter basename="/Cybervantage">
+      <BrowserRouter basename="/">
+        {/* Changed basename from "/Cybervantage" to "/" */}
         <ScrollToTop />
         <Navbar />
         <ScrollToHashElement />
