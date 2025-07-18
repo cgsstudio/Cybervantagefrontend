@@ -14,19 +14,14 @@ const CybersecurityHero = () => {
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
                 <h1 className="font-bold text-white mt-4 headingh2">
-                  Cloud Security Done Right — From Code to Cloud, We’ve Got You Covered
+                 Cloud Security That Scales With You — From Code to Cloud, We’ve Got You Covered
                 </h1>
-                <h2 className='font-bold text-white mt-4 text-2xl'>As organizations accelerate cloud adoption, security can’t be an afterthought.
+                {/* <h2 className='font-bold text-white mt-4 text-2xl'>As organizations accelerate cloud adoption, security can’t be an afterthought.
 
-                </h2>
+                </h2> */}
               </div>
               <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
-                Our Cloud Security services provide deep, hands-on evaluations across cloud-native
-                technologies and hybrid deployments. Whether it’s Docker containers, Kubernetes
-                orchestration, virtualized infrastructure, public cloud platforms like AWS and Azure, or
-                SaaS ecosystems, we identify critical gaps, misconfigurations, privilege escalations, and
-                data exposure risks. Our assessments help ensure that your cloud infrastructure is secure,
-                compliant, and resilient.
+               Whether you're cloud-native or mid-migration, we help you validate controls, meet compliance, and defend against evolving cloud threats across IaaS, PaaS, and SaaS.
               </p>
               <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Explore How We Help

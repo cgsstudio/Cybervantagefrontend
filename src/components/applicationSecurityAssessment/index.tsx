@@ -15,17 +15,19 @@ const CybersecurityHero = () => {
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
                 <h1 className="font-bold text-white mt-4 headingh2">
-                  Test Your Application Before Hackers Do It for You.
+                  Application Security Assesment — Tailored For Every Platform
+
                 </h1>
-                <h2 className='font-bold text-white mt-4 text-2xl'>Your app is your business. Don’t let bugs, breaches, or bad actors ruin the party. We’ll
+                {/* <h2 className='font-bold text-white mt-4 text-2xl'>Your app is your business. Don’t let bugs, breaches, or bad actors ruin the party. We’ll
                   test your application like hackers would—only nicer.
 
-                </h2>
+                </h2> */}
               </div>
               <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
-                In today’s digital world, your application is your storefront, your bank vault, and your
-                reputation—all rolled into one. Whether it's a web app, mobile app, or a financial
-                platform, attackers are constantly probing for weaknesses.
+                Think your app is safe? So did everyone before they got breached. Because "It Won't Happen to Us" is not a strategy.
+              </p>
+              <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
+                One-size-fits-all doesn't work for security. That's why we specialize in below targeted areas.
               </p>
               <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Explore How We Help

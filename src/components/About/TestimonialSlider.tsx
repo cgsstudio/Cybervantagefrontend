@@ -80,7 +80,7 @@ const TestimonialSlider = () => {
         {/* Header */}
         <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-orange-400 inline-block px-8 py-4 rounded-lg">
-            Our Global Presence
+            Our Testimonials
           </h2>
         </div>
 

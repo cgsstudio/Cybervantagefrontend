@@ -15,19 +15,14 @@ const NetworkPenetrationTesting = () => {
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
                 <h1 className="font-bold text-white mt-4 headingh2">
-                  We Break In So Hackers Can’t: Network Penetration Testing That Works
+                  Network Penetration Testing That Thinks Like an Attacker
                 </h1>
-                <h2 className='font-bold text-white mt-4 text-2xl'>Modern enterprises no longer have a fixed perimeter — hybrid environments, remote work, SaaS adoption, and multi-cloud sprawl have redefined the attack surface.
+                <h2 className='font-bold text-white mt-4 text-2xl'>Because Your Network Has No Walls Anymore.
 
                 </h2>
               </div>
               <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
-                Our Network Penetration Testing service simulates real-world attacks to identify
-                vulnerabilities in network infrastructure, access controls, and perimeter layer defenses. We
-                go beyond automated scans by performing in-depth manual sophisticated attack
-                techniques to evaluate the resilience of DNS Infrastructure, Network and Web Application
-                Firewalls, Forward Proxies, and remote access gateways.
-
+                Today’s networks are dynamic. We go beyond perimeter testing, uncovering risks across multi-cloud, VPNs, and remote endpoints.
               </p>
               <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Explore How We Help

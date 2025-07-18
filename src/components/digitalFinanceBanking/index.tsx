@@ -13,24 +13,16 @@ const DigitalFinanceHero = () => {
                         <div className="space-y-8 mt-4 md:mt-0">
                             <div>
                                 <h1 className="font-bold text-white mt-4 headingh2">
-                                    Securing the Digital Vault—Before Someone Else Makes a Withdrawal
+                                    Digital Finance and Banking services
                                 </h1>
-                                <h2 className='font-bold text-white mt-4 text-2xl'>Banks get breached. Wallets get drained. And cybercriminals don’t take holidays. We test your digital finance ecosystem like real attackers would—minus the criminal record.
+                                {/* <h2 className='font-bold text-white mt-4 text-2xl'>Banks get breached. Wallets get drained. And cybercriminals don’t take holidays. We test your digital finance ecosystem like real attackers would—minus the criminal record.
 
-                                </h2>
+                                </h2> */}
                             </div>
                             <p className="text-lg leading-relaxed max-w-xl paragraphcommon">
-                                In the high-stakes world of digital finance, every click, transaction, and API call is a
-                                potential target. From mobile banking apps to ATM fleets and IoT-powered branches, the
-                                financial sector is a playground for fraudsters, phishers, and full-time cyber troublemakers.
+                                At CyberVantage, we bring a sharp offensive edge to financial cybersecurity. Our experts dive deep into the systems that power your digital economy, scanning for weak links, simulating fraud campaigns, and fortifying the digital doors your customers trust every day. 
                             </p>
-                            <p className="text-lg leading-relaxed max-w-xl paragraphcommon">
-                                At <span className='font-bold'>CyberVantage</span>, we bring a sharp offensive edge to financial cybersecurity. Our experts
-                                dive deep into the systems that power your digital economy—scanning for weak links,
-                                simulating fraud campaigns, and fortifying the digital doors your customers trust every day.
-                                Whether you're securing SCADA in a data center or ensuring your ATMs don't go rogue, we
-                                make sure your systems are tougher than your compliance checklist.
-                            </p>
+                          
                             <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
                                 Explore Our Solutions
                             </button>

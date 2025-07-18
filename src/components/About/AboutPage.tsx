@@ -8,6 +8,8 @@ import locationIcon from '../../assest/image/about/location-icon.svg'; // Add th
 import fourtsectionimg from '../../assest/image/about/aboutsectionimage.png'
 import TestimonialSlider from './TestimonialSlider';
 import check from  '../../assest/image/about/check.svg'
+import CertificationsBanner from './CertificationsBanner';
+import hero01 from '../../assest/image/about/about-partner-logos/new.png';
 
 
 // TwoColumnContent reused from Audits.tsx
@@ -82,7 +84,6 @@ const AboutPage = () => {
             playsInline
          
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/40 to-black/90" />
         </div>
 
         {/* Hero content */}
@@ -111,17 +112,37 @@ const AboutPage = () => {
         </div>
       </div>
 
+      {/* Section Navigation Bar */}
+      <div className="w-full bg-[#232323] py-4 flex justify-center items-center border-b border-[#333]">
+        <nav className="flex items-center">
+          <Link to="#about-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">About Us</Link>
+          <span className="mx-4 text-gray-500">|</span>
+          <Link to="#our-global-presence" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Our Global Presence</Link>
+          <span className="mx-4 text-gray-500">|</span>
+          <Link to="#our-values" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Our Values</Link>
+          <span className="mx-4 text-gray-500">|</span>
+          <Link to="#why-choose-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Why Choose Us</Link>
+        </nav>
+      </div>
+
       {/* Who We Are Section */}
-      <TwoColumnContent
-        title="Who We Are"
-        content={whoWeAreContent}
-        image={section2}
-        imageAlt="Who We Are"
-        backgroundColor="bg-black"
-      />
+      <div id="about-us">
+        <TwoColumnContent
+          title="Who We Are"
+          content={whoWeAreContent}
+          image={section2}
+          imageAlt="Who We Are"
+          backgroundColor="bg-black"
+        />
+      </div>
+
+   
+
+  
+
 
       {/* Our Global Presence Section */}
-      <div className="relative w-full h-screen overflow-hidden  ">
+      <div id="our-global-presence" className="relative w-full h-screen overflow-hidden  ">
         {/* Background Map Container */}
         <div className="absolute inset-0">
           <div className="w-full h-full  flex items-center justify-center ">
@@ -143,93 +164,46 @@ const AboutPage = () => {
           </h2>
         </div>
 
-        {/* Location Markers */}
-        <div className="relative z-10 w-full h-full ">
-          {/* North America - Positioned over map */}
-          <div className="absolute top-1/3 left-1/4 transform -translate-x-1/2">
-            <div className="relative space-y-4">
-              <img src={locationIcon} alt="location" className="w-10 h-10 animate-bounce" />
-              <div className="absolute top-8 left-1/2 transform  whitespace-nowrap">
-                <div className="bg-[#F57A00] text-white px-3 py-1 rounded text-sm font-[600]">
-                  NORTH AMERICA
-                </div>
-              </div>
-            </div>
-          </div>
 
-          {/* EMEA - Positioned over map */}
-          <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2">
-            <div className="relative space-y-4">
-              <img src={locationIcon} alt="location" className="w-10 h-10 animate-bounce" />
-              <div className="absolute top-8 left-1/2 transform whitespace-nowrap">
-                <div className="bg-[#F57A00] text-white px-2 py-1 rounded text-sm font-[600]">
-                  EMEA
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Middle East - Positioned over map */}
-          <div className="absolute top-1/3 right-1/3 transform translate-x-1/2">
-            <div className="relative space-y-4">
-              <img src={locationIcon} alt="location" className="w-10 h-10 animate-bounce" />
-              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                <div className="bg-[#F57A00] text-white px-3 py-1 rounded text-sm font-[600]">
-                  MIDDLE EAST
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* APAC - Positioned over map */}
-          <div className="absolute top-1/2 right-1/4 transform translate-x-1/2">
-            <div className="relative space-y-4">
-              <img src={locationIcon} alt="location" className="w-10 h-10 animate-bounce " />
-              <div className="absolute top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
-                <div className="bg-[#F57A00] text-white px-3 py-1 rounded text-sm font-[600]">
-                  APAC
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <AboutTabContent />
+      <div id="our-values">
+        <AboutTabContent />
+      </div>
 
       {/* Why Choose Us Section */}
-      <div className="w-full py-8 min-h-[70vh]  relative flex items-stretch overflow-hidden">
+      <div id="why-choose-us" className="w-full py-8 min-h-[70vh]  relative flex items-stretch overflow-hidden">
         {/* Left Column: Text Content inside container */}
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-stretch relative z-10">
           <div className="md:w-1/2 w-full flex flex-col justify-center md:pl-8 max-w-xl py-16 md:py-0 z-20" data-aos="fade-right">
             <h2 className="text-4xl md:text-5xl font-bold text-orange-500 mb-8">Why Choose Us</h2>
             <ul className="space-y-6">
               <li className="flex items-start">
-                <span className="text-orange-500 mr-4 mt-1">
+                <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   {/* Use imported check SVG */}
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
                 <span className="text-white text-lg font-medium">Trusted by global enterprises and critical sectors</span>
               </li>
               <li className="flex items-start">
-                <span className="text-orange-500 mr-4 mt-1">
+                <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
                 <span className="text-white text-lg font-medium">Hands-on expertise in APT simulation, zero-day research, and emerging technology.</span>
               </li>
               <li className="flex items-start">
-                <span className="text-orange-500 mr-4 mt-1">
+                <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
                 <span className="text-white text-lg font-medium">Transparent reporting, clear ROI, and risk-aligned strategies</span>
               </li>
               <li className="flex items-start">
-                <span className="text-orange-500 mr-4 mt-1">
+                <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
                 <span className="text-white text-lg font-medium">24x7 support from real cybersecurity operators — not ticket queues</span>
               </li>
               <li className="flex items-start">
-                <span className="text-orange-500 mr-4 mt-1">
+                <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
                 <span className="text-white text-lg font-medium">Certified professionals: OSCP, CREST, GIAC, CISSP, CEH, and more</span>
@@ -250,6 +224,69 @@ const AboutPage = () => {
 
       {/* Testimonial Slider Section */}
       <TestimonialSlider />
+      <CertificationsBanner/>
+         {/* What We Do Section */}
+         <div id="what-we-do">
+        <TwoColumnContent
+          title="What We Do"
+          image={hero01}
+          imageAlt="What We Do"
+          backgroundColor="bg-black"
+          content={
+            <>
+              <div className="mb-2">
+                <span className="text-xl font-semibold text-orange-400">We offer end-to-end security services across:</span>
+              </div>
+              <ul className="mt-4 space-y-4">
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-3 mt-1 flex-shrink-0">
+                  <img src={check} alt="check" className="h-6 w-6" />
+                  </span>
+                  <span className="text-white text-lg">Application & Network Penetration Testing</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-3 mt-1 flex-shrink-0">
+                  <img src={check} alt="check" className="h-6 w-6" />
+                  </span>
+                  <span className="text-white text-lg">Red Teaming & Threat Emulation</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-3 mt-1 flex-shrink-0">
+                  <img src={check} alt="check" className="h-6 w-6" />
+                  </span>
+                  <span className="text-white text-lg">Cloud, OT, and ICS Security Assessments</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-3 mt-1 flex-shrink-0">
+                  <img src={check} alt="check" className="h-6 w-6" />
+                  </span>
+                  <span className="text-white text-lg">Zero-Day Research & AI Red Teaming</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-orange-400 mr-3 mt-1 flex-shrink-0">
+                  <img src={check} alt="check" className="h-6 w-6" />
+                  </span>
+                  <span className="text-white text-lg">Digital Finance & Incident Response</span>
+                </li>
+              </ul>
+            </>
+          }
+        />
+      </div>
+          <section id="contact" className='py-24 '>
+            <div className="">
+      <div className="container mx-auto flex flex-col gap-4 justify-between items-center text-center md:text-left bg-gradient-to-r from-[#F57A00] to-[#7103A4] py-20 px-6 rounded-lg ">
+        <h2 className="text-4xl md:text-5xl font-semibold text-white leading-tight lg:leading-relaxed md:leading-relaxed mb-4 md:mb-0 relative z-10 heading-call-to">
+        Ready to Engage?
+        </h2>
+        <p className='text-xl md:text-3xl font-semibold text-center'>Whether you're facing a live threat, undergoing a digital transformation, or preparing for the next audit — we’re ready.</p>
+        <button className="bg-white text-orange-500 hover:text-orange-600 font-semibold py-4 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 relative z-10">
+        Talk to Our Experts →
+        </button>
+      </div>
+    </div>
+    </section>
+  
     </>
   );
 };
