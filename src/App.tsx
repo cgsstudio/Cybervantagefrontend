@@ -20,8 +20,10 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import HeroDemo from './components/HeroDemo';
 import Audits from "../src/components/Audits/Audits"
+import Partner  from './components/Partnerships/Partner';
 
 import { useLocation } from 'react-router-dom';
+import About from './components/About/AboutPage'
 
 function ScrollToHashElement() {
   const { hash } = useLocation();
@@ -47,22 +49,25 @@ function App() {
 
   return (
     <div className="scrollbar">
-      <BrowserRouter basename="/">
-        {/* Changed basename from "/Cybervantage" to "/" */}
+      <BrowserRouter>
         <ScrollToTop />
         <Navbar />
-        <ScrollToHashElement />
+         <ScrollToHashElement />
         <Routes>
           <Route
             path="/"
             element={
               <>
+              
+
+              
                 {/* <HeroDemo /> */}
                 <Hero />
                 <Stats />
                 <Services />
                 <IndustriesSection />
                 <CallToAction />
+               
               </>
             }
           />
@@ -98,6 +103,15 @@ function App() {
           <Route
             path="/audits"
             element={<Audits />}
+          />
+
+             <Route
+            path="/partner"
+            element={<Partner />}
+          />
+             <Route
+            path="/about"
+            element={<About />}
           />
           
         </Routes>

@@ -391,7 +391,7 @@ export default function SecurityTestingSection() {
         {/* Desktop Content Section */}
         <div className="max-w-7xl mx-auto">
           <div className="relative flex flex-col items-center">
-            <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-white z-0"></div>
+            <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-[#5A5A5A] z-0"></div>
             <div className="w-full">
               {currentTabContent.map((item, index) => (
                 <div key={index} className="relative flex items-start w-full my-12">

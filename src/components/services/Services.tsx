@@ -277,7 +277,7 @@ const Services = () => {
     <section id="services" className="py-20 relative bg-primery">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-start mb-12 our-service-main">
-  <div className="basis-full md:basis-2/3 p-4">
+  <div className="basis-full md:basis-2/3 p-4 max-w-full md:max-w-xl">
     <h2 className=" text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight heading42-main" data-aos="fade-right">
       Our Services And Offerings
     </h2>

@@ -539,7 +539,7 @@ const CloudsecurityTabs = () => {
                         <div className="pl-20">
                           <div className="w-full">
                             <img src={item.image} alt="" className="w-full h-[200px] object-contain mb-4" />
-                            <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+                            <h3 className="text-xl font-semibold mb-3 tabs-heading">{item.title}</h3>
                             {item.subHeading && (
                               <h4 className="text-base text-orange-500 font-medium mb-4">
                                 {item.subHeading}

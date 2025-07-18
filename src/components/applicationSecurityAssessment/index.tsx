@@ -44,8 +44,9 @@ const CybersecurityHero = () => {
           </div>
         </div>
       </div>
-      <SecuritySlider />
+     
       <TabContent />
+       <SecuritySlider />
       <CallToAction />
     </>
   );

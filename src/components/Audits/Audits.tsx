@@ -1,8 +1,9 @@
 // Main Audits Component
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { CheckIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useLocation, Link as RouterLink } from 'react-router-dom';
 
 // Import images
 import serv from '../../assest/image/audithero.svg';
@@ -15,6 +16,9 @@ import sec07 from '../../assest/image/Auditsec08.svg';
 import sec08 from '../../assest/image/auditdec09.svg';
 import sec09 from '../../assest/image/auditsec10.svg';
 import CallToAction from '../CallToAction';
+import tab1 from "../../assest/image/audit-tabicon/1.svg";
+import tab2 from "../../assest/image/audit-tabicon/2.svg";
+import tab3 from "../../assest/image/audit-tabicon/3.svg";  
 
 // Constants
 const AUDIT_PHASES = [
@@ -158,7 +162,7 @@ const HeroSection = ({
             <img
               src={heroImage}
               alt="Audit Services"
-              className="w-full h-auto"
+              className="max-w-[80%] 2xl:max-w-full 2xl:w-full h-auto"
             />
           </div>
         </div>
@@ -362,6 +366,20 @@ const BenefitsSection = ({
 // Main Audits Component
 const Audits = () => {
   const [openPhase, setOpenPhase] = useState(0);
+  const [activeTab, setActiveTab] = useState('iso27001');
+  const location = useLocation();
+
+  // Refs for sections
+  const isoRef = useRef<HTMLDivElement>(null);
+  const pciRef = useRef<HTMLDivElement>(null);
+  const soc2Ref = useRef<HTMLDivElement>(null);
+
+  // Add ref map for navigation
+  const sectionRefs = {
+    iso27001: isoRef,
+    'pci-dss': pciRef,
+    soc2: soc2Ref,
+  };
 
   useEffect(() => {
     AOS.init({
@@ -370,9 +388,32 @@ const Audits = () => {
     });
   }, []);
 
+  // Scroll to section if navigated with sectionId
+  useEffect(() => {
+    if (location.state && location.state.sectionId) {
+      const sectionId = location.state.sectionId;
+      let ref = null;
+      if (sectionId === 'iso27001') ref = isoRef;
+      if (sectionId === 'pci-dss') ref = pciRef;
+      if (sectionId === 'soc2') ref = soc2Ref;
+      if (ref && ref.current) {
+        setTimeout(() => {
+          ref.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200); // delay for smooth scroll after render
+      }
+    }
+  }, [location.state]);
+
   const handleExploreClick = () => {
     // Handle button click logic here
     console.log('Explore button clicked');
+  };
+
+  // Navigation click handler
+  const handleNavClick = (id: string) => {
+    setActiveTab(id);
+    // Optionally scroll to top of tab section
+    // window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // ISO 27001 Content
@@ -467,6 +508,25 @@ const Audits = () => {
     "Long-term support for annual renewals and scaling compliance as your business grows."
   ];
 
+  // Navigation tabs data
+  const auditTabs = [
+    {
+      id: 'iso27001',
+      label: 'ISO 27001',
+      icon: tab1,
+    },
+    {
+      id: 'pci-dss',
+      label: 'PCI DSS',
+      icon: tab2,
+    },
+    {
+      id: 'soc2',
+      label: 'SOC 2',
+      icon: tab3,
+    },
+  ];
+
   return (
     <>
       <HeroSection
@@ -477,107 +537,168 @@ const Audits = () => {
         onButtonClick={handleExploreClick}
       />
 
-      <SectionHeader
-        title="ISO 27001 AUDIT SERVICES"
-        subtitle="Build a resilient security posture with the global standard for information security"
-      />
-
-      <TwoColumnContent
-        title="WHAT IS ISO 27001?"
-        content={iso27001Content}
-        image={sec02}
-        imageAlt="ISO 27001 Audit Illustration"
-      />
-
-      <AccordionSection
-        title="How We Perform The ISO 27001 Audit"
-        subtitle="Our process is holistic, collaborative, and tailored to your unique business context."
-        image={sec03}
-        phases={AUDIT_PHASES}
-        openPhase={openPhase}
-        setOpenPhase={setOpenPhase}
-        phasePrefix=""
-      />
-
-      <BenefitsSection
-        benefitsTitle="What You Gain"
-        benefits={iso27001Benefits}
-        whyChooseTitle="Why Choose Our ISO 27001 Services?"
-        whyChooseItems={iso27001WhyChoose}
-        image={sec04}
-        imageAlt="What You Gain ISO 27001"
-      />
-
-      <div className="bg-[#101010]">
-        <SectionHeader
-          title="PCI DSS Audit Services"
-          subtitle="Secure your payment systems and gain customer trust with PCI DSS compliance."
-        />
-
-        <TwoColumnContent
-          title="What is PCI DSS?"
-          content={pciDssContent}
-          image={sec05}
-          imageAlt="PCI DSS Illustration"
-          backgroundColor="bg-[#101010]"
-        />
-
-        <AccordionSection
-          title="How We Perform the PCI DSS Audit"
-          subtitle="Our PCI audit engagements are comprehensive and customized to match your payment environment (eCommerce, retail, fintech, SaaS, etc.)."
-          image={sec05}
-          phases={PCI_AUDIT_PHASES}
-          openPhase={openPhase}
-          setOpenPhase={setOpenPhase}
-          phasePrefix="pci"
-          backgroundColor="#101010"
-        />
-
-        <BenefitsSection
-          benefitsTitle="What You Gain"
-          benefits={pciDsssBenefits}
-          whyChooseTitle="Why Choose Our PCI DSS Services?"
-          whyChooseItems={pciDssWhyChoose}
-          image={sec06}
-          imageAlt="PCI DSS What You Gain"
-          backgroundColor="bg-[#101010]"
-        />
+      {/* Navigation Section (restored UI, tab logic) */}
+      <div className="w-full  py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
+            {auditTabs.map((tab) => (
+              <div
+                key={tab.id}
+                className="flex flex-col items-center transition-all duration-300 relative z-0 text-white"
+                style={{
+                  borderRadius: 8,
+                  padding: 2,
+                  background: 'linear-gradient(90deg, #F57A00, #7103A4)',
+                  width: '100%',
+                }}
+              >
+                <div
+                  style={{
+                    borderRadius: 6,
+                    background: '#000000',
+                    padding: '1rem 1rem',
+                    height: '100%',
+                    width: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <div className='flex flex-col items-center gap-3'>
+                    <img src={tab.icon} alt={tab.label} className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] " />
+                    <span className="font-medium text-2xl text-center ">{tab.label}</span>
+                    <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                  </div>
+                  <button
+                    onClick={() => handleNavClick(tab.id)}
+                    className="gradient-bg  px-6 py-2 font-semibold mt-4 transition-all duration-200 transform hover:scale-105 rounded-full"
+                    style={{
+                      display: 'inline-block',
+                      textAlign: 'center',
+                    }}
+                  >
+                    Read More
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
 
-      <div className="bg-black">
-        <SectionHeader
-          title="SOC 2 AUDIT SERVICES"
-          subtitle="Earn the trust of clients, investors, and partners by demonstrating operational integrity."
-        />
+      {/* Tabbed Content */}
+      <div className="w-full">
+        {activeTab === 'iso27001' && (
+          <div id="iso27001" ref={isoRef}>
+            <SectionHeader
+              title="ISO 27001 AUDIT SERVICES"
+              subtitle="Build a resilient security posture with the global standard for information security"
+            />
 
-        <TwoColumnContent
-          title="WHAT IS SOC 2?"
-          content={soc2Content}
-          image={sec08}
-          imageAlt="SOC 2 Audit Services Illustration"
-          backgroundColor="bg-black"
-        />
+            <TwoColumnContent
+              title="WHAT IS ISO 27001?"
+              content={iso27001Content}
+              image={sec02}
+              imageAlt="ISO 27001 Audit Illustration"
+            />
 
-        <AccordionSection
-          title="How We Perform The SOC 2 Audit"
-          subtitle="Our SOC 2 audit process is designed to be smooth, transparent, and aligned with your business goals."
-          image={sec07}
-          phases={SOC2_AUDIT_PHASES}
-          openPhase={openPhase}
-          setOpenPhase={setOpenPhase}
-          phasePrefix="soc2"
-          backgroundColor="#000000"
-        />
+            <AccordionSection
+              title="How We Perform The ISO 27001 Audit"
+              subtitle="Our process is holistic, collaborative, and tailored to your unique business context."
+              image={sec03}
+              phases={AUDIT_PHASES}
+              openPhase={openPhase}
+              setOpenPhase={setOpenPhase}
+              phasePrefix=""
+            />
 
-        <BenefitsSection
-          benefitsTitle="What You Gain"
-          benefits={soc2Benefits}
-          whyChooseTitle="Why Choose Our SOC 2 Services?"
-          whyChooseItems={soc2WhyChoose}
-          image={sec09}
-          imageAlt="SOC 2 What You Gain"
-          backgroundColor="bg-black"
-        />
+            <BenefitsSection
+              benefitsTitle="What You Gain"
+              benefits={iso27001Benefits}
+              whyChooseTitle="Why Choose Our ISO 27001 Services?"
+              whyChooseItems={iso27001WhyChoose}
+              image={sec04}
+              imageAlt="What You Gain ISO 27001"
+            />
+          </div>
+        )}
+
+        {activeTab === 'pci-dss' && (
+          <div className="bg-[#101010]" id="pci-dss" ref={pciRef}>
+            <SectionHeader
+              title="PCI DSS Audit Services"
+              subtitle="Secure your payment systems and gain customer trust with PCI DSS compliance."
+            />
+
+            <TwoColumnContent
+              title="What is PCI DSS?"
+              content={pciDssContent}
+              image={sec05}
+              imageAlt="PCI DSS Illustration"
+              backgroundColor="bg-[#101010]"
+            />
+
+            <AccordionSection
+              title="How We Perform the PCI DSS Audit"
+              subtitle="Our PCI audit engagements are comprehensive and customized to match your payment environment (eCommerce, retail, fintech, SaaS, etc.)."
+              image={sec05}
+              phases={PCI_AUDIT_PHASES}
+              openPhase={openPhase}
+              setOpenPhase={setOpenPhase}
+              phasePrefix="pci"
+              backgroundColor="#101010"
+            />
+
+            <BenefitsSection
+              benefitsTitle="What You Gain"
+              benefits={pciDsssBenefits}
+              whyChooseTitle="Why Choose Our PCI DSS Services?"
+              whyChooseItems={pciDssWhyChoose}
+              image={sec06}
+              imageAlt="PCI DSS What You Gain"
+              backgroundColor="bg-[#101010]"
+            />
+          </div>
+        )}
+
+        {activeTab === 'soc2' && (
+          <div className="bg-black" id="soc2" ref={soc2Ref}>
+            <SectionHeader
+              title="SOC 2 AUDIT SERVICES"
+              subtitle="Earn the trust of clients, investors, and partners by demonstrating operational integrity."
+            />
+
+            <TwoColumnContent
+              title="WHAT IS SOC 2?"
+              content={soc2Content}
+              image={sec08}
+              imageAlt="SOC 2 Audit Services Illustration"
+              backgroundColor="bg-black"
+            />
+
+            <AccordionSection
+              title="How We Perform The SOC 2 Audit"
+              subtitle="Our SOC 2 audit process is designed to be smooth, transparent, and aligned with your business goals."
+              image={sec07}
+              phases={SOC2_AUDIT_PHASES}
+              openPhase={openPhase}
+              setOpenPhase={setOpenPhase}
+              phasePrefix="soc2"
+              backgroundColor="#000000"
+            />
+
+            <BenefitsSection
+              benefitsTitle="What You Gain"
+              benefits={soc2Benefits}
+              whyChooseTitle="Why Choose Our SOC 2 Services?"
+              whyChooseItems={soc2WhyChoose}
+              image={sec09}
+              imageAlt="SOC 2 What You Gain"
+              backgroundColor="bg-black"
+            />
+          </div>
+        )}
       </div>
 
       <CallToAction />

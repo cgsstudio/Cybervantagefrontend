@@ -1,150 +1,176 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from "../assest/image/mainlogo.svg";
+import { Link, useLocation } from "react-router-dom";
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(""); // Track  menu
-  const [activeDropdown, setActiveDropdown] = useState(null);
+// Navbar Component
+const Navbar = ({ currentPage, onPageChange }) => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  // Accordion state for mobile dropdowns
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
+  const location = useLocation();
+
+  // Handle scroll behavior
   useEffect(() => {
-    // Function to detect scroll position
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true); 
+      const currentScrollY = window.scrollY;
+      
+      // Add background color when scrolled
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
       } else {
-        setScrolled(false); 
+        setIsScrolled(false);
       }
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down - hide navbar
+        setIsVisible(false);
+      } else {
+        // Scrolling up - show navbar
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
     };
 
-    // Add event listener on mount
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup event listener on unmount
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
-  const handleMenuClick = (menu) => {
-    setActiveMenu(menu);
-    setIsOpen(false); 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+    setOpenAccordion(null);
+  }, [location]);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const toggleDropdown = (dropdown) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleNavigation = (page) => {
+    onPageChange(page);
+    closeMobileMenu();
+  };
+
+  const toggleAccordion = (key: string) => {
+    setOpenAccordion(openAccordion === key ? null : key);
+  };
+
+  // Helper for mobile: closes menu and navigates
+  const handleMobileNavigate = (page) => {
+    handleNavigation(page);
+    setIsMobileMenuOpen(false);
   };
 
   return (
-    <nav className={`fixed w-full text-white z-50 py-3 ${scrolled ? 'bg-black/60 backdrop-blur-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4  2xl:px-0">
-        <div className="flex items-center justify-between relative">
-          {/* Left: Logo */}
-          <div className="flex items-center flex-shrink-0 w-1/4">
-            <Link to="/" className="flex items-center w-full">
-              <img src={Logo} alt="Logo" className="h-20 w-auto max-w-full" />
+    <nav className={` fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
+      <div className={`py-4 transition-all duration-300 border-b ${
+        isScrolled || isMobileMenuOpen 
+          ? 'bg-black/60 backdrop-blur-sm border-gray-800' 
+          : 'bg-transparent border-transparent'
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link to="/" className="hover:opacity-80 transition-opacity">
+              <img 
+                src={Logo}
+                alt="Cyber Vantage Logo" 
+                className="h-16 w-auto object-contain"
+              />
             </Link>
-          </div>
 
-          {/* Center: Menu (desktop only) */}
-          <div className="hidden lg:flex justify-center w-3/5">
-            <div className="nav-container nav-menu py-5 px-3 lg:space-x-3 2xl:space-x-6 flex items-center justify-center w-full">
-              <Link
-                to="/"
-                className={`text-white font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "home" ? "" : ""}`}
-                onClick={() => handleMenuClick("home")}
-              >
-                Home
-              </Link>
-              <Link
-                to="#about"
-                className={`text-white font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "about" ? "" : ""}`}
-                onClick={() => handleMenuClick("about")}
-              >
-                About Us
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/">
+                <button
+                  onClick={() => handleNavigation('home')}
+                  className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
+                    currentPage === 'home' ? 'text-[#CA6200]' : ''
+                  }`}
+                >
+                  Home
+                </button>
               </Link>
               
-              {/* Assurance Services Dropdown */}
-              <div
-                className="relative inline-block"
-                onMouseEnter={() => setActiveDropdown('assurance')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              <Link to="/#about">
                 <button
-                  onClick={() => toggleDropdown('assurance')}
-                  className={`flex items-center space-x-1 font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "assurance" ? "text-orange-500 " : "text-white"}`}
+                  onClick={() => handleNavigation('about')}
+                  className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
+                    currentPage === 'about' ? 'text-[#CA6200]' : ''
+                  }`}
                 >
+                  About Us
+                </button>
+              </Link>
+
+              {/* Assurance Services Dropdown (fixed) */}
+              <div className="relative group">
+                <button className="text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors flex items-center space-x-1">
                   <span>Assurance Services</span>
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'assurance' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
-                {activeDropdown === 'assurance' && (
-                  <div className="absolute top-full left-0 mt-0 w-80 bg-gray-800/90 backdrop-blur-sm rounded-md shadow-lg z-50">
-                    <div className="py-2">
-                      <Link to="/application-security-assessment" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Application Security Assessment
-                      </Link>
-                      <Link to="/network-penetration-testing" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Network Penetration Testing
-                      </Link>
-                      <Link to="/red-teaming" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Red Teaming
-                      </Link>
-                      <Link to="/cloud-security-assesment" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Cloud Security Assessment
-                      </Link>
-                      <Link to="/digital-finance-banking" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Digital Finance & Banking
-                      </Link>
-                    </div>
-                  </div>
-                )}
+                <div className="absolute top-full left-0 mt-1 w-60 bg-black/90 backdrop-blur-md border border-gray-800 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <Link to="/application-security-assessment"
+                    className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                    onClick={() => handleNavigation('application-security-assessment')}>
+                    Application Security Assessment
+                  </Link>
+                  <Link to="/network-penetration-testing"
+                    className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                    onClick={() => handleNavigation('network-penetration-testing')}>
+                    Network Penetration Testing
+                  </Link>
+                  <Link to="/red-teaming"
+                    className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                    onClick={() => handleNavigation('red-teaming')}>
+                    Red Teaming
+                  </Link>
+                  <Link to="/cloud-security-assesment"
+                    className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                    onClick={() => handleNavigation('cloud-security-assesment')}>
+                    Cloud Security Assessment
+                  </Link>
+                  <Link to="/digital-finance-banking"
+                    className="block px-4 py-2 text-sm text-white hover:text-orange-500"
+                    onClick={() => handleNavigation('digital-finance-banking')}>
+                    Digital Finance & Banking
+                  </Link>
+                </div>
               </div>
 
-              {/* Audit Service Dropdown */}
-              <div
-                className="relative inline-block"
-                onMouseEnter={() => setActiveDropdown('audit')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              <Link to="/#advisory-services">
                 <button
-                  onClick={() => toggleDropdown('audit')}
-                  className={`flex items-center space-x-1 font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "audit" ? "text-orange-500 " : "text-white"}`}
+                  onClick={() => handleNavigation('advisory-services')}
+                  className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
+                    currentPage === 'advisory-services' ? 'text-[#CA6200]' : ''
+                  }`}
                 >
-                  <span>Advisory Services</span>
-                  {/* <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'audit' ? 'rotate-180' : ''}`} /> */}
+                  Advisory Services
                 </button>
-       
-              </div>
+              </Link>
 
-                 <div
-                className="relative inline-block"
-                onMouseEnter={() => setActiveDropdown('audits')}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  onClick={() => toggleDropdown('audits')}
-                  className={`flex items-center space-x-1 font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "audits" ? "text-orange-500 " : "text-white"}`}
-                >
+              {/* Audits Dropdown - now after Advisory Services */}
+              <div className="relative group">
+                <button className="text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors flex items-center space-x-1">
                   <Link to={"/audits"}>
-                  <span> Audits</span>
+                  <span>Audits</span>
                   </Link>
                   
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'audits' ? 'rotate-180' : ''}`} />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
-                {activeDropdown === 'audits' && (
-                  <div className="absolute top-full left-0 mt-0 w-52 bg-gray-800/90 backdrop-blur-sm rounded-md shadow-lg z-50">
-                    <div className="py-2">
-                      <Link to="/audits#iso27001" 
+                <div className="absolute top-full left-0 mt-1 w-48 bg-black/90 backdrop-blur-md border border-gray-800 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <Link to="/audits#iso27001" 
                          className="block px-4 py-2 text-sm text-white hover:text-orange-500"
                          onClick={() => handleMenuClick("audits")}>
                         ISO 27001
@@ -159,183 +185,188 @@ function Navbar() {
                          onClick={() => handleMenuClick("audits")}>
                        SOC 2
                       </Link>
-                     
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
 
-             
-
-              <Link
-                to="#partnerships"
-                className={`text-white font-semibold hover:text-orange-500 transition-colors duration-200 ${activeMenu === "partnerships" ? "" : ""}`}
-                onClick={() => handleMenuClick("partnerships")}
-              >
-                Partnerships
+              <Link to="/partner">
+                <button
+                  onClick={() => handleNavigation('partnerships')}
+                  className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
+                    currentPage === 'partnerships' ? 'text-[#CA6200]' : ''
+                  }`}
+                >
+                  Partnerships
+                </button>
+              </Link>
+              
+              <Link to="/#contact">
+                <button
+                  onClick={() => handleNavigation('contact')}
+                  className="gradient-bg contact-btn px-6 py-2 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
+                >
+                  Contact Us
+                </button>
               </Link>
             </div>
-          </div>
 
-          {/* Right: Contact Us button (desktop only) */}
-          <div className="hidden lg:flex items-center flex-shrink-0 justify-end w-1/6 ">
-            <Link
-              to="#contact"
-              className={`gradient-bg contact-btn px-6 py-2 font-semibold transition-all duration-200 transform hover:scale-105 ${activeMenu === "contact" ? "" : ""}`}
-              onClick={() => handleMenuClick("contact")}
+            {/* Mobile Menu Button */}
+            <button
+              onClick={toggleMobileMenu}
+              className="md:hidden text-white hover:text-[#CA6200] transition-colors"
             >
-              Contact Us
-            </Link>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-gray-300">
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-        </div>
 
-        {/* Mobile menu */}
-        {isOpen && (
-          <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-gray-800/90 backdrop-blur-sm rounded-lg mt-2">
-              <Link
-                to="/"
-                className={`block px-3 py-2 text-center ${activeMenu === "home" ? "" : "text-gray-300 hover:text-white"}`}
-                onClick={() => handleMenuClick("home")}
-              >
-                Home
-              </Link>
-              <Link
-                to="#about"
-                className={`block px-3 py-2 text-center ${activeMenu === "about" ? "" : "text-gray-300 hover:text-white"}`}
-                onClick={() => handleMenuClick("about")}
-              >
-                About Us
-              </Link>
-              
-              {/* Mobile Assurance Services */}
-              <div>
-                <button
-                  onClick={() => toggleDropdown('mobile-assurance')}
-                  className={`flex items-center justify-center gap-2 w-full px-3 py-2 text-center ${activeMenu === "assurance" ? "text-orange-500 " : "text-gray-300 hover:text-white"}`}
-                >
-                  <span>Assurance Services</span>
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'mobile-assurance' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'mobile-assurance' && (
-                  <div className="ml-4 mt-2 space-y-1 p-2 bg-black rounded-lg">
-                     <Link to="/application-security-assessment" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Application Security Assessment
+          {/* Mobile Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden py-4 border-t border-gray-800">
+              <div className="flex flex-col space-y-2">
+                <Link to="/#home">
+                  <button
+                    onClick={() => handleMobileNavigate('home')}
+                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
+                  >
+                    Home
+                  </button>
+                </Link>
+                
+                <Link to="/#about">
+                  <button
+                    onClick={() => handleMobileNavigate('about')}
+                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
+                  >
+                    About Us
+                  </button>
+                </Link>
+
+                {/* Assurance Services Accordion */}
+                <div>
+                  <button
+                    className="w-full flex items-center justify-between text-white font-medium py-2 text-left hover:text-[#CA6200] transition-colors"
+                    onClick={() => toggleAccordion('assurance')}
+                  >
+                    <span>Assurance Services</span>
+                    <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${openAccordion === 'assurance' ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openAccordion === 'assurance' && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      <Link to="/application-security-assessment">
+                        <button
+                          onClick={() => handleMobileNavigate('application-security-assessment')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          Application Security Assessment
+                        </button>
                       </Link>
-                      <Link to="/network-penetration-testing" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Network Penetration Testing
+                      <Link to="/network-penetration-testing">
+                        <button
+                          onClick={() => handleMobileNavigate('network-penetration-testing')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          Network Penetration Testing
+                        </button>
                       </Link>
-                      <Link to="/red-teaming" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Red Teaming
+                      <Link to="/red-teaming">
+                        <button
+                          onClick={() => handleMobileNavigate('red-teaming')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          Red Teaming
+                        </button>
                       </Link>
-                      <Link to="/cloud-security-assesment" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Cloud Security Assessment
+                      <Link to="/cloud-security-assesment">
+                        <button
+                          onClick={() => handleMobileNavigate('cloud-security-assesment')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          Cloud Security Assessment
+                        </button>
                       </Link>
-                      <Link to="/digital-finance-banking" 
-                         className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("assurance")}>
-                        Digital Finance & Banking
+                      <Link to="/digital-finance-banking">
+                        <button
+                          onClick={() => handleMobileNavigate('digital-finance-banking')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          Digital Finance & Banking
+                        </button>
                       </Link>
-                  </div>
-                )}
+                    </div>
+                  )}
+                </div>
+
+                <Link to="/#advisory-services">
+                  <button
+                    onClick={() => handleMobileNavigate('advisory-services')}
+                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
+                  >
+                    Advisory Services
+                  </button>
+                </Link>
+
+                {/* Audits Accordion */}
+                <div>
+                  <button
+                    className="w-full flex items-center justify-between text-white font-medium py-2 text-left hover:text-[#CA6200] transition-colors"
+                    onClick={() => toggleAccordion('audits')}
+                  >
+                    <span>Audits</span>
+                    <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${openAccordion === 'audits' ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openAccordion === 'audits' && (
+                    <div className="ml-4 mt-2 space-y-1">
+                      <Link to="/audits#iso27001">
+                        <button
+                          onClick={() => handleMobileNavigate('iso-27001')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          ISO 27001
+                        </button>
+                      </Link>
+                      <Link to="/audits#pci-dss">
+                        <button
+                          onClick={() => handleMobileNavigate('pci-dss')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          PCI DSS
+                        </button>
+                      </Link>
+                      <Link to="/audits#soc2">
+                        <button
+                          onClick={() => handleMobileNavigate('soc-2')}
+                          className="block text-gray-300 hover:text-[#CA6200] transition-colors py-1 text-left"
+                        >
+                          SOC 2
+                        </button>
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
+                <Link to="/#partnerships">
+                  <button
+                    onClick={() => handleMobileNavigate('partnerships')}
+                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
+                  >
+                    Partnerships
+                  </button>
+                </Link>
+                
+                <Link to="/#contact">
+                  <button
+                    onClick={() => handleMobileNavigate('contact')}
+                    className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-200 mt-2 text-center"
+                  >
+                    Contact Us
+                  </button>
+                </Link>
               </div>
-
-              {/* Mobile Audit Service */}
-              <div>
-                <button
-                  onClick={() => toggleDropdown('mobile-audit')}
-                  className={`flex items-center justify-center gap-2  w-full px-3 py-2 text-center ${activeMenu === "audit" ? "text-orange-500 " : "text-gray-300 hover:text-white"}`}
-                >
-                  <span>Audit Service</span>
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'mobile-audit' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'mobile-audit' && (
-                  <div className="ml-4 mt-2 space-y-1 p-2 bg-black rounded-lg">
-                    <Link to="#internal-audits" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("audit")}>
-                      Internal Audits
-                    </Link>
-                    <Link to="#external-audits" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("audit")}>
-                      External Audits
-                    </Link>
-                    <Link to="#audit-reports" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("audit")}>
-                      Audit Reports
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Products */}
-              <div>
-                <button
-                  onClick={() => toggleDropdown('mobile-products')}
-                  className={`flex items-center justify-center gap-2  w-full px-3 py-2 text-center ${activeMenu === "products" ? "text-orange-500 " : "text-gray-300 hover:text-white"}`}
-                >
-                  <span>Products</span>
-                  <ChevronDown size={16} className={`transform transition-transform duration-200 ${activeDropdown === 'mobile-products' ? 'rotate-180' : ''}`} />
-                </button>
-                {activeDropdown === 'mobile-products' && (
-                  <div className="ml-4 mt-2 space-y-1 p-2 bg-black rounded-lg">
-                    <Link to="#security-tools" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("products")}>
-                      Security Tools
-                    </Link>
-                    <Link to="#software-solutions" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("products")}>
-                      Software Solutions
-                    </Link>
-                    <Link to="#enterprise-suite" 
-                       className="block px-3 py-2 text-sm text-gray-300 hover:text-orange-500"
-                       onClick={() => handleMenuClick("products")}>
-                      Enterprise Suite
-                    </Link>
-                  </div>
-                )}
-              </div>
-
-              <Link
-                to="#partnerships"
-                className={`block px-3 py-2 text-center ${activeMenu === "partnerships" ? "" : "text-gray-300 hover:text-white"}`}
-                onClick={() => handleMenuClick("partnerships")}
-              >
-                Partnerships
-              </Link>
-              
-              <Link
-                to="#contact"
-                className={`block px-3 py-2 text-center gradient-bg rounded-full ${activeMenu === "contact" ? "" : ""}`}
-                onClick={() => handleMenuClick("contact")}
-              >
-                Contact Us
-              </Link>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

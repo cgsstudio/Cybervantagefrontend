@@ -299,7 +299,7 @@ const RedTeamingTabs = () => {
             <div className="relative">
               {/* Desktop Timeline - Zigzag */}
               <div className="hidden md:flex flex-col items-center">
-                <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-white z-0"></div>
+                <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-[#5A5A5A] z-0"></div>
                 <div className="w-full">
                   {currentTabContent.map((item, index) => {
                     const isEven = index % 2 === 1;

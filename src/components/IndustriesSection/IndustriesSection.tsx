@@ -69,11 +69,11 @@ const IndustriesSection = () => {
     }}>
       <div className="industries-container container mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          className="industries-main industries-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3  items-start"
+          className="industries-main industries-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 items-start"
         >
           {/* Left Column: Heading and Description (spans 2 columns) */}
           <div
-            className="col-span-1 2xl:col-span-2 max-w-2xl "
+            className="col-span-1 xl:col-span-2 max-w-2xl "
             data-aos="fade-right"
           >
             <h2 className="text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight text-left heading42-main ">
@@ -88,7 +88,7 @@ const IndustriesSection = () => {
 
           {/* Right Column: Single Icon Box */}
           <div
-            className="col-span-1 "
+            className="col-span-1 xl:col-span-1 xl:col-start-3"
             data-aos="fade"
             data-aos-delay="300"
           >
@@ -102,7 +102,7 @@ const IndustriesSection = () => {
 
 
         {/* Remaining Icon Boxes Below */}
-        <div className="industries-grid mt-8" data-aos="fade" data-aos-delay="300">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8" data-aos="fade" data-aos-delay="300">
           {remainingIndustries.map((industry, index) => (
             <div key={index} className="industry-card mb-4">
               <img className="industry-icon mb-2" src={industry.icon} alt={industry.title} />

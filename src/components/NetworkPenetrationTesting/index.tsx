@@ -46,8 +46,9 @@ const NetworkPenetrationTesting = () => {
           </div>
         </div>
       </div>
-      <NetworkPenterationslider />
+      
       <NetworkTabs />
+      <NetworkPenterationslider />
       <CallToAction />
     </>
   );

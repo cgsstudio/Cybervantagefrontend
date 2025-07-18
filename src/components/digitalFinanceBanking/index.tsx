@@ -47,8 +47,9 @@ const DigitalFinanceHero = () => {
                     </div>
                 </div>
             </div>
-            <SecuritySlider />
+           
             <TabContent />
+             <SecuritySlider />
             <CallToAction />
         </>
     );

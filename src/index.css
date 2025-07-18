@@ -118,13 +118,13 @@ body, html, * {
   transition: all 0.3s ease;
 } */
  .contact-btn {
-    width: 205px;
-    height: 60px;
+    /* width: 205px;
+    height: 60px; */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    font-size: 22px;
+    /* font-size: 22px; */
     font-weight: 600;
 }
 .nav-container a{
@@ -158,9 +158,9 @@ body, html, * {
 img.industry-icon {
   margin-top: -60px;
 }
-.industries-grid {
+/* .industries-grid {
   gap: 90px 60px;
-}
+} */
 
 
 .industries-main{
@@ -553,4 +553,39 @@ html {
     height: 340px !important;
  
   }
+}
+.who-we-wre{
+  background-image: url('./assest/image/about/Design-1.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.global-presence {
+  background-image: url('./assest/image/about/Design-2.svg');
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.testimonial-swiper {
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Custom styles to ensure equal height */
+.testimonial-swiper .swiper-slide > div {
+  height: 100%;
+}
+.testimonial-slider{
+  background: url('./assest/image/about/Design-4.png');
+  background-repeat: no-repeat;
+  background-position: left top;
+
 }

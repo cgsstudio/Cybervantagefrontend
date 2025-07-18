@@ -45,8 +45,9 @@ const RedTeaming = () => {
           </div>
         </div>
       </div>
-      <RedTeamingslider />
+      
       <RedTeamingTabs />
+      <RedTeamingslider />
       <CallToAction />
 
     </>

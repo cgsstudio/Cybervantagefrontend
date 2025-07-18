@@ -17,11 +17,13 @@ const Footer = () => {
           {/* Logo and Description - 35% */}
           <div className="w-full md:basis-[35%]">
             <div className="flex items-center space-x-3">
+              <Link to="/">
               <img
                 src={Logo}
                 alt="Cyber Vantage Logo"
                 className="w-100"
               />
+              </Link>
             </div>
             <p className="mt-4 text-white-400">
               Cyber Vantage provides end-to-end cybersecurity services that enhance your security maturity. From application and cloud security to red teaming and compliance audits, we strengthen your defenses and improve your organizations's overall security posture, ensuring your business stays one step ahead of cyber risks.
@@ -36,67 +38,52 @@ const Footer = () => {
             <h3 className="text-xl font-semibold text-orange-500">Assurance Services</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <a href="#network-penetration-testing" className="text-white-400 hover:text-orange-500">
+                <Link to="/application-security-assessment" className="text-white-400 hover:text-orange-500">
+                  Application Security Assessment
+                </Link>
+              </li>
+              <li>
+                <Link to="/network-penetration-testing" className="text-white-400 hover:text-orange-500">
                   Network Penetration Testing
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#red-teaming" className="text-white-400 hover:text-orange-500">
+                <Link to="/red-teaming" className="text-white-400 hover:text-orange-500">
                   Red Teaming
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#cloud-security" className="text-white-400 hover:text-orange-500">
-                  Cloud Security
-                </a>
+                <Link to="/cloud-security-assesment" className="text-white-400 hover:text-orange-500">
+                  Cloud Security Assessment
+                </Link>
               </li>
               <li>
-                <a href="#ai-security" className="text-white-400 hover:text-orange-500">
-                  AI Security
-                </a>
+                <Link to="/digital-finance-banking" className="text-white-400 hover:text-orange-500">
+                  Digital Finance & Banking
+                </Link>
               </li>
-              <li>
-                <a href="#digital-assets-security" className="text-white-400 hover:text-orange-500">
-                  Digital Assets Security
-                </a>
-              </li>
-              <li>
-                <a href="#ot-security" className="text-white-400 hover:text-orange-500">
-                  OT Security
-                </a>
-              </li>
-                <li>
-                  <a href="#os-virtual-desktop-security" className="text-white-400 hover:text-orange-500">
-                    Operating System(OS)
-                  </a>
-                </li>
-                <li>
-                <a href="#virtual-desktop-security" className="text-white-400 hover:text-orange-500">
-                 Virtual Desktop Security
-                </a>
-              </li>
-              
+             
             </ul>
           </div>
 
           {/* Quick Links Duplicate - 20% */}
           <div className="w-full md:basis-[20%]">
-            <h3 className="text-xl font-semibold text-orange-500">Audit</h3>
+            <h3 className="text-xl font-semibold text-orange-500">Audits</h3>
             <ul className="mt-4 space-y-2 mb-4">
               <li>
-                <a href="#about" className="text-white-400 hover:text-orange-500">
+                <Link to="/#about" className="text-white-400 hover:text-orange-500">
                   ISO 27001
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#services" className="text-white-400 hover:text-orange-500">
+                <Link to="/#services" className="text-white-400 hover:text-orange-500">
                   PCI DSS
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#support" className="text-white-400 hover:text-orange-500">
+                <Link to="/#support" className="text-white-400 hover:text-orange-500">
                   SOC 2
-                </a>
+                </Link>
               </li>
               {/* <li>
                 <a href="#contact" className="text-white-400 hover:text-orange-500">
@@ -132,9 +119,9 @@ const Footer = () => {
                   className="w-6 h-6"
                 />
                 <a href="https://maps.app.goo.gl/GStFNkFcQchSdunq8" target="_blank">
-                <p className="text-white-400 hover:text-orange-500">
-                  Cyber Vantage B.V. - Herengracht 449 A, 1017BR Amsterdam, Netherlands
-                </p>
+                  <p className="text-white-400 hover:text-orange-500">
+                    Cyber Vantage B.V. - Herengracht 449 A, 1017BR Amsterdam, Netherlands
+                  </p>
                 </a>
               </li>
               {/* Phone */}
@@ -206,3 +193,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
