@@ -142,7 +142,7 @@ const HeroSection = ({
         <div className="mt-4 md:mt-0">
           <div className="space-y-8" data-aos="fade-up">
             <div>
-              <h1 className="font-bold text-[#F57A00] mt-4 text-[32px] leading-[1.2] md:text-[40px] lg:text-[50px]">
+              <h1 className="font-bold text-[#F57A00] mt-4 text-3xl  md:text-4xl lg:text-5xl 2xl:text-7xl">
                 {title}
               </h1>
             </div>

@@ -48,7 +48,7 @@ body, html, * {
 }
 
 .hero-banner{
-  background-image: url("./assest/image/hero-banner.svg");
+  background-image: url("./assest/image/contactus/contactbg.png");
   background-repeat: no-repeat;
   /* background-color: #171717; */
 }
@@ -323,11 +323,7 @@ button.px-4.py-2 {
   padding-left: 20px;
   padding-right: 20px;
 }
-.text-4xl {
-  font-size: 25px;
-  line-height: 30px;
-  text-align: center;
-}
+
 .industries-container {
   padding: 20px;
 }
@@ -588,4 +584,9 @@ html {
   background-repeat: no-repeat;
   background-position: left top;
 
+}
+
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: unset !important;
 }

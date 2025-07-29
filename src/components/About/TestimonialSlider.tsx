@@ -54,6 +54,10 @@ const TestimonialSlider = () => {
               spaceBetween: 32,
             },
           },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
         });
       }
     };
@@ -75,11 +79,23 @@ const TestimonialSlider = () => {
   }, []);
 
   return (
-    <div className=" text-white py-20 px-4 testimonial-slider">
+    <div className=" text-white py-20 px-4 testimonial-slider" >
+      {/* Custom Swiper Pagination Styles */}
+      <style>{`
+        .testimonial-slider .swiper-pagination-bullet {
+          background: #888888;
+          opacity: 0.4;
+        }
+        .testimonial-slider .swiper-pagination-bullet-active {
+          background: #F57A00;
+          opacity: 1;
+          transform: scale(1.2);
+        }
+      `}</style>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-orange-400 inline-block px-8 py-4 rounded-lg">
+        <h2 className="text-4xl md:text-6xl font-bold text-[#F57A00] mb-16 text-center">
             Our Testimonials
           </h2>
         </div>
@@ -122,24 +138,26 @@ const TestimonialSlider = () => {
                     {/* Quote */}
                     <div className="flex-1 mb-6">
                       
-                      <p className="text-2xl  text-white">
+                      <p className="text-xl md:text-2xl  text-white">
                         {testimonial.text}
                       </p>
                     </div>
 
                     {/* Author */}
                     <div className="mt-auto flex items-center justify-between">
-                      <p className="font-bold text-white text-[27px]">
+                      <p className="font-bold text-white text-lg md:text-xl">
                         {testimonial.author}
                       </p>
                     {/* Optional: Add an image for the testimonial author if available */}
-                    <img src={quote} alt={testimonial.author}  />
+                    <img src={quote} alt={testimonial.author} className="w-16 h-16 md:w-auto md:h-auto" />
                     </div>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+          {/* Swiper Pagination */}
+          <div className="swiper-pagination mt-8 flex justify-center" />
         </div>
 
         {/* Decorative Elements */}

@@ -13,7 +13,7 @@ const CybersecurityHero = () => {
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
-                <h1 className="font-bold text-white mt-4 headingh2">
+                <h1 className="font-bold text-white mt-4 text-3xl lg:text-4xl 2xl:text-6xl">
                  Cloud Security That Scales With You — From Code to Cloud, We’ve Got You Covered
                 </h1>
                 {/* <h2 className='font-bold text-white mt-4 text-2xl'>As organizations accelerate cloud adoption, security can’t be an afterthought.

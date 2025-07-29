@@ -12,7 +12,7 @@ const DigitalFinanceHero = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                         <div className="space-y-8 mt-4 md:mt-0">
                             <div>
-                                <h1 className="font-bold text-white mt-4 headingh2">
+                                <h1 className="font-bold text-white mt-4 text-3xl lg:text-4xl 2xl:text-6xl">
                                     Digital Finance and Banking services
                                 </h1>
                                 {/* <h2 className='font-bold text-white mt-4 text-2xl'>Banks get breached. Wallets get drained. And cybercriminals don’t take holidays. We test your digital finance ecosystem like real attackers would—minus the criminal record.

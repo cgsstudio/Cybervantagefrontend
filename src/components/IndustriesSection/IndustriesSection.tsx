@@ -102,7 +102,7 @@ const IndustriesSection = () => {
 
 
         {/* Remaining Icon Boxes Below */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-8" data-aos="fade" data-aos-delay="300">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-20 mt-8" data-aos="fade" data-aos-delay="300">
           {remainingIndustries.map((industry, index) => (
             <div key={index} className="industry-card mb-4">
               <img className="industry-icon mb-2" src={industry.icon} alt={industry.title} />

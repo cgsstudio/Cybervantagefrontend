@@ -13,7 +13,7 @@ const Stats = () => {
   ];
 
   return (
-    <section id="about" className='py-20 bg-primery'>
+    <section id="about" className='py-20 bg-black'>
          <h2 className="fade-up-element text-4xl md:text-6xl lg:text-6xl font-semibold text-white text-center mb-12 heading42-main" data-aos="fade-up" >
           Experience and Trust
         </h2>

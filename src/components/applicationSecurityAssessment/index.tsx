@@ -14,7 +14,7 @@ const CybersecurityHero = () => {
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
-                <h1 className="font-bold text-white mt-4 headingh2">
+                <h1 className="font-bold text-white mt-4 text-3xl lg:text-4xl 2xl:text-6xl">
                   Application Security Assesment — Tailored For Every Platform
 
                 </h1>

@@ -3,8 +3,12 @@ import { ChevronDown, Menu, X } from 'lucide-react';
 import Logo from "../assest/image/mainlogo.svg";
 import { Link, useLocation } from "react-router-dom";
 
+type NavbarProps = {
+  currentPage?: string;
+  onPageChange?: (page: string) => void;
+};
 // Navbar Component
-const Navbar = ({ currentPage, onPageChange }) => {
+const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,8 +59,8 @@ const Navbar = ({ currentPage, onPageChange }) => {
     setIsMobileMenuOpen(false);
   };
 
-  const handleNavigation = (page) => {
-    onPageChange(page);
+  const handleNavigation = (page: string) => {
+    if (onPageChange) onPageChange(page);
     closeMobileMenu();
   };
 
@@ -65,7 +69,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
   };
 
   // Helper for mobile: closes menu and navigates
-  const handleMobileNavigate = (page) => {
+  const handleMobileNavigate = (page: string) => {
     handleNavigation(page);
     setIsMobileMenuOpen(false);
   };
@@ -91,7 +95,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               <Link to="/">
                 <button
                   onClick={() => handleNavigation('home')}
@@ -103,7 +107,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
                 </button>
               </Link>
               
-              <Link to="/#about">
+              <Link to="/about">
                 <button
                   onClick={() => handleNavigation('about')}
                   className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
@@ -172,17 +176,17 @@ const Navbar = ({ currentPage, onPageChange }) => {
                 <div className="absolute top-full left-0 mt-1 w-48 bg-black/90 backdrop-blur-md border border-gray-800 rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <Link to="/audits#iso27001" 
                          className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("audits")}>
+                         onClick={() => handleNavigation("audits")}>
                         ISO 27001
                       </Link>
                       <Link to="/audits#pci-dss" 
                          className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("audits")}>
+                         onClick={() => handleNavigation("audits")}>
                         PCI DSS
                       </Link>
                       <Link to="/audits#soc2" 
                          className="block px-4 py-2 text-sm text-white hover:text-orange-500"
-                         onClick={() => handleMenuClick("audits")}>
+                         onClick={() => handleNavigation("audits")}>
                        SOC 2
                       </Link>
                 </div>
@@ -199,7 +203,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
                 </button>
               </Link>
               
-              <Link to="/#contact">
+              <Link to="/contact-us">
                 <button
                   onClick={() => handleNavigation('contact')}
                   className="gradient-bg contact-btn px-6 py-2 text-lg font-semibold transition-all duration-200 transform hover:scale-105"
@@ -212,7 +216,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="md:hidden text-white hover:text-[#CA6200] transition-colors"
+              className="lg:hidden text-white hover:text-[#CA6200] transition-colors"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -220,7 +224,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden py-4 border-t border-gray-800">
+            <div className="lg:hidden py-4 border-t border-gray-800">
               <div className="flex flex-col space-y-2">
                 <Link to="/#home">
                   <button
@@ -231,7 +235,7 @@ const Navbar = ({ currentPage, onPageChange }) => {
                   </button>
                 </Link>
                 
-                <Link to="/#about">
+                <Link to="/about">
                   <button
                     onClick={() => handleMobileNavigate('about')}
                     className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
@@ -343,16 +347,16 @@ const Navbar = ({ currentPage, onPageChange }) => {
                   )}
                 </div>
 
-                <Link to="/#partnerships">
+                <Link to="/partner">
                   <button
-                    onClick={() => handleMobileNavigate('partnerships')}
+                    onClick={() => handleMobileNavigate('partner')}
                     className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"
                   >
                     Partnerships
                   </button>
                 </Link>
                 
-                <Link to="/#contact">
+                <Link to="/contact-us">
                   <button
                     onClick={() => handleMobileNavigate('contact')}
                     className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-200 mt-2 text-center"

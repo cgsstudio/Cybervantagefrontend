@@ -168,7 +168,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-gray-700 mt-10 pt-4">
-        <div className="container mx-auto px-6 md:px-12 footer-bottom-text">
+        <div className="container mx-auto px-6 md:px-12 lg:px-4 2xl:px-0 footer-bottom-text">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white-400 mb-2 md:mb-0 text-center md:text-left w-full md:w-1/2">
               CYBER VANTAGE – All rights reserved |{" "}

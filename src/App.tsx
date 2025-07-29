@@ -21,6 +21,10 @@ import AOS from 'aos';
 import HeroDemo from './components/HeroDemo';
 import Audits from "../src/components/Audits/Audits"
 import Partner  from './components/Partnerships/Partner';
+import Contact from './components/Contact-Us/Contact'
+import NotFound from './components/NotFound';
+import AboutTwo from './components/About-2/AboutPage'
+import AboutThree from './components/About-3/AboutPage'
 
 import { useLocation } from 'react-router-dom';
 import About from './components/About/AboutPage'
@@ -113,6 +117,20 @@ function App() {
             path="/about"
             element={<About />}
           />
+              <Route
+            path="/contact-us"
+            element={<Contact />}
+          />
+              <Route
+            path="/about-2"
+            element={<AboutTwo />}
+          />
+              <Route
+            path="/about-3"
+            element={<AboutThree />}
+          />
+          {/* 404 Route - must be last */}
+          <Route path="*" element={<NotFound />} />
           
         </Routes>
         <Footer />

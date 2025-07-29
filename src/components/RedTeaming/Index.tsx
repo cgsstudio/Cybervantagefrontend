@@ -14,7 +14,7 @@ const RedTeaming = () => {
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0">
               <div>
-                <h1 className="font-bold text-white mt-4 headingh2">Red Teaming services
+                <h1 className="font-bold text-white mt-4 text-3xl lg:text-4xl 2xl:text-6xl">Red Teaming services
                 </h1>
                 {/* <h2 className='font-bold text-white mt-4 text-2xl'>If your team’s never faced a real attack, how do you know you’re ready?
 

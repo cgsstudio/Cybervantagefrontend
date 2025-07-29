@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
   return (
@@ -8,9 +9,13 @@ const CallToAction = () => {
         <h2 className="text-4xl md:text-3xl font-semibold text-white leading-tight lg:leading-relaxed md:leading-relaxed mb-4 md:mb-0 relative z-10 heading-call-to">
           Let’s untangle the complex world of information security, <br /> one layer at a time
         </h2>
+        <Link to={'/contact-us'}>
         <button className="bg-white text-orange-500 hover:text-orange-600 font-semibold py-4 px-6 rounded-lg shadow-md transition-transform transform hover:scale-105 relative z-10">
           Get In Touch
         </button>
+        
+        </Link>
+     
       </div>
     </div>
     </section>

@@ -1,5 +1,17 @@
 import React from "react";
-import partner1 from "../../assest/image/66a72c50e10a56f20ac80795_aws-svgrepo-com.svg"
+import partner1 from '../../assest/image/about/about-partner-logos/Group 1286.svg';
+import partner2 from '../../assest/image/about/about-partner-logos/download 3.svg';
+import partner3 from '../../assest/image/about/about-partner-logos/media_149fe055bcfb29eb7d6ce44fd20b2564de86e153f 1.svg';
+import partner4 from '../../assest/image/about/about-partner-logos/SU Programs@2x 1.svg';
+import partner5 from '../../assest/image/about/about-partner-logos/Group.svg';
+import partner6 from '../../assest/image/about/about-partner-logos/Group.svg';
+import partner7 from '../../assest/image/about/about-partner-logos/image-1.svg';
+import partner8 from '../../assest/image/about/about-partner-logos/OSEP.D_R8bS1A_Z1JYK2E 1.svg';
+import partner9 from '../../assest/image/about/about-partner-logos/osee.svg';
+import partner10 from '../../assest/image/about/about-partner-logos/blob 1.svg';
+import partner11 from '../../assest/image/about/about-partner-logos/ceh.svg';
+import partner12 from '../../assest/image/about/about-partner-logos/Group-1287.svg';
+import partner13 from '../../assest/image/about/about-partner-logos/azure.svg';
 // Heroicons imports
 import { UserGroupIcon, UsersIcon, BriefcaseIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
@@ -23,7 +35,7 @@ const Partner: React.FC = () => {
         {/* Main content */}
         <div className="relative z-10 flex flex-col items-center justify-center py-32">
           <h1 className="text-center font-bold text-[#fff] text-[40px] md:text-[56px] leading-tight mb-4" style={{ fontFamily: "inherit" }}>
-            Reco re:Configure<br />Partner Program
+            Cybervantage re:Configure<br />Partner Program
           </h1>
           <p className="text-center text-[#fff] text-lg md:text-xl mb-10 max-w-2xl">
             Empower your customers to build, grow, and keep their SaaS ecosystems secure.
@@ -41,16 +53,11 @@ const Partner: React.FC = () => {
             >
               Become a partner
             </button>
-            <button
-              className="bg-[#101010] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all duration-200 hover:bg-[#222]"
-              style={{ fontFamily: "inherit" }}
-            >
-              Explore Reco integrations
-            </button>
+           
           </div>
         </div>
         {/* Why Partner with Us section */}
-        <div className="relative z-10 w-full flex flex-col items-center mt-20 pb-20">
+        <div className="relative z-10 w-full flex flex-col items-center mt-20 ">
           <h2 className="text-[#fff] font-bold text-3xl md:text-5xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
             Why Partner with Us
           </h2>
@@ -64,7 +71,7 @@ const Partner: React.FC = () => {
             {/* Column 1 */}
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center justify-center mb-6">
-                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#fff] text-[#fff] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
+                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#F57A00] text-[#F57A00] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
                   1
                 </span>
               </div>
@@ -78,7 +85,7 @@ const Partner: React.FC = () => {
             {/* Column 2 */}
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center justify-center mb-6">
-                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#fff] text-[#fff] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
+                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#F57A00] text-[#F57A00] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
                   2
                 </span>
               </div>
@@ -92,7 +99,7 @@ const Partner: React.FC = () => {
             {/* Column 3 */}
             <div className="flex flex-col items-center text-center">
               <div className="flex items-center justify-center mb-6">
-                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#fff] text-[#fff] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
+                <span className="w-24 h-24 flex items-center justify-center rounded-full border-2 border-dashed border-[#F57A00] text-[#F57A00] text-4xl font-bold" style={{ fontFamily: "inherit" }}>
                   3
                 </span>
               </div>
@@ -112,31 +119,43 @@ const Partner: React.FC = () => {
           </h2>
           <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 px-4">
             {/* Row 1 */}
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4 ">
               {/* Replace src with actual logo */}
-              <img src={partner1} alt="AWS" className="h-20" />
+              <img src={partner1} alt="AWS" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Wiz" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner2} alt="Wiz" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Palo Alto" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner3} alt="Palo Alto" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Google Cloud" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner4} alt="Google Cloud" className="w-auto h-full " />
             </div>
             {/* Row 2 */}
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 col-span-2 md:col-span-1">
-              <img src={partner1} alt="Security Scorecard" className="h-10" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4 col-span-2 md:col-span-1">
+              <img src={partner5} alt="Security Scorecard" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Blink" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner7} alt="Blink" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Tines" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner8} alt="Tines" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32">
-              <img src={partner1} alt="Torq" className="h-20" />
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner9} alt="Torq" className="w-auto h-full " />
+            </div>
+              <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4 col-span-2 md:col-span-1">
+              <img src={partner10} alt="Security Scorecard" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner11} alt="Blink" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner12} alt="Tines" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner13} alt="Torq" className="w-auto h-full " />
             </div>
           </div>
         </div>
@@ -188,13 +207,13 @@ const Partner: React.FC = () => {
           </div>
         </div>
         {/* SaaS Ecosystem Section */}
-        <div className="w-full bg-[#000000] py-20 flex flex-col items-center">
+        {/* <div className="w-full bg-[#000000] py-20 flex flex-col items-center">
       
           <h2 className="text-[#fff] font-bold text-3xl md:text-5xl mb-12 text-center" style={{ fontFamily: "inherit" }}>
             Secure Your Customers’ Entire<br />SaaS Ecosystem
           </h2>
           <div className="max-w-6xl w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 px-2">
-            {/* Row 1 */}
+          
             <div className="bg-white rounded-xl flex items-center justify-center h-32">
               <img src={partner1} alt="Salesforce" className="h-20" />
             </div>
@@ -210,7 +229,7 @@ const Partner: React.FC = () => {
             <div className="bg-white rounded-xl flex items-center justify-center h-32">
               <img src={partner1} alt="Okta" className="h-20" />
             </div>
-            {/* Row 2 */}
+       
             <div className="bg-white rounded-xl flex items-center justify-center h-32">
               <img src={partner1} alt="ServiceNow" className="h-20" />
             </div>
@@ -226,7 +245,7 @@ const Partner: React.FC = () => {
             <div className="bg-white rounded-xl flex items-center justify-center h-32">
               <img src={partner1} alt="Oracle Netsuite" className="h-20" />
             </div>
-            {/* Row 3 */}
+    
             <div className="bg-white rounded-xl flex items-center justify-center h-32">
               <img src={partner1} alt="Vanta" className="h-20" />
             </div>
@@ -243,7 +262,7 @@ const Partner: React.FC = () => {
               <img src={partner1} alt="Zoom" className="h-20" />
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
