@@ -92,6 +92,7 @@ const AboutPage = () => {
     <>
       <p className="text-[#CFC9C9] font-normal	 mb-4">
         We are a global cybersecurity service provider committed to defending the digital future. From critical infrastructure to global banks, our team protects some of the world's most complex environments against ever-evolving threats.
+        
       </p>
 
       <p className="text-[#CFC9C9] font-normal	">
