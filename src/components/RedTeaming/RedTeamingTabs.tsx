@@ -226,7 +226,7 @@ const RedTeamingTabs = () => {
 
   return (
     <div className="text-white" id='redteaming'>
-      <div id='explore-now' className="container mx-auto px-4 py-8 lg:py-10">
+      <div id='explore-now' className="container mx-auto px-8 pt-8 lg:pt-10">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
@@ -260,7 +260,6 @@ const RedTeamingTabs = () => {
                   margin: '6px',
                   width: '100%',
                   height: 200,
-                  maxWidth: 350,
                   maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
                 }}
               >

@@ -77,14 +77,14 @@ const SERVICES = {
       title: 'Web Application Security',
       description: 'Identify and remediate vulnerabilities in modern web applications through in-depth manual and automated testing.',
       icon: Ser5,
-      link: '/application-security-assessment#applicationsecurity',
+      link: '/application-security-assessment#applicationsecurity?activeTab=web',
     },
     {
       title: 'Mobile Application Security',
       description: 'Secure iOS and Android apps against reverse engineering, insecure storage, and runtime threats.',
       icon: Ser7,
       isHighlighted: true,
-      link: '/application-security-assessment#applicationsecurity',
+      link: '/application-security-assessment#applicationsecurity?activeTab=mobile',
     },
     {
       title: 'API Security',

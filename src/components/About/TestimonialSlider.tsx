@@ -95,7 +95,7 @@ const TestimonialSlider = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F57A00] mb-16 text-center">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F57A00] mb-12 text-center">
             Our Testimonials
           </h2>
         </div>

@@ -137,13 +137,13 @@ const HeroSection = ({
   onButtonClick,
   backgroundClass = "banner-image" 
 }) => (
-  <div className={`w-full from-purple-900 via-gray-900 to-black min-h-screen flex items-center ${backgroundClass}`}>
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center min-h-[70vh]">
+  <div className={`w-full from-purple-900 via-gray-900 to-black flex items-center ${backgroundClass}`}>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20 flex items-center">
       <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
         <div className="mt-4 md:mt-0">
           <div className="space-y-8" data-aos="fade-up">
             <div>
-              <h1 className="font-bold text-[#F57A00] mt-4 text-3xl  md:text-4xl lg:text-5xl 2xl:text-7xl">
+              <h1 className="font-bold text-[#F57A00] mt-4 text-[34px] leading-[40px] md:text-[42px] md:leading-[50px] xl:text-[50px] xl:leading-[60px] 2xl:text-[75px] 2xl:leading-[80px]">
                 {title}
               </h1>
             </div>
@@ -159,7 +159,7 @@ const HeroSection = ({
           </div>
         </div>
         <div className="relative flex justify-center lg:justify-end" data-aos="fade-left">
-          <div className="relative w-full max-w-lg flex items-center justify-center">
+          <div className="relative w-full max-w-sm xl:max-w-[350px] 2xl:max-w-lg flex items-center justify-center">
             <img
               src={heroImage}
               alt="Audit Services"
@@ -242,7 +242,7 @@ const AccordionItem = ({
       style={{ background: backgroundColor }}
     >
       <button
-        className="w-full flex justify-between items-center px-6 py-5 focus:outline-none"
+        className="w-full flex justify-between items-center px-6 py-4 xl:py-4 2xl:py-5 focus:outline-none"
         onClick={onToggle}
       >
         <span className="text-left font-semibold text-lg text-[#F57A00] transition-colors duration-200">
@@ -280,9 +280,9 @@ const AccordionSection = ({
   backgroundColor = "#080808",
   reverseOrder = false 
 }) => (
-  <div className="w-full py-20 flex justify-center items-center">
-    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
-      <div className={`w-full lg:w-1/2 flex justify-center mb-10 lg:mb-0 ${reverseOrder ? 'order-2 lg:order-2' : 'order-1 lg:order-1'}`} data-aos="fade-right">
+  <div className="w-full py-12 sm:py-20 flex justify-center items-center">
+    <div className="container mx-auto px-8 flex flex-col lg:flex-row items-center gap-12">
+      <div className={`w-full lg:w-1/2 flex justify-center lg:mb-0 ${reverseOrder ? 'order-2 lg:order-2' : 'order-1 lg:order-1'}`} data-aos="fade-right">
         <img
           src={image}
           alt={title}
@@ -338,7 +338,7 @@ const BenefitsSection = ({
   backgroundColor = "" 
 }) => (
   <div className={`w-full py-20 flex justify-center items-center ${backgroundColor}`}>
-    <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+    <div className="container mx-auto px-8 flex flex-col lg:flex-row items-center gap-12">
       <div className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1" data-aos="fade-right">
         <div className="max-w-xl mx-auto">
           <h3 className="text-[28px] md:text-[32px] font-semibold text-[#F57A00] mb-4">

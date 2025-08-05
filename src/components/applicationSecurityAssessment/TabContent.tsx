@@ -330,9 +330,9 @@ export default function SecurityTestingSection() {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="container mx-auto text-white py-10" id='applicationsecurity'>
+    <div className="container mx-auto text-white pt-10" id='applicationsecurity'>
       {/* Header Section */}
-      <div id='explore-now' className="text-center mb-12 px-4">
+      <div id='explore-now' className="text-center mb-12 px-8">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
           Application Security Assesment, <br />Tailored For Every Platform
         </h2>
@@ -387,7 +387,7 @@ export default function SecurityTestingSection() {
 
         {/* Desktop Content Section */}
         <div className="max-w-7xl mx-auto">
-          <div className="relative flex flex-col items-center px-4">
+          <div className="relative flex flex-col items-center px-8">
             <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-[#5A5A5A] z-0"></div>
             <div className="w-full">
               {currentTabContent.map((item, index) => (

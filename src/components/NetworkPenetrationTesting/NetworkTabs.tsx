@@ -192,11 +192,11 @@ const SecurityTestingSection = () => {
 
   return (
     <div className="text-white" id='networksecurity'>
-      <div id="explore-now" className="container mx-auto px-4 py-8 lg:py-10">
+      <div id="explore-now" className="container mx-auto px-8 pt-8 lg:pt-10">
         {/* Header Section */}
         <div className="text-center mb-12">
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
-            Network Penetration Testing Services
+            Network Penetration Testing That Thinks Like an Attacker Because Your Network Has No Walls Anymore
           </h2>
           <p className="text-white-400 text-lg max-w-5xl mx-auto">
             Our Network Penetration Testing service simulates real-world attacks to identify vulnerabilities in network infrastructure, access controls, and perimeter layer defenses. 
@@ -226,7 +226,6 @@ const SecurityTestingSection = () => {
                   margin: '6px',
                   width: '100%',
                   height: 200,
-                  maxWidth: 350,
                   maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
                 }}
               >
@@ -407,7 +406,7 @@ const SecurityTestingSection = () => {
                 <div className="bg-black rounded-md p-4 flex items-center justify-between">
                   <div className="flex items-center space-x-4">
                     <img src={tabIcons[i]} alt="" className="w-[35px] h-[35px]" />
-                    <span className="font-medium text-sm">{tab}</span>
+                    <span className="font-medium text-sm text-left">{tab}</span>
                   </div>
                   <ChevronRight 
                     className={`w-4 h-4 transform transition-transform duration-300 ${
