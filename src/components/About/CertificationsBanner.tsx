@@ -13,10 +13,17 @@ import partner6 from '../../assest/image/about/about-partner-logos/Group.svg';
 import partner7 from '../../assest/image/about/about-partner-logos/image-1.svg';
 import partner8 from '../../assest/image/about/about-partner-logos/OSEP.D_R8bS1A_Z1JYK2E 1.svg';
 import partner9 from '../../assest/image/about/about-partner-logos/osee.svg';
-import partner10 from '../../assest/image/about/about-partner-logos/blob 1.svg';
 import partner11 from '../../assest/image/about/about-partner-logos/ceh.svg';
 import partner12 from '../../assest/image/about/about-partner-logos/Group-1287.svg';
 import partner13 from '../../assest/image/about/about-partner-logos/azure.svg';
+import partner14 from '../../assest/image/about/about-partner-logos/ccna-security.svg';
+import partner15 from '../../assest/image/about/about-partner-logos/aws-security.svg';
+import partner16 from '../../assest/image/about/about-partner-logos/vault.svg';
+import partner17 from '../../assest/image/about/about-partner-logos/OSCP-security.svg';
+import partner18 from '../../assest/image/about/about-partner-logos/CISSP.svg';
+import partner19 from '../../assest/image/about/about-partner-logos/GPEN.svg';
+import partner20 from '../../assest/image/about/about-partner-logos/kubernetes.svg';
+
 
 
 
@@ -43,23 +50,38 @@ const CertificationsBanner = () => {
     },
     {
       id: 4,
-      name: 'ISO 27001',
-      logo: partner4
+      name: 'CCNA Security',
+      logo: partner14
     },
     {
       id: 5,
-      name: 'CREST',
-      logo: partner5
+      name: 'AWS Security',
+      logo: partner15
     },
     {
       id: 6,
-      name: 'AWS',
-      logo: partner1
+      name: 'Vault',
+      logo: partner16
     },
     {
       id: 7,
-      name: 'ISO 27001',
-      logo: partner2
+      name: 'OSCP',
+      logo: partner17
+    },
+    {
+      id: 8,
+      name: 'CISSP',
+      logo: partner18
+    },    
+    {
+      id: 9,
+      name: 'GPEN',
+      logo: partner19
+    },
+    {
+      id: 8,
+      name: 'Kubernetes Security',
+      logo: partner20
     }
   ];
 
@@ -83,7 +105,7 @@ const CertificationsBanner = () => {
     {
       id: 4,
       name: 'Partner 4',
-      logo: partner10
+      logo: partner20
     },
     {
       id: 5,
@@ -103,11 +125,11 @@ const CertificationsBanner = () => {
   ];
 
   return (
-    <div className="w-full  relative overflow-hidden" id='partner'>
+    <div className="w-full  relative overflow-hidden" id='certificate'>
       <div className="relative z-10 px-8 py-12">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold text-[#F57A00] mb-16 text-center">
+          <h1 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F57A00] mb-16 text-center">
             Certifications & Global Accreditations
           </h1>
         </div>

@@ -86,7 +86,7 @@ const RedTeamingslider = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-white p-4 md:p-8">
+    <div className="text-white p-4 pb-24">
       <div className="container mx-auto relative px-2 md:px-0">
         <div className="relative overflow-hidden" style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
@@ -103,7 +103,7 @@ const RedTeamingslider = () => {
             <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col">
               {/* Header */}
               <div className="mb-6">
-                <h1 className="text-2xl md:text-3xl lg:text-[50px] lg:leading-[55px] font-bold leading-tight text-white">
+                <h1 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold leading-tight text-white">
                   Innovative Security Bugs & Business Impact
                 </h1>
               </div>

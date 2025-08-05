@@ -13,11 +13,11 @@ const Stats = () => {
   ];
 
   return (
-    <section id="about" className='py-20 bg-black'>
-         <h2 className="fade-up-element text-4xl md:text-6xl lg:text-6xl font-semibold text-white text-center mb-12 heading42-main" data-aos="fade-up" >
+    <section id="about" className='pt-16 md:pt-20 bg-black'>
+         <h2 className="fade-up-element text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white text-center mb-12 heading42-main" data-aos="fade-up" >
           Experience and Trust
         </h2>
-       <div className="bg-gradient-to-r from-orange-500 to-purple-600 py-20 counter-bg">
+       <div className="bg-gradient-to-r from-orange-500 to-purple-600 py-16 md:py-20 counter-bg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 relative z-10">
@@ -30,7 +30,7 @@ const Stats = () => {
 
             return (
               <div key={index} className="text-center" ref={ref}>
-                <div className="text-4xl md:text-6xl lg:text-6xl font-extrabold text-white counter-list">
+                <div className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white counter-list">
                   {inView ? (
                     <CountUp 
                       start={0} 

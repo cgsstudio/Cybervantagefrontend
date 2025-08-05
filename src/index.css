@@ -253,9 +253,6 @@ bg-main-back{
 
 }
 
-button.px-4.py-2 {
-  padding: 15px;
-}
 .main-icon-col {
   color: #ffc107;
 }
@@ -285,10 +282,7 @@ button.px-4.py-2 {
   .lg\:text-6xl {
     font-size: 2.75rem;
   }
-  .lg\:px-8 {
-    padding-left: 6.25rem;
-    padding-right: 6.25rem;
-}
+  
 .sm\:px-6{
   padding-left: 6.25rem;
     padding-right: 6.25rem;
@@ -309,13 +303,13 @@ button.px-4.py-2 {
   .industries-main {
     gap: 80px;
   }
-  .py-20 {
+  /* .py-20 {
     padding-top: 1rem;
     padding-bottom: 1rem;
-}
+} */
 .px-4 {
-  padding-left: 2.25rem;
-  padding-right: 2.25rem;
+  padding-left: 1.3rem;
+  padding-right: 1.3rem;
 }
 .py-24 {
   padding-top: 1rem;
@@ -324,9 +318,6 @@ button.px-4.py-2 {
   padding-right: 20px;
 }
 
-.industries-container {
-  padding: 20px;
-}
 .industries-main {
   padding-top: 20px;
   padding-bottom: 40px;
@@ -359,9 +350,6 @@ h1.text-3xl {
   padding-left: 2.25rem;
   padding-right: 2.25rem;
 }
-.counter-list {
-  font-size: 40px !important;
-}
 }
 
 .heading-h1-main{
@@ -378,7 +366,6 @@ html {
     scroll-padding-top: 100px; /* Mobile navbar height ke hisaab se */
   }
   .heading42-main {
-    font-size: 40px !important;
     line-height: 50px !important;
   }
   .nav-container a {
@@ -396,11 +383,11 @@ html {
 .hero-heading {
   padding-top: 130px !important;
 }
-.our-service-main{
+/* .our-service-main{
   flex-direction: column !important;
   justify-content: center;
   align-items: center;
-}
+} */
 }
 
 
@@ -415,16 +402,15 @@ html {
 
 /* Small Laptops (11-inch, 13-inch) */
 @media (max-width: 1280px) {
-  .heading-main {
+  /* .heading-main {
     font-size: 50px !important;
     line-height: 60px !important;
-  }
+  } */
   .image-hero-main {
     width: 100%;
     max-width: 370px;
 }
 .heading-call-to{
-  font-size: 25px !important;
   line-height: normal !important;
 
 }
@@ -443,16 +429,15 @@ html {
 
 /* Medium Laptops (15-inch) */
 @media (max-width: 1440px) {
-  .heading-main {
+  /* .heading-main {
     font-size: 50px !important;
     line-height: 60px !important;
-  }
+  } */
   .image-hero-main {
     width: 100%;
     max-width: 370px;
 }
 .heading-call-to{
-  font-size: 25px !important;
   line-height: normal !important;
 
 }

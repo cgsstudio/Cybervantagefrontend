@@ -9,12 +9,8 @@ type NavbarProps = {
 };
 // Navbar Component
 const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-
-  // Accordion state for mobile dropdowns
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const location = useLocation();
 
@@ -29,21 +25,11 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
       } else {
         setIsScrolled(false);
       }
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down - hide navbar
-        setIsVisible(false);
-      } else {
-        // Scrolling up - show navbar
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -75,9 +61,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
   };
 
   return (
-    <nav className={` fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
-    }`}>
+    <nav className="fixed top-0 left-0 right-0 z-50">
       <div className={`py-4 transition-all duration-300 border-b ${
         isScrolled || isMobileMenuOpen 
           ? 'bg-black/60 backdrop-blur-sm border-gray-800' 

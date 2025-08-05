@@ -28,6 +28,7 @@ import AboutThree from './components/About-3/AboutPage'
 
 import { useLocation } from 'react-router-dom';
 import About from './components/About/AboutPage'
+import AdvisoryServices from './components/Advisory'
 
 function ScrollToHashElement() {
   const { hash } = useLocation();
@@ -129,6 +130,11 @@ function App() {
             path="/about-3"
             element={<AboutThree />}
           />
+          
+<Route
+      path="/advisory-services"
+      element={<AdvisoryServices />}
+     />
           {/* 404 Route - must be last */}
           <Route path="*" element={<NotFound />} />
           

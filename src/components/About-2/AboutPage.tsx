@@ -103,7 +103,7 @@ const AboutPage = () => {
       </p>
 
       <p className="text-[#CFC9C9] font-normal	">
-        With deep technical expertise and a mission-first mindset, we help organizations not just survive cyber threats — but stay ahead of them
+        With deep technical expertise and a mission-first mindset, we help organizations not just survive cyber threats, but stay ahead of them
       </p>
     </>
   );
@@ -214,7 +214,7 @@ const AboutPage = () => {
       <h2 className="text-4xl md:text-6xl font-bold text-[#F57A00]  text-center">
         Our Global Presence
       </h2>
-      <p className="text-white text-lg font-medium text-center">With security operations centers across North America, EMEA, APAC, and the Middle East, we offer 24/7 coverage — delivering local context with global capability.</p>
+      <p className="text-white text-lg font-medium text-center">With security operations centers across North America, EMEA, APAC, and the Middle East, we offer 24/7 coverage, delivering local context with global capability.</p>
 
       </div>
     
@@ -267,7 +267,7 @@ const AboutPage = () => {
                 <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">
                   <img src={check} alt="check" className="h-6 w-6" />
                 </span>
-                <span className="text-white text-lg font-medium">24x7 support from real cybersecurity operators — not ticket queues</span>
+                <span className="text-white text-lg font-medium">24x7 support from real cybersecurity operators, not ticket queues</span>
               </li>
               <li className="flex items-start">
                 <span className="text-orange-500 mr-4 mt-1 flex-shrink-0">

@@ -7,13 +7,13 @@ const TestimonialSlider = () => {
     {
       id: 1,
       rating: 5,
-      text: "Their red team simulated a real-world attack with surgical precision. It helped us find gaps we didn't know existed — and helped us fix them on time.",
+      text: "Their red team simulated a real-world attack with surgical precision. It helped us find gaps we didn't know existed, and helped us fix them on time.",
       author: "CISO, Banking Leader (UK)"
     },
     {
       id: 2,
       rating: 5,
-      text: "We needed more than a vendor — we got a true security partner.",
+      text: "We needed more than a vendor, we got a true security partner.",
       author: "VP Cyber Security, Healthcare Group (Middle East)"
     },
     {
@@ -95,7 +95,7 @@ const TestimonialSlider = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-6xl font-bold text-[#F57A00] mb-16 text-center">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F57A00] mb-16 text-center">
             Our Testimonials
           </h2>
         </div>
@@ -108,7 +108,7 @@ const TestimonialSlider = () => {
                 <div
                   className="group relative overflow-hidden rounded-2xl transition-all duration-300 h-full"
                   style={{
-                    background: 'linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)'
+                    background: 'linear-gradient(96.79deg, #121212 0%, #1e1e1e 50%, #121212 100%)'
                   }}
                 >
                   {/* Hover Border Effect */}
@@ -138,7 +138,7 @@ const TestimonialSlider = () => {
                     {/* Quote */}
                     <div className="flex-1 mb-6">
                       
-                      <p className="text-xl md:text-2xl  text-white">
+                      <p className="text-xl xl:text-2xl text-white">
                         {testimonial.text}
                       </p>
                     </div>

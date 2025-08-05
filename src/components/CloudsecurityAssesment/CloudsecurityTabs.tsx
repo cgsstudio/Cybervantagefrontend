@@ -228,7 +228,7 @@ const tabContent = {
       title: 'Data Exposure & Sharing Configurations',
       image: saas3,
       description: [
-        "Assess sensitive data sharing settings—such as document and calendar sharing, guest access, and link-based sharing permissions.",
+        "Assess sensitive data sharing settings, such as document and calendar sharing, guest access, and link-based sharing permissions.",
         "Review SaaS app-specific DLP configurations and verify whether customer or PII data is exposed inadvertently.",
         "Detect public-facing dashboards, repositories (e.g., Notion, Confluence), or file shares misconfigured for external access.",
       ]
@@ -302,15 +302,15 @@ const CloudsecurityTabs = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="min-h-screen text-white" id='cloudsecurity'>
-      <div className="container mx-auto px-4 py-8 lg:py-20">
+    <div className="text-white" id='cloudsecurity'>
+      <div id="explore-now" className="container mx-auto px-4 py-8 lg:py-10">
         {/* Header Section - visible on all screens */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-6xl font-bold mb-4 text-white">
-            Cloud Security Assessment — Tailored for Every Platform
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            One-size-fits-all doesn’t work for security. That’s why we specialize in below targeted areas:
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+            Cloud Security Assessment Services
+          </h2>
+          <p className="text-White-400 text-lg max-w-6xl mx-auto">
+            Our Cloud Security services provide deep, hands-on evaluations across cloud-native technologies and hybrid deployments. Our assessments help ensure that your cloud infrastructure is secure, compliant, and resilient.
           </p>
         </div>
 
@@ -337,7 +337,7 @@ const CloudsecurityTabs = () => {
                   margin: '6px',
                   width: '100%',
                   height: 200,
-                  maxWidth: 350,
+                  maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
                 }}
               >
                 <div
@@ -362,7 +362,7 @@ const CloudsecurityTabs = () => {
 
           {/* Desktop Tab-specific Heading and Paragraph */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-6xl font-bold text-orange-500 mb-4 leading-none">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-4 leading-none">
               {(() => {
                 switch (activeTab) {
                   case 'Containers and Kubernetes Security':
@@ -378,7 +378,7 @@ const CloudsecurityTabs = () => {
                 }
               })()}
             </h2>
-            <p className="text-white-300 max-w-4xl mx-auto mt-5">
+            <p className="text-white-300 max-w-5xl mx-auto mt-5">
               {(() => {
                 switch (activeTab) {
                   case 'Containers and Kubernetes Security':

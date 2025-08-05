@@ -258,7 +258,7 @@ const tabContent = {
     },
     {
       title: 'Custom Business Logic Abuse Detection',
-      descriptionText: "Identification of flaws unique to your application's workflows—like insecure trading algorithms, authorization bypass in invoice systems, or misuse of cryptographic keys.",
+      descriptionText: "Identification of flaws unique to your application's workflows, like insecure trading algorithms, authorization bypass in invoice systems, or misuse of cryptographic keys.",
       icon: <Lock className="w-6 h-6" />,
       image: scr8
     },
@@ -330,18 +330,15 @@ export default function SecurityTestingSection() {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="container mx-auto min-h-screen text-white py-20" id='applicationsecurity'>
+    <div className="container mx-auto text-white py-10" id='applicationsecurity'>
       {/* Header Section */}
-      <div className="text-center mb-12 px-4">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white line-heading-tight">
-          Application Security Testing — Tailored<br />For Every Platform
-        </h1>
-        <p className="text-white-400 text-lg max-w-3xl mx-auto mb-2">
-          Think your app is safe? So did everyone before they got breached. Because "It Won't
-          Happen to Us" is not a strategy.
-        </p>
-        <p className="text-white-400 text-lg max-w-3xl mx-auto">
-          One-size-fits-all doesn't work for security. That's why we specialize in below targeted areas.
+      <div id='explore-now' className="text-center mb-12 px-4">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
+          Application Security Assesment, <br />Tailored For Every Platform
+        </h2>
+        <p className="text-white-400 text-lg max-w-5xl mx-auto mb-2">
+          Think your app is safe? So did everyone before they got breached. Because "It Won't Happen to Us" is not a strategy.
+         One-size-fits-all doesn't work for security. That's why we specialize in below targeted areas.
         </p>
       </div>
 
@@ -365,7 +362,7 @@ export default function SecurityTestingSection() {
                 margin: '6px',
                 width: '100%',
                 height: 250,
-                maxWidth: 350,
+                maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
               }}
             >
               <div
@@ -390,7 +387,7 @@ export default function SecurityTestingSection() {
 
         {/* Desktop Content Section */}
         <div className="max-w-7xl mx-auto">
-          <div className="relative flex flex-col items-center">
+          <div className="relative flex flex-col items-center px-4">
             <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-[#5A5A5A] z-0"></div>
             <div className="w-full">
               {currentTabContent.map((item, index) => (

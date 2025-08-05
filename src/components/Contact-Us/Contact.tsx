@@ -7,6 +7,7 @@ import flag2 from '../../assest/image/flag-2.svg'
 import { Link } from 'react-router-dom';
 import calendericon from '../../assest/image/about/calendar.png'
 import contactsvg from '../../assest/image/contactus/contact-svg.svg'
+import Breadcrumb from '../Breadcrums/Breadcrumb';
 
 
 const Contact = () => {
@@ -34,12 +35,19 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="bg-black relative overflow-hidden">
 
       {/* Gradient Banner with Contact Us Title */}
-      <div className="w-full bg-gradient-to-r from-[#F57A00] to-[#7103A4] py-8 lg:py-16 flex items-center justify-center mt-[100px]">
+      {/* <div className="w-full bg-gradient-to-r from-[#F57A00] to-[#7103A4] py-8 lg:py-16 flex items-center justify-center mt-[100px]">
         <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Contact Us</h1>
-      </div>
+      </div> */}
+      <Breadcrumb 
+      pageTitle="Contact Us"
+      items={[
+    { label: 'Contact Us', path: '/contact-us' },
+
+  ]} 
+/>
 
       {/* Add top padding to account for navbar height */}
       <div className="relative z-10 pt-20 pb-8 px-8 hero-banner">
@@ -266,7 +274,7 @@ const Contact = () => {
             className="absolute inset-0 w-full h-full"
           ></iframe>
           {/* Custom Marker Overlay */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] z-10 pointer-events-none">
+          {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] z-10 pointer-events-none">
             <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#shadow)">
                 <path d="M32 0C17.664 0 6 11.664 6 26C6 44.8 32 80 32 80C32 80 58 44.8 58 26C58 11.664 46.336 0 32 0Z" fill="#F57A00"/>
@@ -278,7 +286,7 @@ const Contact = () => {
                 </filter>
               </defs>
             </svg>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
@@ -286,3 +294,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

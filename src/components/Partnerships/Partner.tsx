@@ -8,10 +8,16 @@ import partner6 from '../../assest/image/about/about-partner-logos/Group.svg';
 import partner7 from '../../assest/image/about/about-partner-logos/image-1.svg';
 import partner8 from '../../assest/image/about/about-partner-logos/OSEP.D_R8bS1A_Z1JYK2E 1.svg';
 import partner9 from '../../assest/image/about/about-partner-logos/osee.svg';
-import partner10 from '../../assest/image/about/about-partner-logos/blob 1.svg';
+import partner10 from '../../assest/image/about/about-partner-logos/kubernetes.svg';
 import partner11 from '../../assest/image/about/about-partner-logos/ceh.svg';
-import partner12 from '../../assest/image/about/about-partner-logos/Group-1287.svg';
+// import partner12 from '../../assest/image/about/about-partner-logos/Group-1287.svg';
 import partner13 from '../../assest/image/about/about-partner-logos/azure.svg';
+import partner14 from '../../assest/image/about/about-partner-logos/wiz.png';
+import partner15 from '../../assest/image/about/about-partner-logos/trunkoz.png';
+import partner16 from '../../assest/image/about/about-partner-logos/bulwarkers-logo.png';
+import partner17 from '../../assest/image/about/about-partner-logos/axway-logo.png';
+import partner18 from '../../assest/image/about/about-partner-logos/Google_for_Startups.png';
+
 // Heroicons imports
 import { UserGroupIcon, UsersIcon, BriefcaseIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
@@ -35,7 +41,7 @@ const Partner: React.FC = () => {
         {/* Main content */}
         <div className="relative z-10 flex flex-col items-center justify-center py-32">
           <h1 className="text-center font-bold text-[#fff] text-[40px] md:text-[56px] leading-tight mb-4" style={{ fontFamily: "inherit" }}>
-            Cybervantage re:Configure<br />Partner Program
+            Cybervantage <br />Partner Program
           </h1>
           <p className="text-center text-[#fff] text-lg md:text-xl mb-10 max-w-2xl">
             Empower your customers to build, grow, and keep their SaaS ecosystems secure.
@@ -151,11 +157,26 @@ const Partner: React.FC = () => {
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
               <img src={partner11} alt="Blink" className="w-auto h-full " />
             </div>
-            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+            {/* <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
               <img src={partner12} alt="Tines" className="w-auto h-full " />
-            </div>
+            </div> */}
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
               <img src={partner13} alt="Torq" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner14} alt="Torq" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner15} alt="Torq" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner16} alt="Torq" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner17} alt="Torq" className="w-auto h-full " />
+            </div>
+            <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
+              <img src={partner18} alt="Torq" className="w-auto h-full " />
             </div>
           </div>
         </div>

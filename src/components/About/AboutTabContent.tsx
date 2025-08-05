@@ -51,8 +51,8 @@ export default function AboutTabContent() {
 			id="digitalfinance"
 		>
 			{/* Header Section */}
-			<div className="text-center mb-16">
-				<h2 className="text-4xl md:text-5xl font-bold text-orange-400 inline-block px-8 py-4 rounded-lg">
+			<div className="text-center mb-8">
+				<h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-400 inline-block px-8 py-4 rounded-lg">
 					Our Values
 				</h2>
 			</div>
@@ -78,10 +78,10 @@ export default function AboutTabContent() {
 								<div>
 									<img src={card.icon} alt={card.title + ' icon'} className="w-50 h-50" />
 								</div>
-								<h3 className="text-[22px] font-[800] text-[#F57A00] uppercase leading-[1.2]">
+								<h3 className="lg:text-[18px] xl:text-[22px] font-[800] text-[#F57A00] uppercase leading-[1.2]">
 									{card.title}
 								</h3>
-								<p className="text-gray-300 text-[18px] font-[500] ">{card.description}</p>
+								<p className="text-gray-300 text-[16px] xl:text-[18px] font-[500] ">{card.description}</p>
 							</div>
 						</div>
 					</div>

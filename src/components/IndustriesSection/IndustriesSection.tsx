@@ -61,13 +61,13 @@ const IndustriesSection = () => {
   const [firstIndustry, ...remainingIndustries] = industries;
 
   return (
-    <section id="support" className="bg-primery bg-main-back"style={{
+    <section className="bg-primery bg-main-back"style={{
       backgroundImage: "url('../assest/image/bg-service.png')",
       backgroundPosition: "left center",  
       backgroundSize: "cover",          
       backgroundRepeat: "no-repeat",    
     }}>
-      <div className="industries-container container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="industries-container container mx-auto pt-16 md:pt-20 px-4 sm:px-6 lg:px-8">
         <div
           className="industries-main industries-grid grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3 gap-8 items-start"
         >
@@ -76,10 +76,10 @@ const IndustriesSection = () => {
             className="col-span-1 xl:col-span-2 max-w-2xl "
             data-aos="fade-right"
           >
-            <h2 className="text-4xl lg:text-6xl md:text-6xl font-semibold mb-4 leading-tight text-left heading42-main ">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight text-center xl:text-left heading42-main ">
               Industries We Support
             </h2>
-            <p className="text-gray-300 mb-7 text-center xl:text-left">
+            <p className="text-white-300 mb-7 text-center xl:text-left">
               We are one of the fastest growing companies with a footprint in India,
               Middle East & North America. Our clientele base spans Banks, PSUs,
               Fortune 1000 companies, IT/ITES, Logistics, Start-ups, and SMBs.

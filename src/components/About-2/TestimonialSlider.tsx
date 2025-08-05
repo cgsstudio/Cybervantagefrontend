@@ -7,13 +7,13 @@ const TestimonialSlider = () => {
     {
       id: 1,
       rating: 5,
-      text: "Their red team simulated a real-world attack with surgical precision. It helped us find gaps we didn't know existed — and helped us fix them on time.",
+      text: "Their red team simulated a real-world attack with surgical precision. It helped us find gaps we didn't know existed, and helped us fix them on time.",
       author: "CISO, Banking Leader (UK)"
     },
     {
       id: 2,
       rating: 5,
-      text: "We needed more than a vendor — we got a true security partner.",
+      text: "We needed more than a vendor, we got a true security partner.",
       author: "VP Cyber Security, Healthcare Group (Middle East)"
     },
     {

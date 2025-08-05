@@ -13,8 +13,8 @@ import tab10 from '../../assest/image/digitalfinanceicon/iot.svg';
 
 const tabs = [
   'Fraud Red Teaming',
-  'Open banking Security',
-  'ATM security Assessment',
+  'Open Banking Security',
+  'ATM Security Assessment',
   'IoT Security for Banking & Finance'
 ];
 
@@ -44,7 +44,7 @@ const contentByTab = {
       },
       {
         title: "Insider Threat Simulations",
-        description: "Deploy covert tactics—malicious USB drops, privilege escalation—to test internal monitoring and response."
+        description: "Deploy covert tactics, malicious USB drops, privilege escalation, to test internal monitoring and response."
       },
       {
         title: "API Abuse Testing",
@@ -57,7 +57,7 @@ const contentByTab = {
     ],
     image: tab1
   },
-  'Open banking Security': {
+  'Open Banking Security': {
     offerings: [
       {
         title: "API Security Testing",
@@ -82,7 +82,7 @@ const contentByTab = {
     ],
     image: tab2
   },
-  'ATM security Assessment': {
+  'ATM Security Assessment': {
     offerings: [
       {
         title: "Physical Penetration Testing",
@@ -141,15 +141,15 @@ const contentByTab = {
 const tabHeaders = {
   'Fraud Red Teaming': {
     title: 'Fraud Red Team',
-    description: 'Our Fraud Red Team simulates real-world financial crime campaigns against your organization—combining technical exploits, social engineering, and data-driven deception to test the resilience of your people, processes, and platforms and assess how attackers might exploit banking systems, user workflows, and human behavior.'
+    description: 'Our Fraud Red Team simulates real-world financial crime campaigns against your organization, combining technical exploits, social engineering, and data-driven deception to test the resilience of your people, processes, and platforms and assess how attackers might exploit banking systems, user workflows, and human behavior.'
   },
-  'Open banking Security': {
+  'Open Banking Security': {
     title: 'Open Banking Security',
     description: 'We assess the security of open banking APIs, third-party integrations, consent management, and data access flows to protect customer data and ensure compliance with PSD2 and regional regulations.'
   },
-  'ATM security Assessment': {
+  'ATM Security Assessment': {
     title: 'ATM Security Assessment',
-    subTitle: 'Every ATM is a high-value target—make sure yours can’t be turned into a jackpotting machine.',
+    subTitle: 'Every ATM is a high-value target, make sure yours can’t be turned into a jackpotting machine.',
     description: 'Our end-to-end ATM assessments blend physical penetration, OS boot order attacks, malware injection, and network security testing to block skimming, peripheral device security, response tampering, and black-box attacks.'
   },
   'IoT Security for Banking & Finance': {
@@ -174,14 +174,14 @@ export default function FinanceTabContent() {
   const isTabExpanded = (tab: string) => expandedTabs.includes(tab);
 
   return (
-    <div className="container mx-auto min-h-screen text-white py-20" id='digitalfinance'>
+    <div className="container mx-auto text-white py-10" id='digitalfinance'>
       {/* Header Section */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white line-heading-tight">
-          Digital Finance and Banking— Tailored for Every Platform
-        </h1>
-        <p className="text-white-400 text-lg max-w-3xl mx-auto">
-          Our Digital Finance and Banking security practice covers key domains to ensure your operations remain resilient, efficient, and secure.
+      <div id="explore-now" className="text-center mb-12">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
+          Digital Finance and Banking Services
+        </h2>
+        <p className="text-white-400 text-lg max-w-5xl mx-auto">
+          At CyberVantage, we bring a sharp offensive edge to financial cybersecurity. Our experts dive deep into the systems that power your digital economy, scanning for weak links, simulating fraud campaigns, and fortifying the digital doors your customers trust every day.
         </p>
       </div>
 
@@ -208,7 +208,7 @@ export default function FinanceTabContent() {
                 margin: '6px',
                 width: '100%',
                 height: 250,
-                maxWidth: 350,
+                maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
               }}
             >
               <div
@@ -233,7 +233,7 @@ export default function FinanceTabContent() {
 
         {/* Tab Header Section */}
         <div className="max-w-7xl mx-auto mt-16 mb-12">
-          <div className="text-center space-y-4 max-w-4xl mx-auto">
+          <div className="text-center space-y-4 max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-orange-500">
               {tabHeaders[activeTab].title}
             </h2>

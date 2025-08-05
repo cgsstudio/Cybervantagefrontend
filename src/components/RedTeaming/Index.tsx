@@ -3,33 +3,38 @@ import serv from '../../assest/image/services/RedTeaming.png';
 import CallToAction from '../CallToAction';
 import RedTeamingslider from './RedTeamingslider';
 import RedTeamingTabs from './RedTeamingTabs';
+import Breadcrumb from '../Breadcrums/Breadcrumb';
 
 
 const RedTeaming = () => {
   return (
     <>
-      <div className="w-full  from-purple-900 via-gray-900 to-black min-h-screen flex items-center banner-image">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center min-h-[70vh]">
+
+    <Breadcrumb 
+      pageTitle="Red Teaming"
+      items={[
+    { label: 'Red Teaming', path: '/red-teaming' },
+
+  ]} 
+/>
+      <div className="w-full from-purple-900 via-gray-900 to-black flex items-center banner-image">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
-            <div className="space-y-8 mt-4 md:mt-0">
+            <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
               <div>
-                <h1 className="font-bold text-white mt-4 text-3xl lg:text-4xl 2xl:text-6xl">Red Teaming services
-                </h1>
-                {/* <h2 className='font-bold text-white mt-4 text-2xl'>If your team’s never faced a real attack, how do you know you’re ready?
-
-                </h2> */}
+                <h2 className='font-semibold text-white mt-4 text-4xl lg:text-5xl 2xl:text-6xl'>Your Security Needs a Reality Check</h2>
               </div>
               <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
-                Experience where your organization’s security stands when our most elite hackers target your organization. From phishing and lateral movement to privilege escalation and exfiltration, we test your organization the way real attackers would: no shortcuts, no assumptions.
+                If your team has never faced a real attack, how do you know you’re ready? We uncover the Blind Spots You Didn’t Know Existed
               </p>
               <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
-                Explore How We Help
+                <a href="#explore-now">Explore How We Help</a>
               </button>
             </div>
             {/* Right Image */}
-            <div className="relative flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-lg flex items-center justify-center">
+            <div className="relative flex justify-center">
+              <div className="relative w-full max-w-sm xl:max-w-[320px] 2xl:max-w-lg flex items-center justify-center">
                 <img
                   src={serv}
                   alt="Application Security Assessment"

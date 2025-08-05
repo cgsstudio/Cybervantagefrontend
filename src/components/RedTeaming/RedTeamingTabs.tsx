@@ -36,8 +36,8 @@ const tabIcons = [
 const tabs = [
   'Advanced Penetration Testing',
   'DDOS Simulation', 
-  'AI Red teaming',
-  'zero day hunting',
+  'AI Red Teaming',
+  'Zero Day Hunting',
 ];
 
 const tabDescriptions = {
@@ -49,11 +49,11 @@ const tabDescriptions = {
     title: 'DDOS Simulation & Testing',
     description: 'Validate your DDoS resilience through controlled simulation of various attack vectors. We test your infrastructure\'s ability to withstand volumetric attacks, protocol abuse, and application-layer exhaustion while maintaining service availability.',
   },
-  'AI Red teaming': {
+  'AI Red Teaming': {
     title: 'AI Red Teaming',
     description: 'As AI systems become central to business operations, they present unique security challenges. Our AI Red Team specializes in testing machine learning models, training data integrity, and AI-powered security controls against adversarial attacks.',
   },
-  'zero day hunting': {
+  'Zero Day Hunting': {
     title: 'Zero Day Vulnerability Research',
     description: 'Our expert researchers conduct deep technical analysis to discover previously unknown vulnerabilities in your critical systems before attackers do. We focus on high-impact flaws that could lead to system compromise.',
   }
@@ -128,7 +128,7 @@ const tabContent = {
       image: ddos3
     }
   ],
-  'AI Red teaming': [
+  'AI Red Teaming': [
     {
       title: 'Model Poisoning & Adversarial Inputs',
       description: [
@@ -162,7 +162,7 @@ const tabContent = {
       image: art3
     }
   ],
-  'zero day hunting': [
+  'Zero Day Hunting': [
     {
       title: 'Source Code Analysis & Fuzzing',
       description: [
@@ -202,8 +202,8 @@ const getTabIcon = (tabName) => {
   switch(tabName) {
     case 'Advanced Penetration Testing ': return <Shield className="w-5 h-5" />;
     case 'DDOS Simulation': return <Smartphone className="w-5 h-5" />;
-    case 'AI Red teaming': return <Database className="w-5 h-5" />;
-    case 'zero day hunting': return <Code className="w-5 h-5" />;
+    case 'AI Red Teaming': return <Database className="w-5 h-5" />;
+    case 'Zero Day Hunting': return <Code className="w-5 h-5" />;
     default: return <Shield className="w-5 h-5" />;
   }
 };
@@ -225,16 +225,15 @@ const RedTeamingTabs = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab] || [], [activeTab]);
 
   return (
-    <div className="min-h-screen text-white" id='redteaming'>
-      <div className="container mx-auto px-4 py-8 lg:py-20">
+    <div className="text-white" id='redteaming'>
+      <div id='explore-now' className="container mx-auto px-4 py-8 lg:py-10">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-6xl font-bold mb-4 text-white">
-            Network Security Assessment — Tailored for<br />Every Platform
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            One-size-fits-all doesn't work for security. That's why we specialize in below targeted areas 
-            hybrid environments, remote work, SaaS adoption, and multi-cloud sprawl have redefined the attack surface.
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+            Red Teaming Services
+          </h2>
+          <p className="text-white-400 text-lg max-w-6xl mx-auto">
+          Experience where your organization’s security stands when our most elite hackers target your organization. From phishing and lateral movement to privilege escalation and exfiltration, we test your organization the way real attackers would: no shortcuts, no assumptions.
           </p>
         </div>
 
@@ -262,6 +261,7 @@ const RedTeamingTabs = () => {
                   width: '100%',
                   height: 200,
                   maxWidth: 350,
+                  maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
                 }}
               >
                 <div
@@ -286,7 +286,7 @@ const RedTeamingTabs = () => {
 
           {/* Tab-specific Heading and Paragraph */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-6xl font-bold text-orange-500 mb-4 leading-none">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-4 leading-none">
               {tabDescriptions[activeTab].title}
             </h2>
             <p className="text-white-300 max-w-4xl mx-auto mt-5">

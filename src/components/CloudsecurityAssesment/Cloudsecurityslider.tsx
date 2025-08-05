@@ -16,7 +16,7 @@ const Cloudsecurityslider = () => {
       content: {
         whatWeFound: "The etcd datastore for a production Kubernetes cluster was exposed without any authentication or TLS encryption, allowing full read/write access to all cluster state.",
         howWeFound: " During a container security review, we ran an internal port scan of the Kubernetes control plane and noticed etcd listening on the public management network. We then connected with a simple HTTP client and enumerated secrets, config maps, and deployment specs.",
-        impact: "An attacker could manipulate critical cluster configurations, inject malicious containers, harvest all service credentials (including database and payment API keys), and effectively take over the entire application infrastructure—putting customer financial data at risk and jeopardizing regulatory compliance."
+        impact: "An attacker could manipulate critical cluster configurations, inject malicious containers, harvest all service credentials (including database and payment API keys), and effectively take over the entire application infrastructure, putting customer financial data at risk and jeopardizing regulatory compliance."
       },
       image: slideimg4,
        bgGradient: "from-white-500 to-pink-600",
@@ -29,7 +29,7 @@ const Cloudsecurityslider = () => {
       content: {
         whatWeFound: "A third-party kernel module used by the organization’s on-premises virtualization host was vulnerable to a privilege escalation flaw, allowing a VM guest to break out into the hypervisor context.",
         howWeFound: "In our virtualization infrastructure assessment, we deployed a proof-of-concept exploit against the targeted kernel driver from within a low-privileged VM. By triggering a crafted IOCTL call, we gained root on the host OS and then obtained control of other guest VMs.",
-        impact: "Successful VM escape would let attackers access protected health information (PHI) stored in other VMs, move laterally across critical systems, and fully compromise the healthcare provider’s virtual environment—exposing them to HIPAA violations and patient privacy breaches."
+        impact: "Successful VM escape would let attackers access protected health information (PHI) stored in other VMs, move laterally across critical systems, and fully compromise the healthcare provider’s virtual environment, exposing them to HIPAA violations and patient privacy breaches."
       },
       image: slideimg3,
       bgGradient: "from-white-500 to-pink-600",
@@ -39,9 +39,9 @@ const Cloudsecurityslider = () => {
       id: 3,
       subtitle: "️3. Server-Side Request Forgery (SSRF) Leading to AWS Metadata Theft in an E-Commerce Cloud",
       content: {
-        whatWeFound: "A function in the customer support portal allowed users to supply arbitrary URLs for product image fetching, but failed to whitelist or sanitize input—enabling SSRF.",
+        whatWeFound: "A function in the customer support portal allowed users to supply arbitrary URLs for product image fetching, but failed to whitelist or sanitize input, enabling SSRF.",
         howWeFound: "During public cloud assessment, we crafted URLs pointing at the AWS instance metadata service (169.254.169.254) and observed our SSRF payload return IAM role credentials. We then used those temporary credentials to list and download S3 buckets containing order history.",
-        impact: "Attackers could steal IAM credentials, exfiltrate sensitive customer orders and payment records, spin up rogue infrastructure (incurring large costs), and fully compromise the e-commerce environment—leading to massive data breaches and financial loss."
+        impact: "Attackers could steal IAM credentials, exfiltrate sensitive customer orders and payment records, spin up rogue infrastructure (incurring large costs), and fully compromise the e-commerce environment, leading to massive data breaches and financial loss."
       },
       image: slideimg2,
       bgGradient: "from-white-500 to-teal-600",
@@ -53,7 +53,7 @@ const Cloudsecurityslider = () => {
       content: {
         whatWeFound: "The retail company’s integration with a popular CRM-SaaS invoked OAuth tokens with “full_access” scope, rather than the minimal “read_only” scope they actually needed.",
         howWeFound: "In our SaaS security review, we intercepted the OAuth handshake in transit, inspected the token scopes, and confirmed via API calls that the token could create, modify, and delete all customer records.",
-        impact: "If an attacker obtained that token—via phishing or a stolen session—they could modify inventory, rewrite pricing, inject fraudulent orders, or erase entire customer datasets, causing direct revenue impact and severe damage to brand loyalty."
+        impact: "If an attacker obtained that token, via phishing or a stolen session, they could modify inventory, rewrite pricing, inject fraudulent orders, or erase entire customer datasets, causing direct revenue impact and severe damage to brand loyalty."
       },
       image: slideimg1,
       bgGradient: "from-white-500 to-emerald-600",
@@ -86,7 +86,7 @@ const Cloudsecurityslider = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-white p-4 md:p-8">
+    <div className="text-white p-4 pb-24">
       <div className="container mx-auto relative px-2 md:px-0">
         <div className="relative overflow-hidden " style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
@@ -103,9 +103,9 @@ const Cloudsecurityslider = () => {
             <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col h-full">
               {/* Header */}
               <div className="mb-6">
-                <h1 className="text-2xl md:text-3xl lg:text-[50px] lg:leading-[55px] font-bold leading-tight text-white">
+                <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold leading-tight text-white">
                   Innovative Security Bugs & Business Impact
-                </h1>
+                </h2>
               </div>
 
               {/* Subtitle */}

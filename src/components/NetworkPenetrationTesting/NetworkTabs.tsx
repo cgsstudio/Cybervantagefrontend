@@ -51,7 +51,7 @@ const tabContent = {
         { label: 'Name Spoofing & Response Forging', text: "Validate protections against malicious responses crafted to impersonate legitimate internal domains or resolve attacker-controlled hosts." },
         { label: 'Split-Horizon DNS Validation ', text: "Review the separation between internal and public zones to prevent data leakage or cross-zone contamination. Assess whether internal-only records are improperly exposed externally. " },
         { label: 'Access Control on Zone Modifications ', text: "Evaluate who can create, update, or delete internal records. Improper ACLs could allow low-privilege users to redirect traffic or hijack service resolution. " },
-        { label: 'Unsecured Dynamic DNS Updates', text: "Detect whether endpoints can register records without authentication—commonly abused for persistence by malware and rogue devices." }
+        { label: 'Unsecured Dynamic DNS Updates', text: "Detect whether endpoints can register records without authentication, commonly abused for persistence by malware and rogue devices." }
       ],
       image: dns2
     },
@@ -66,7 +66,7 @@ const tabContent = {
         { label: 'Firewall Evasion Techniques', text: "Test the firewall's resistance to obfuscation techniques like packet fragmentation, port hopping, or malformed traffic that bypasses standard filtering. " },
         { label: 'Zone Segmentation Validation', text: "Validate segmentation controls between trusted, DMZ, and untrusted zones, ensuring critical internal assets are not exposed or reachable. " },
         { label: 'Administrative Interface Exposure', text: "Scan for exposed management interfaces (SSH, Telnet, SNMP, HTTPS) from untrusted networks, often a precursor to lateral movement or device takeover. " },
-        { label: 'Unsecured Dynamic DNS Updates', text: "Detect whether endpoints can register records without authentication—commonly abused for persistence by malware and rogue devices." }
+        { label: 'Unsecured Dynamic DNS Updates', text: "Detect whether endpoints can register records without authentication, commonly abused for persistence by malware and rogue devices." }
       ],
       image: firewall1
     },
@@ -137,14 +137,14 @@ const tabContent = {
     },
     {
       title: 'Zero Trust Network Access (ZTNA) Security Assessment',
-     descriptionText: 'ZTNA platforms (e.g., Zscaler Private Access, Cloudflare Access, Prisma Access) are designed to limit access to apps—not networks—but poor integration and overbroad policy definitions can nullify their benefits.',
+     descriptionText: 'ZTNA platforms (e.g., Zscaler Private Access, Cloudflare Access, Prisma Access) are designed to limit access to apps, not networks, but poor integration and overbroad policy definitions can nullify their benefits.',
       heading2: 'Assessment Areas:',
       description: [
         { label: 'Policy Definition & Enforcement Testing', text: "Assess ZTNA rules mapping users/groups to applications. Test whether users can access unauthorized apps via misconfigured group memberships, overly permissive policies, or untagged applications. " },
         { label: 'Identity & Device Trust Evaluation', text: "Evaluate whether access is gated by both strong identity verification and device trust checks (posture, patch level, MDM enrollment). Attempt to bypass using unmanaged or spoofed devices. " },
         { label: 'SSO Integration and Session Propagation', text: "Review SAML/OAuth integrations for weaknesses in token handling, insecure redirection, ID token reuse, or policy misalignment between IdP and ZTNA provider. " },
         { label: 'Audit & Visibility Gaps', text: "Examine the logging, alerting, and session visibility capabilities of the ZTNA provider. Determine whether lateral movements, anomalous access patterns, or policy violations are detectable. " },
-        { label: 'Example: ', text: "We were able to bypass ZTNA access controls by using a synced but unmanaged BYOD device. The provider relied solely on user group memberships in Azure AD, without validating device posture — resulting in unauthorized access to dev and staging environments. " },
+        { label: 'Example: ', text: "We were able to bypass ZTNA access controls by using a synced but unmanaged BYOD device. The provider relied solely on user group memberships in Azure AD, without validating device posture, resulting in unauthorized access to dev and staging environments. " },
       ],
       image: vpn2
     },
@@ -191,16 +191,15 @@ const SecurityTestingSection = () => {
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
   return (
-    <div className="min-h-screen  text-white" id='networksecurity'>
-      <div className="container mx-auto px-4 py-8 lg:py-20">
+    <div className="text-white" id='networksecurity'>
+      <div id="explore-now" className="container mx-auto px-4 py-8 lg:py-10">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-6xl font-bold mb-4 text-white">
-            Network Security Assessment — Tailored for<br />Every Platform
-          </h1>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
-            One-size-fits-all doesn't work for security. That's why we specialize in below targeted areas 
-            hybrid environments, remote work, SaaS adoption, and multi-cloud sprawl have redefined the attack surface.
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+            Network Penetration Testing Services
+          </h2>
+          <p className="text-white-400 text-lg max-w-5xl mx-auto">
+            Our Network Penetration Testing service simulates real-world attacks to identify vulnerabilities in network infrastructure, access controls, and perimeter layer defenses. 
           </p>
         </div>
 
@@ -228,6 +227,7 @@ const SecurityTestingSection = () => {
                   width: '100%',
                   height: 200,
                   maxWidth: 350,
+                  maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
                 }}
               >
                 <div
@@ -252,7 +252,7 @@ const SecurityTestingSection = () => {
 
           {/* Tab-specific Heading and Paragraph */}
           <div className="text-center mb-8">
-            <h2 className="text-3xl md:text-6xl font-bold text-orange-500 mb-4 leading-none">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-4 leading-none">
               {(() => {
                 switch (activeTab) {
                   case 'DNS Security':
@@ -268,7 +268,7 @@ const SecurityTestingSection = () => {
                 }
               })()}
             </h2>
-            <p className="text-white-300 max-w-4xl mx-auto mt-5">
+            <p className="text-white-300 max-w-6xl mx-auto mt-5">
               {(() => {
                 switch (activeTab) {
                   case 'DNS Security':

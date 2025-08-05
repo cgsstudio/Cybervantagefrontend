@@ -19,6 +19,7 @@ import CallToAction from '../CallToAction';
 import tab1 from "../../assest/image/audit-tabicon/1.svg";
 import tab2 from "../../assest/image/audit-tabicon/2.svg";
 import tab3 from "../../assest/image/audit-tabicon/3.svg";  
+import Breadcrumb from '../Breadcrums/Breadcrumb';
 
 // Constants
 const AUDIT_PHASES = [
@@ -179,7 +180,7 @@ const SectionHeader = ({ title, subtitle, centered = true }) => (
         {title}
       </h2>
       {subtitle && (
-        <p className="text-white text-lg max-w-2xl mb-0">
+        <p className="text-white text-lg max-w-3xl mb-0">
           {subtitle}
         </p>
       )}
@@ -419,10 +420,10 @@ const Audits = () => {
   // ISO 27001 Content
   const iso27001Content = (
     <>
-      <p className="text-[#CFC9C9] mb-4">
+      <p className="text-white mb-4">
         ISO/IEC 27001 is the internationally recognized standard for creating and managing an Information Security Management System (ISMS). It provides a structured methodology for protecting sensitive data through the implementation of security controls, risk assessments, and continuous monitoring.
       </p>
-      <p className="text-[#CFC9C9] mb-4">
+      <p className="text-white mb-4">
         This standard is applicable to all types and sizes of organizations and is essential for companies seeking to:
       </p>
       <ul className="list-disc list-inside text-white mb-4 pl-2">
@@ -430,7 +431,7 @@ const Audits = () => {
         <li>Meet contractual and regulatory obligations</li>
         <li>Demonstrate commitment to information security</li>
       </ul>
-      <p className="text-[#CFC9C9]">
+      <p className="text-[#fff]">
         Achieving ISO 27001 certification demonstrates your organization's dedication to maintaining the highest standards of information security management.
       </p>
     </>
@@ -529,8 +530,17 @@ const Audits = () => {
 
   return (
     <>
+
+<Breadcrumb 
+      pageTitle="Audits"
+      items={[
+    { label: 'Audits', path: '/audits' },
+
+  ]} 
+/>
+
       <HeroSection
-        title="Cybersecurity Audit & Compliance Services"
+        title="Cybersecurity Audits & Compliance Services"
         description="At Cyber Vantage, we specialize in helping organizations of all sizes navigate the complexities of information security and compliance. Whether you need to protect customer data, achieve regulatory compliance, or build trust with partners and clients, our audit services are designed to align your business with the world's most recognized security standards."
         buttonText="Explore How We Help"
         heroImage={serv}

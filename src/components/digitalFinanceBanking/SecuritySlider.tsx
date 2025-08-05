@@ -15,7 +15,7 @@ const SecuritySlider = () => {
       content: {
         whatWeFound: "The bank’s fraud detection system failed to detect synthetic identities crafted with real but unrelated identity fragments, allowing multiple high-value loans to be approved fraudulently.",
         howWeFound: "As part of a fraud red teaming engagement, we constructed multiple applicant profiles combining legitimate national IDs, fake addresses, and reused phone numbers. These passed KYC and credit scoring systems with minimal friction. Loan approval workflow had a photo verification step as well which we bypassed.",
-        impact: "This bypass technique could be weaponized by fraud rings to drain credit portfolios, bypass anti-fraud scoring engines, and generate high financial losses — while also undermining the credibility of customer onboarding and compliance programs."
+        impact: "This bypass technique could be weaponized by fraud rings to drain credit portfolios, bypass anti-fraud scoring engines, and generate high financial losses, while also undermining the credibility of customer onboarding and compliance programs."
       },
       image: slideimg,
       bgGradient: "from-white-500 to-pink-600",
@@ -27,7 +27,7 @@ const SecuritySlider = () => {
       content: {
         whatWeFound: "During an assessment of Digital Bank in EU, we found an authorization flaw in consent revocation where third-party access tokens remained active even after the user revoked them also found that some APIs did not validate JWT scope properly and allowed actions not permitted in the token scope.",
         howWeFound: "By manually inspecting token lifecycles during consent revocation and replaying older tokens during time-bound expiry windows.",
-        impact: "Allowed continued access to sensitive account data post-revocation — fixed by implementing instant token invalidation upon consent withdrawal."
+        impact: "Allowed continued access to sensitive account data post-revocation, fixed by implementing instant token invalidation upon consent withdrawal."
       },
       image: slideimg1,
       bgGradient: "from-white-500 to-pink-600",
@@ -39,7 +39,7 @@ const SecuritySlider = () => {
       content: {
         whatWeFound: "Several ATMs from a major vendor allowed BIOS access without a password, exposing the device to boot-level compromise and malware installation.",
         howWeFound: "During a physical ATM assessment, we used a standard USB keyboard to access the BIOS menu on reboot and found no password was configured. We then booted a live Linux environment and accessed the ATM’s filesystem where we dropped a sample binary.",
-        impact: "A threat actor with short-term physical access could deploy malware to steal card data, jackpot cash, or disable ATM security software — leading to direct financial losses, forensic response costs, and ATM vendor scrutiny."
+        impact: "A threat actor with short-term physical access could deploy malware to steal card data, jackpot cash, or disable ATM security software, leading to direct financial losses, forensic response costs, and ATM vendor scrutiny."
       },
       image: slideimg2,
       bgGradient: "from-white-500 to-teal-600",
@@ -73,7 +73,7 @@ const SecuritySlider = () => {
   }, []);
 
   return (
-    <div className="min-h-screen text-white p-4 md:p-8">
+    <div className="text-white p-4 pb-24">
       <div className="container mx-auto relative px-2 md:px-0">
         <div className="relative overflow-hidden" style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"
@@ -90,7 +90,7 @@ const SecuritySlider = () => {
             <div className="flex-1 p-6 md:p-8 lg:p-12 flex flex-col">
               {/* Header */}
               <div className="mb-6">
-                <h1 className="text-2xl md:text-3xl lg:text-[50px] lg:leading-[55px] font-bold leading-tight text-white">
+                <h1 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold leading-tight text-white">
                   Innovative Security Bugs & Business Impact
                 </h1>
               </div>
