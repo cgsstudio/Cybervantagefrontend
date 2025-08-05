@@ -79,7 +79,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden xl:flex items-center space-x-8">
               <Link to="/">
                 <button
                   onClick={() => handleNavigation('home')}
@@ -137,7 +137,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 </div>
               </div>
 
-              <Link to="/#advisory-services">
+              <Link to="/advisory-services">
                 <button
                   onClick={() => handleNavigation('advisory-services')}
                   className={`text-white hover:text-[#CA6200] hover:underline font-semibold transition-colors ${
@@ -200,7 +200,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
             {/* Mobile Menu Button */}
             <button
               onClick={toggleMobileMenu}
-              className="lg:hidden text-white hover:text-[#CA6200] transition-colors"
+              className="xl:hidden text-white hover:text-[#CA6200] transition-colors"
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -208,7 +208,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-800">
+            <div className="xl:hidden py-4 border-t border-gray-800">
               <div className="flex flex-col space-y-2">
                 <Link to="/#home">
                   <button
@@ -283,7 +283,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                   )}
                 </div>
 
-                <Link to="/#advisory-services">
+                <Link to="/advisory-services">
                   <button
                     onClick={() => handleMobileNavigate('advisory-services')}
                     className="text-white hover:text-[#CA6200] transition-colors py-2 text-left"

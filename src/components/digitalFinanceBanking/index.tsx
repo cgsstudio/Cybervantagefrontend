@@ -16,8 +16,8 @@ const DigitalFinanceHero = () => {
 
     ]} 
     />
-            <div className="w-full from-purple-900 via-gray-900 to-black flex items-center banner-image py-16">
-                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center">
+            <div className="w-full from-purple-900 via-gray-900 to-black flex items-center banner-image">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 flex items-center">
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                         <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
                             <div>
@@ -41,7 +41,7 @@ const DigitalFinanceHero = () => {
                                 <img
                                     src={financeHero}
                                     alt="Digital Finance and Banking"
-                                    className="w-full h-auto scale-[1] 2xl:scale-[1.4]"
+                                    className="w-full h-auto"
                                 />
                             </div>
                         </div>

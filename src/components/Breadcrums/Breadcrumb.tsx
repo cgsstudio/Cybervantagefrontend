@@ -15,7 +15,7 @@ const Breadcrumb = ({ items, pageTitle }: BreadcrumbProps) => {
   return (
     <div>
       {/* Gradient Banner with Title */}
-      <div className="w-full bg-gradient-to-r from-[#7103A4] to-[#F57A00] py-12 md:py-20 lg:py-36 flex flex-col items-center justify-center mt-[100px]">
+      <div className="w-full bg-gradient-to-r from-[#7103A4] to-[#F57A00] px-4 py-12 md:py-20 lg:py-36 flex flex-col items-center justify-center mt-[100px]">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-7xl font-bold text-white text-center drop-shadow-lg">{pageTitle}</h2>
         
       {/* Breadcrumb Navigation */}

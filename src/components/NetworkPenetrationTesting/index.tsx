@@ -18,13 +18,13 @@ const NetworkPenetrationTesting = () => {
   ]} 
 />
       <div className="w-full  from-purple-900 via-gray-900 to-black flex items-center banner-image">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 flex items-center">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
               <div>
                 <h2 className="font-semibold text-white mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
-                  Network Penetration Testing That Thinks Like an Attacker Because Your Network Has No Walls Anymore
+                  Network Penetration Testing Services
                 </h2>
                 
               </div>

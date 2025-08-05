@@ -53,33 +53,40 @@ const Contact = () => {
       <div className="relative z-10 pt-20 pb-8 px-8 hero-banner">
         {/* Container with max-width and centered alignment to match navbar */}
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row  justify-between gap-12 min-h-[calc(100vh-8rem)]">
+          <div className="flex flex-col lg:flex-row  justify-between gap-12">
             
             {/* Hero Section - Left Side */}
-            <div className="flex-1 text-white max-w-3xl pt-10 lg:pt-0 ">
-              <h1 className="text-4xl lg:text-6xl 2xl:text-7xl font-bold mb-6 leading-tight ">
+            <div className="flex-1 text-white max-w-3xl text-center lg:text-left">
+              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] font-bold mb-6 leading-tight ">
                 Let's make security your competitive advantage.
               </h1>
               <p className="text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed">
-                We're here to answer your questions, provide guidance, or kickstart a security engagement — wherever you are in the world.
+                We're here to answer your questions, provide guidance, or kickstart a security engagement, wherever you are in the world.
               </p>
               
               {/* Contact SVG Image */}
-              <div className="mb-6 flex justify-center md:justify-start">
+              <div className="mb-6 flex justify-center lg:justify-start">
                 <img src={contactsvg} alt="Contact Us" className="w-32 h-full lg:w-full max-w-sm lg:h-full" />
               </div>
               
-              <a href='https://calendly.com/rutvi-cybervantage/30min' target="_blank" rel="noopener noreferrer">
-              <button className="bg-gradient-to-r text-xl from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform  shadow-lg flex items-center gap-3">
-                <img src={calendericon} alt="Calendar" className="w-6 h-6 mr-2" />
-                Book a meeting directly
-              </button>
-              </a>
+              <div className="w-full flex justify-center lg:justify-start">
+                <a
+                  href="https://calendly.com/rutvi-cybervantage/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <button className="bg-gradient-to-r sm:text-xl from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform shadow-lg flex items-center gap-3">
+                    <img src={calendericon} alt="Calendar" className="w-6 h-6 mr-2" />
+                    Book a meeting directly
+                  </button>
+                </a>
+              </div>
+
            
             </div>
 
             {/* Contact Form - Right Side */}
-            <div className="flex-1 w-full max-w-2xl pr-0 2xl:pr-8">
+            <div className="flex-1 w-full lg:max-w-2xl pr-0 2xl:pr-8">
               <div className="bg-[#FFFFFF1A] p-8 rounded-[10px] shadow-2xl ">
                 <h2 className="text-2xl md:text-4xl font-bold text-[#F57A00] mb-6">Contact Us</h2>
                 
@@ -197,10 +204,10 @@ const Contact = () => {
       </div>
       {/* Talk To Us Directly Section */}
       <div className="w-full flex flex-col items-center justify-center py-12 px-8">
-        <h2 className="text-3xl md:text-6xl font-bold text-white mb-10 lg:mb-[70px] text-center">Talk To Us Directly</h2>
-        <div className="w-full container flex flex-col md:flex-row gap-8 justify-center items-stretch">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-10 text-center">Talk To Us Directly</h2>
+        <div className="w-full container flex flex-col md:flex-row gap-4 xl:gap-8 justify-center items-stretch">
           {/* Card 1: Call Us */}
-          <div className="flex-1 min-w-[200px] lg:min-w-[260px] bg-[#181818] rounded-xl p-8 flex flex-col items-center justify-center relative"
+          <div className="flex-1 min-w-[220px] lg:min-w-[260px] bg-[#181818] rounded-xl p-4 xl:p-8 flex flex-col items-center justify-center relative"
             style={{
               border: '2px solid transparent',
               backgroundImage: 'linear-gradient(#000000, #000000), linear-gradient(90deg, #F57A00, #8f43ea)',
@@ -211,18 +218,18 @@ const Contact = () => {
             <img src={phone} alt="Phone Icon" className="w-10 h-10 mb-3" />
             <div className="font-bold text-lg text-white mb-2">CALL US</div>
             <div className="flex flex-col gap-1 items-center">
-              <div className="flex items-center gap-2 text-white text-base">
+              <div className="flex items-center gap-2 text-white text-sm xl:text-base">
                 <img src={flag2} alt="UK Flag" className="w-7 h-5 rounded-sm" />
                 <a href="tel:+447405302956" className="hover:underline" >+44 7405302956 - UK</a>
               </div>
-              <div className="flex items-center gap-2 text-white text-base">
+              <div className="flex items-center gap-2 text-white text-sm xl:text-base">
                 <img src={flag} alt="Netherlands Flag" className="w-7 h-5 rounded-sm" />
                 <a href="tel:+319701025921" className="hover:underline" >+31 9701025921 - Netherlands</a>
               </div>
             </div>
           </div>
           {/* Card 2: Email */}
-          <div className="flex-1 min-w-[200px] lg:min-w-[260px] bg-[#181818] rounded-xl p-8 flex flex-col items-center justify-center relative"
+          <div className="flex-1 min-w-[220px] lg:min-w-[260px] bg-[#181818] rounded-xl p-4 lg:p-8 flex flex-col items-center justify-center relative"
             style={{
               border: '2px solid transparent',
               backgroundImage: 'linear-gradient(#000000, #000000), linear-gradient(90deg, #F57A00, #8f43ea)',
@@ -232,15 +239,15 @@ const Contact = () => {
           >
             <img src={mail} alt="Mail Icon" className="w-10 h-10 mb-3" />
             <div className="font-bold text-lg text-white mb-2">EMAIL</div>
-            <div className="text-white text-base">
+            <div className="text-white text-sm xl:text-base">
               <a href="mailto:business@cybervantage.ai" className="hover:underline">business@cybervantage.ai</a>
             </div>
-            <div className="text-white text-base">
+            <div className="text-white text-sm xl:text-base">
               <a href="mailto:sales@cybervantage.ai" className="hover:underline">sales@cybervantage.ai</a>
             </div>
           </div>
           {/* Card 3: Address */}
-          <div className="flex-1 min-w-[200px] lg:min-w-[260px] bg-[#181818] rounded-xl p-8 flex flex-col items-center justify-center relative"
+          <div className="flex-1 min-w-[220px] lg:min-w-[260px] bg-[#181818] rounded-xl p-4 lg:p-8 flex flex-col items-center justify-center relative"
             style={{
               border: '2px solid transparent',
               backgroundImage: 'linear-gradient(#000000, #000000), linear-gradient(90deg, #F57A00, #8f43ea)',
@@ -250,7 +257,7 @@ const Contact = () => {
           >
             <img src={Address} alt="Address Icon" className="w-10 h-10 mb-3" />
             <div className="font-bold text-lg text-white mb-2">ADDRESS</div>
-            <div className="text-white text-base text-center">
+            <div className="text-white text-sm xl:text-base text-center">
               <a href="https://maps.app.goo.gl/9a3L8zYweU5d96VF8" target="_blank" rel="noopener noreferrer" className="hover:underline">
                 Cyber Vantage B.V. - Herengracht 449 A, 1017BR Amsterdam, Netherlands
               </a>
@@ -259,8 +266,8 @@ const Contact = () => {
         </div>
       </div>
       {/* Map Section */}
-      <div className="w-full flex justify-center items-center py-12 px-8">
-        <div className="w-full container h-[400px] md:h-[700px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl relative">
+      <div className="w-full flex justify-center items-center py-16 px-8">
+        <div className="w-full container h-[400px] md:h-[600px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl relative">
           {/* Google Maps Embed */}
           <iframe
             title="Cyber Vantage Location"

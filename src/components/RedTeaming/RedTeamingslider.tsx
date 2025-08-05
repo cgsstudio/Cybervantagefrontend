@@ -86,7 +86,7 @@ const RedTeamingslider = () => {
   }, []);
 
   return (
-    <div className="text-white p-4 pb-24">
+    <div className="text-white py-16 xl:py-20 px-8">
       <div className="container mx-auto relative px-2 md:px-0">
         <div className="relative overflow-hidden" style={{
           background: "linear-gradient(96.79deg, #171717 -62.94%, #323335 -62.92%, rgba(90, 90, 90, 0) 54.42%, #171717 174.24%)"

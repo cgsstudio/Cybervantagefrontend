@@ -174,7 +174,7 @@ export default function FinanceTabContent() {
   const isTabExpanded = (tab: string) => expandedTabs.includes(tab);
 
   return (
-    <div className="container mx-auto text-white py-10" id='digitalfinance'>
+    <div className="container mx-auto text-white pt-10 px-4 sm:px-6 lg:px-8" id='digitalfinance'>
       {/* Header Section */}
       <div id="explore-now" className="text-center mb-12">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
@@ -208,7 +208,7 @@ export default function FinanceTabContent() {
                 margin: '6px',
                 width: '100%',
                 height: 250,
-                maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 210 : 350,
+                maxWidth: window.innerWidth >= 1024 && window.innerWidth <= 1535 ? 200 : 320,
               }}
             >
               <div
@@ -301,7 +301,7 @@ export default function FinanceTabContent() {
               <div className="bg-black rounded-md p-4 flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <img src={tabIcons[i]} alt="" className="w-[35px] h-[35px]" />
-                  <span className="font-medium text-sm">{tab}</span>
+                  <span className="font-medium text-sm text-left">{tab}</span>
                 </div>
                 <ChevronRight 
                   className={`w-4 h-4 transform transition-transform duration-300 ${
