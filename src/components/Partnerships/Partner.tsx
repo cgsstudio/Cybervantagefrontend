@@ -63,7 +63,7 @@ const Partner: React.FC = () => {
           </div>
         </div>
         {/* Why Partner with Us section */}
-        <div className="relative z-10 w-full flex flex-col items-center mt-20 ">
+        <div className="relative z-10 w-full flex flex-col items-center mt-12 sm:mt-20 ">
           <h2 className="text-[#fff] font-bold text-3xl md:text-5xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
             Why Partner with Us
           </h2>
@@ -72,7 +72,7 @@ const Partner: React.FC = () => {
           </p>
         </div>
         {/* New 3-column section */}
-        <div className="w-full bg-[#000] py-24 flex justify-center items-center">
+        <div className="w-full bg-[#000] py-20 flex justify-center items-center">
           <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
             {/* Column 1 */}
             <div className="flex flex-col items-center text-center">
@@ -81,7 +81,7 @@ const Partner: React.FC = () => {
                   1
                 </span>
               </div>
-              <h3 className="text-[#fff] text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-[#fff] text-xl md:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Stay Ahead of<br />the Competition
               </h3>
               <p className="text-[#fff] text-base md:text-lg max-w-xs">
@@ -95,7 +95,7 @@ const Partner: React.FC = () => {
                   2
                 </span>
               </div>
-              <h3 className="text-[#fff] text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-[#fff] text-xl md:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Grow Your<br />Business
               </h3>
               <p className="text-[#fff] text-base md:text-lg max-w-xs">
@@ -109,7 +109,7 @@ const Partner: React.FC = () => {
                   3
                 </span>
               </div>
-              <h3 className="text-[#fff] text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-[#fff] text-xl md:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Enhance Your<br />Portfolio Offering
               </h3>
               <p className="text-[#fff] text-base md:text-lg max-w-xs">
@@ -119,7 +119,7 @@ const Partner: React.FC = () => {
           </div>
         </div>
         {/* Trusted Partners section */}
-        <div className="w-full bg-[#000] py-20 flex flex-col items-center">
+        <div className="w-full bg-[#000] py-12 sm:py-20 flex flex-col items-center">
           <h2 className="text-[#fff] font-bold text-3xl md:text-5xl mb-12 text-center" style={{ fontFamily: "inherit" }}>
             Trusted Partners
           </h2>

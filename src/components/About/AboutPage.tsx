@@ -23,7 +23,7 @@ const TwoColumnContent = ({
   backgroundColor = "",
   maxWidth = "xl"
 }) => (
-  <div className={`w-full py-12 flex justify-center items-center who-we-wre`}>
+  <div className={`w-full pt-12 flex justify-center items-center who-we-wre`}>
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
       <div className={`lg:w-1/2 w-full mb-12 lg:mr-8 lg:mb-0 ${reverseOrder ? 'order-2 lg:order-1' : 'order-1 lg:order-1'}`} data-aos="fade-right">
         <img
@@ -90,12 +90,12 @@ const AboutPage = () => {
   // Who We Are section content
   const whoWeAreContent = (
     <>
-      <p className="text-[#CFC9C9] font-normal	 mb-4">
+      <p className="text-[#ffffff] font-normal mb-4 text-center lg:text-left">
         We are a global cybersecurity service provider committed to defending the digital future. From critical infrastructure to global banks, our team protects some of the world's most complex environments against ever-evolving threats.
         
       </p>
 
-      <p className="text-[#CFC9C9] font-normal	">
+      <p className="text-[#ffffff] font-normal text-center lg:text-left">
         With deep technical expertise and a mission-first mindset, we help organizations not just survive cyber threats, but stay ahead of them
       </p>
     </>
@@ -157,7 +157,7 @@ const AboutPage = () => {
       {isNavSticky && <div style={{ height: '60px' }}></div>}
 
       {/* Big Title Section */}
-      <div className="container mx-auto px-4 py-16 md:py-20">
+      <div className="container mx-auto px-4 py-16 lg:py-16 xl:py-20">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4 text-center">
           Relentless In Defense.<br />Human In Approach.<br />Global In Reach.
         </h2>
@@ -375,7 +375,7 @@ const AboutPage = () => {
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4 md:mb-0 relative z-10 heading-call-to">
         Ready to Engage?
         </h2>
-        <p className='text-xl md:text-3xl font-semibold text-center'>Whether you're facing a live threat, undergoing a digital transformation, or preparing for the next audit, we're ready.</p>
+        <p className='text-xl lg:text-3xl font-semibold text-center'>Whether you're facing a live threat, undergoing a digital transformation, or preparing for the next audit, we're ready.</p>
         <Link to={'/contact-us'}>
         <button className="bg-white text-orange-500 hover:text-orange-600 font-semibold py-4 px-6 mt-8 rounded-lg shadow-md transition-transform transform hover:scale-105 relative z-10">
         Talk to Our Experts →

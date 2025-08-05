@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 const CallToAction = () => {
   return (
-    <section id="contact" className="px-8 lg:px-8 py-16 xl:py-24 bg-primery">
+    <section id="contact" className="px-8 py-16 xl:py-20 bg-primery">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left bg-gradient-to-r from-orange-500 to-purple-600 py-20 px-12 sm:px-12 rounded-lg cta-bg gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left bg-gradient-to-r from-orange-500 to-purple-600 py-20 px-4 sm:px-12 rounded-lg cta-bg gap-8">
 
   {/* Left Column: 60% on desktop, 100% on tablets and below */}
   <div className="w-full md:w-[70%]">

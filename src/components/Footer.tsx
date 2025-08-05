@@ -85,11 +85,21 @@ const Footer = () => {
                   SOC 2
                 </Link>
               </li>
-              {/* <li>
-                <a href="#contact" className="text-white-400 hover:text-orange-500">
-                  Product Hunting
-                </a>
-              </li> */}
+              <li className="pt-4">
+                <Link to="/advisory-services" className="text-orange-500">
+                  Advisory Services
+                </Link>
+              </li>
+              <li>
+                <Link to="/partner" className="text-orange-500">
+                  Partnerships
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact-us" className="text-orange-500">
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
 

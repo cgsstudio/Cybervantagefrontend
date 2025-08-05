@@ -17,7 +17,7 @@ const CybersecurityHero = () => {
   ]} 
 />
       <div className="w-full  from-purple-900 via-gray-900 to-black flex items-center banner-image">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 flex items-center]">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 flex items-center]">
           <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
@@ -29,7 +29,7 @@ const CybersecurityHero = () => {
 
                 </h2> */}
               </div>
-              <p className="text-lg  leading-relaxed max-w-xl paragraphcommon">
+              <p className="text-lg  leading-relaxed paragraphcommon">
               Whether you're cloud-native or mid-migration, we help you validate controls, meet compliance, and defend against evolving cloud threats across IaaS, PaaS, and SaaS.
               </p>
               <button className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
