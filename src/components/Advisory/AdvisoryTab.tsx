@@ -5,7 +5,7 @@ import tab9 from '../../assest/image/advisory-tab-icons/header3.svg';
 import tab10 from '../../assest/image/advisory-tab-icons/header4.svg';
 import tab11 from '../../assest/image/advisory-tab-icons/header5.svg';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import tab1 from '../../assest/image/digitalfinance/Rectangle 95.png';
+import tab1 from '../../assest/image/advisory-image/Core Service Modules.svg';
 
 // Type definitions
 type TabKey = 'Cost Efficiency' | 'Strategic Guidance' | 'Flexible Support' | 'Compliance & Risk Expertise' | 'Incident Response Preparedness';
@@ -146,13 +146,13 @@ export default function AdvisoryTab() {
     <div className="container mx-auto min-h-screen text-white py-20" id='digitalfinance'>
       {/* Header Section */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-orange-500 mb-6 heading-h1-main">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-6 heading-h1-main">
           Why Choose a vCISO? (Benefits)
         </h2>
       </div>
 
       {/* Grid Section */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-12">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-24">
         {tabs.map((tab, i) => (
           <button
             key={tab}
@@ -185,7 +185,7 @@ export default function AdvisoryTab() {
           {/* Left Side: Content */}
           <div className="space-y-8">
             <div className="space-y-4 max-w-4xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-orange-500 mb-6 heading-h1-main">
+              <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-6 heading-h1-main">
                 Core Service Modules
               </h2>
             </div>

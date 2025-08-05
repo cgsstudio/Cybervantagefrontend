@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from 'react-router-dom';
-import advisoryImage from '../../assest/image/services/hero-service.png';
+import advisoryImage from '../../assest/image/advisory-image/What Is A Virtual CISO.svg';
 import AdvisoryTab from './AdvisoryTab';
 import Breadcrumb from '../Breadcrums/Breadcrumb';
-import hero01 from '../../assest/image/about/about-partner-logos/new.png';
+import hero01 from '../../assest/image/advisory-image/CISO-vCiso-Consulting-services.svg';
+import hero02 from '../../assest/image/advisory-image/Virtual-CISO-partners.svg';
 import check from '../../assest/image/about/check.svg'
 import tab7 from '../../assest/image/advisory-tab-icons/header1.svg';
 import tab8 from '../../assest/image/advisory-tab-icons/header2.svg';
@@ -91,7 +92,7 @@ const TwoColumnContent = ({
         <div
           className={`mt-4  lg:text-left flex flex-col items-center lg:items-start`}
         >
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-[#F37803] mb-6 heading-h1-main mb-4">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-6 heading-h1-main mb-4">
             {title}
           </h2>
 
@@ -116,14 +117,14 @@ const TwoColumnContentTwo = ({
   backgroundColor = "",
   maxWidth = "xl"
 }) => (
-  <div className={`w-full py-12 flex justify-center items-center bg-black`}>
+  <div className={`w-full pb-24 pt-12 flex justify-center items-center bg-black`}>
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
       <div className={`lg:w-1/2 w-full mb-12 lg:mr-8 lg:mb-0 ${reverseOrder ? 'order-2 lg:order-1' : 'order-1 lg:order-1'}`} data-aos="fade-right">
 
         <div
           className={`mt-4  lg:text-left flex flex-col items-center lg:items-start`}
         >
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-[#F37803] mb-6 heading-h1-main mb-4">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-6 heading-h1-main mb-4">
             {title}
           </h2>
 
@@ -193,12 +194,12 @@ const AdvisoryServices = () => {
 
         ]}
       />
-      <div className="min-h-screen bg-black">
+      <div className="bg-black">
         <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-[6.25rem] xl:px-24 py-16">
           <div className="pt-20 lg:pt-20 pt-[10rem] md:pt-0">
             {/* Top Hero Section */}
             <div className="text-center mb-16" data-aos="fade-up">
-              <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[75px] leading-normal font-bold text-[#F37803] mb-4 md:mb-6 heading-h1-main heading-main hero-heading">
+              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] leading-normal font-bold text-[#F37803] mb-4 md:mb-6 heading-h1-main heading-main hero-heading">
                 On-Demand Cybersecurity Leadership For Your Organization
               </h1>
               <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 md:mb-8 font-medium leading-relaxed">
@@ -207,10 +208,10 @@ const AdvisoryServices = () => {
             </div>
 
             {/* Bottom Content Section */}
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               {/* Left Text Section */}
               <div className="w-full lg:w-1/2" data-aos="fade-up" data-aos-delay="200">
-                <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-[#F37803] mb-6 heading-h1-main">
+                <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-6 heading-h1-main">
                   What Is A Virtual CISO?
                 </h2>
                 <div className="space-y-4 text-white text-base sm:text-lg leading-relaxed">
@@ -298,7 +299,7 @@ const AdvisoryServices = () => {
 
 
         <div className="container mx-auto px-4 max-w-7xl relative z-10">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-[#F37803] mb-16 text-center">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-16 text-center">
             How It Works, Our Process
           </h2>
 
@@ -344,7 +345,7 @@ const AdvisoryServices = () => {
       <div id="Why Partner">
         <TwoColumnContentTwo
           title="Why Partner With Us"
-          image={hero01}
+          image={hero02}
           imageAlt="Who Benefits"
           backgroundColor="bg-black"
           content={
@@ -416,7 +417,7 @@ const AdvisoryServices = () => {
       {/* FAQ Section */}
       <div className="bg-black py-20">
         <div className="container mx-auto ">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-bold text-[#F37803] mb-16 text-center">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-16 text-center">
             FAQs
           </h2>
           <div className=' px-4 py-16  bg-[#1f1f1f] rounded-[10px]  '>
