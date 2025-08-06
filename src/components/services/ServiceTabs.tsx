@@ -11,6 +11,10 @@ const tabs = [
   'Digital Finance and Banking',
 ];
 
+const generateTabId = (tabName: string) => {
+  return tabName.toLowerCase().replace(/[\s&]/g, '-');
+};
+
 const ServiceTabs = ({ activeTab, setActiveTab, contentMap }: { 
   activeTab: string; 
   setActiveTab: (tab: string) => void;
@@ -34,6 +38,17 @@ const ServiceTabs = ({ activeTab, setActiveTab, contentMap }: {
     });
   }, []);
 
+  // Add useEffect for hash navigation
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchingTab = tabs.find(tab => generateTabId(tab) === hash);
+      if (matchingTab) {
+        setActiveTab(matchingTab);
+      }
+    }
+  }, [setActiveTab]);
+
   // Helper function to wrap content with AOS attributes
   const wrapWithAOS = (content: React.ReactNode, index: number) => {
     return (
@@ -54,7 +69,11 @@ const ServiceTabs = ({ activeTab, setActiveTab, contentMap }: {
         {tabs.map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            id={generateTabId(tab)}
+            onClick={() => {
+              setActiveTab(tab);
+              window.history.pushState(null, '', `#${generateTabId(tab)}`);
+            }}
             className={`px-4 py-2 rounded-lg text-sm lg:text-[11px] xl:text-[14px] xl:py-4 transition-all duration-300 ${
               activeTab === tab
                 ? 'bg-gradient-to-r from-orange-500 to-purple-600 text-white'
@@ -71,7 +90,11 @@ const ServiceTabs = ({ activeTab, setActiveTab, contentMap }: {
         {tabs.map((tab) => (
           <div key={tab} className="w-full">
             <button
-              onClick={() => toggleTab(tab)}
+              id={`mobile-${generateTabId(tab)}`}
+              onClick={() => {
+                toggleTab(tab);
+                window.history.pushState(null, '', `#${generateTabId(tab)}`);
+              }}
               className="w-full p-[2px] rounded-lg transition-all duration-300"
               style={{
                 background: expandedTab === tab

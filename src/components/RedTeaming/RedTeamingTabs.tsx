@@ -208,9 +208,24 @@ const getTabIcon = (tabName) => {
   }
 };
 
+const generateTabId = (tabName: string) => {
+  return tabName.toLowerCase().replace(/\s+/g, '-');
+};
+
 const RedTeamingTabs = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [expandedTabs, setExpandedTabs] = useState<string[]>([]);
+
+  // Add useEffect for hash navigation
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchingTab = tabs.find(tab => generateTabId(tab) === hash);
+      if (matchingTab) {
+        setActiveTab(matchingTab);
+      }
+    }
+  }, []);
 
   const toggleTab = (tab: string) => {
     setExpandedTabs(prev => 
@@ -244,7 +259,11 @@ const RedTeamingTabs = () => {
             {tabs.map((tab, i) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                id={generateTabId(tab)}
+                onClick={() => {
+                  setActiveTab(tab);
+                  window.history.pushState(null, '', `#${generateTabId(tab)}`);
+                }}
                 className={`flex flex-col items-center transition-all duration-300  relative z-0 ${
                   activeTab === tab 
                     ? 'text-white'
@@ -399,7 +418,11 @@ const RedTeamingTabs = () => {
           {tabs.map((tab, i) => (
             <div key={tab} className="w-full">
               <button
-                onClick={() => toggleTab(tab)}
+                id={`mobile-${generateTabId(tab)}`}
+                onClick={() => {
+                  toggleTab(tab);
+                  window.history.pushState(null, '', `#${generateTabId(tab)}`);
+                }}
                 className="w-full p-[2px] rounded-lg transition-all duration-300"
                 style={{
                   background: isTabExpanded(tab)

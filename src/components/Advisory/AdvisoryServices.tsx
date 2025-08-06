@@ -29,37 +29,37 @@ const processes = [
     number: "01",
     title: "Discovery Session",
     description: "Understand your structure and risk landscape",
-    icon: <img src={icon1} alt="Discovery" className="w-20 h-20" />
+    icon: <img src={icon1} alt="Discovery" className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     number: "02",
     title: "Security & Compliance Assessment",
     description: "Current state from policies to technical controls",
-    icon: <img src={icon2} alt="Assessment" className="w-20 h-20" />
+    icon: <img src={icon2} alt="Assessment" className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     number: "03",
     title: "Strategy Development",
     description: "Tailored roadmap aligned to objectives and risk appetite",
-    icon: <img src={icon3} alt="Strategy" className="w-20 h-20" />
+    icon: <img src={icon3} alt="Strategy" className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     number: "04",
     title: "Deployment & Execution",
     description: "Implement strategy, oversee projects, and manage controls",
-    icon: <img src={icon4} alt="Deployment" className="w-20 h-20" />
+    icon: <img src={icon4} alt="Deployment" className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     number: "05",
     title: "Monitoring & Review",
     description: "Continuous support, regular status reporting, and risk tracking",
-    icon: <img src={icon5} alt="Monitoring" className="w-20 h-20" />
+    icon: <img src={icon5} alt="Monitoring" className="w-12 h-12 md:w-20 md:h-20" />
   },
   {
     number: "06",
     title: "Knowledge Transfer",
     description: "Coaching and documentation handover for internal sustainability",
-    icon: <img src={icon6} alt="Knowledge" className="w-20 h-20" />
+    icon: <img src={icon6} alt="Knowledge" className="w-12 h-12 md:w-20 md:h-20" />
   }
 ];
 
@@ -188,27 +188,24 @@ const AdvisoryServices = () => {
   return (
     <>
       <Breadcrumb
-        pageTitle="Advisory Services"
+        pageTitle="Virtual CISO"
         items={[
-          { label: 'Advisory Services', path: '/advisory-services' },
+          { label: 'Virtual CISO', path: '/vciso' },
 
         ]}
       />
       <div className="bg-black">
-        <div className="container mx-auto px-4 sm:px-8 md:px-12 lg:px-[6.25rem] xl:px-24 py-16">
-          <div className="pt-20 lg:pt-20 pt-[10rem] md:pt-0">
+        <div className="container mx-auto px-8 xl:px-8 py-12">
+          <div className="pt-4 xl:pt-8 2xl:pt-12">
             {/* Top Hero Section */}
-            <div className="text-center mb-16" data-aos="fade-up">
-              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] leading-normal font-bold text-[#F37803] mb-4 md:mb-6 heading-h1-main heading-main hero-heading">
+            <div className="text-center mb-20" data-aos="fade-up">
+              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] leading-normal font-bold text-[#F37803] mb-4 md:mb-6 heading-h1-main heading-main">
                 On-Demand Cybersecurity Leadership For Your Organization
               </h1>
-              <p className="text-gray-300 text-base sm:text-lg md:text-xl mb-6 md:mb-8 font-medium leading-relaxed">
-                Enter proactive cybersecurity consolidated
-              </p>
             </div>
 
             {/* Bottom Content Section */}
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
               {/* Left Text Section */}
               <div className="w-full lg:w-1/2" data-aos="fade-up" data-aos-delay="200">
                 <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-6 heading-h1-main">
@@ -317,9 +314,9 @@ const AdvisoryServices = () => {
                     </span>
                   </div>
                   {/* Outer dotted border */}
-                  <div className="w-44 h-44 rounded-full border-2 border-dashed border-white flex items-center justify-center">
+                  <div className="w-33 h-33 md:w-44 md:h-44 rounded-full border-2 border-dashed border-white flex items-center justify-center">
                     {/* Inner solid circle with icon */}
-                    <div className="w-40 h-40 bg-[#1f1f1f] rounded-full flex items-center justify-center">
+                    <div className="w-28 h-28 md:w-40 md:h-40 bg-[#1f1f1f] rounded-full flex items-center justify-center">
                       {process.icon}
                     </div>
                   </div>
@@ -393,13 +390,13 @@ const AdvisoryServices = () => {
 
       <section id="contact" className=' py-16 xl:py-24 bg-gradient-to-r from-[#F57A00] to-[#7103A4]'>
         <div className="">
-          <div className="container  mx-auto flex flex-col justify-center items-center  text-center md:text-left px-6  ">
+          <div className="container  mx-auto flex flex-col justify-center items-center text-center px-6  ">
             <div className='w-full max-w-7xl flex flex-col gap-4 justify-between items-center'>
 
               <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4 md:mb-0 relative z-10 heading-call-to">
                 Ready to Elevate Your Security Culture?
               </h2>
-              <p className='text-xl md:text-3xl font-normal text-center'>Initiate a free consultation to examine your cybersecurity needs and explore how a virtual CISO can reinforce your defense posture. We deliver customized proposals aligned to your organisation’s priorities.</p>
+              <p className='text-base sm:text-lg md:text-xl font-normal text-center'>Initiate a free consultation to examine your cybersecurity needs and explore how a virtual CISO can reinforce your defense posture. We deliver customized proposals aligned to your organisation’s priorities.</p>
               <Link to={'/contact-us'}>
                 <button className="bg-white text-orange-500 hover:text-orange-600 font-semibold py-4 px-6 mt-8 rounded-lg shadow-md transition-transform transform hover:scale-105 relative z-10">
                   Contact our team to schedule a session
@@ -416,11 +413,11 @@ const AdvisoryServices = () => {
 
       {/* FAQ Section */}
       <div className="bg-black py-20">
-        <div className="container mx-auto ">
+        <div className="container mx-auto px-8">
           <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-[#F37803] mb-16 text-center">
             FAQs
           </h2>
-          <div className=' px-4 py-16  bg-[#1f1f1f] rounded-[10px]  '>
+          <div className=' px-4 py-16 bg-[#1f1f1f] rounded-[10px]  '>
 
 
             <div className='mx-auto max-w-7xl'>
@@ -437,7 +434,7 @@ const AdvisoryServices = () => {
                   }}
                 >
                   <div className="rounded-[5px] overflow-hidden" style={{
-                    background: 'linear-gradient(90deg, #171717 0%, #323335 30%, #5A5A5A 49%, #171717 100%)',
+                    background: '#1f1f1f',
                   }}>
                     <button
                       onClick={() => toggleFaq(index)}
