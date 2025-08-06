@@ -141,13 +141,13 @@ const HeroSection = ({
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-20 flex items-center">
       <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
         <div className="mt-4 md:mt-0">
-          <div className="space-y-8" data-aos="fade-up">
+          <div className="space-y-8 text-center lg:text-left" data-aos="fade-up">
             <div>
               <h1 className="font-bold text-[#F57A00] mt-4 text-[34px] leading-[40px] md:text-[42px] md:leading-[50px] xl:text-[50px] xl:leading-[60px] 2xl:text-[75px] 2xl:leading-[80px]">
                 {title}
               </h1>
             </div>
-            <p className="text-lg leading-relaxed max-w-xl paragraphcommon">
+            <p className="text-lg leading-relaxed lg:max-w-xl paragraphcommon">
               {description}
             </p>
             <button 
@@ -335,9 +335,8 @@ const BenefitsSection = ({
   whyChooseItems, 
   image, 
   imageAlt,
-  backgroundColor = "" 
 }) => (
-  <div className={`w-full py-20 flex justify-center items-center ${backgroundColor}`}>
+  <div className={`w-full py-20 flex justify-center items-center`}>
     <div className="container mx-auto px-8 flex flex-col lg:flex-row items-center gap-12">
       <div className="w-full lg:w-1/2 flex flex-col justify-center order-2 lg:order-1" data-aos="fade-right">
         <div className="max-w-xl mx-auto">
@@ -515,16 +514,19 @@ const Audits = () => {
       id: 'iso27001',
       label: 'ISO 27001',
       icon: tab1,
+      description: "Comprehensive gap assessments, risk treatment planning, and control validation to help you achieve and maintain ISO 27001 certification"
     },
     {
       id: 'pci-dss',
       label: 'PCI DSS',
       icon: tab2,
+      description: "End-to-end support for achieving PCI DSS compliance, including readiness assessments, control mapping, and remediation guidance"
     },
     {
       id: 'soc2',
       label: 'SOC 2',
       icon: tab3,
+      description: "Expert-led readiness evaluations and control reviews to streamline your journey toward SOC 2 Type I and Type II attestation"
     },
   ];
 
@@ -578,7 +580,7 @@ const Audits = () => {
                   <div className='flex flex-col items-center gap-3'>
                     <img src={tab.icon} alt={tab.label} className="w-[40px] h-[40px] md:w-[60px] md:h-[60px] " />
                     <span className="font-medium text-2xl text-center ">{tab.label}</span>
-                    <p className='text-center'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    <p className='text-center'>{tab.description}</p>
                   </div>
                   <button
                     onClick={() => handleNavClick(tab.id)}
@@ -635,7 +637,7 @@ const Audits = () => {
         )}
 
         {activeTab === 'pci-dss' && (
-          <div className="bg-[#101010]" id="pci-dss" ref={pciRef}>
+          <div id="pci-dss" ref={pciRef}>
             <SectionHeader
               title="PCI DSS Audit Services"
               subtitle="Secure your payment systems and gain customer trust with PCI DSS compliance."
@@ -646,7 +648,6 @@ const Audits = () => {
               content={pciDssContent}
               image={sec05}
               imageAlt="PCI DSS Illustration"
-              backgroundColor="bg-[#101010]"
             />
 
             <AccordionSection
@@ -667,13 +668,12 @@ const Audits = () => {
               whyChooseItems={pciDssWhyChoose}
               image={sec06}
               imageAlt="PCI DSS What You Gain"
-              backgroundColor="bg-[#101010]"
             />
           </div>
         )}
 
         {activeTab === 'soc2' && (
-          <div className="bg-black" id="soc2" ref={soc2Ref}>
+          <div id="soc2" ref={soc2Ref}>
             <SectionHeader
               title="SOC 2 AUDIT SERVICES"
               subtitle="Earn the trust of clients, investors, and partners by demonstrating operational integrity."
@@ -684,7 +684,6 @@ const Audits = () => {
               content={soc2Content}
               image={sec08}
               imageAlt="SOC 2 Audit Services Illustration"
-              backgroundColor="bg-black"
             />
 
             <AccordionSection

@@ -132,7 +132,7 @@ function App() {
           />
           
 <Route
-      path="/advisory-services"
+      path="/vciso"
       element={<AdvisoryServices />}
      />
           {/* 404 Route - must be last */}

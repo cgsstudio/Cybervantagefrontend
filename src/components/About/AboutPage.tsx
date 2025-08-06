@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import section2 from '../../assest/image/about/section-2.svg'
 import design1 from '../../assest/image/about/Design-1.svg'
-import worldMap from '../../assest/image/about/map.png'; // Add your actual map image here
+import worldMap from '../../assest/image/about/map.svg'; // Add your actual map image here
 import { Link } from 'react-router-dom';
 import AboutTabContent from './AboutTabContent';
 import locationIcon from '../../assest/image/about/location-icon.svg'; // Add this import
