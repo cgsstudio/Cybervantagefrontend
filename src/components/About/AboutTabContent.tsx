@@ -52,7 +52,7 @@ export default function AboutTabContent() {
 		>
 			{/* Header Section */}
 			<div className="text-center mb-8">
-				<h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-400 inline-block px-8 py-4 rounded-lg">
+				<h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 inline-block px-8 py-4 rounded-lg">
 					Our Values
 				</h2>
 			</div>

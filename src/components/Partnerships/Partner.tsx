@@ -45,8 +45,8 @@ const Partner: React.FC = () => {
         </div>
         {/* Why Partner with Us section */}
         <div className="relative z-10 w-full flex flex-col items-center mt-12 sm:mt-20 ">
-          <h2 className="text-[#fff] font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
-            Why Partner with Us
+          <h2 className="text-orange-500 font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
+            Why Partner With Us
           </h2>
           <p className="text-[#fff] text-lg md:text-xl text-center max-w-4xl">
             Enhance your offering with enterprise-grade cybersecurity solutions, trusted by global organizations to secure critical infrastructure, applications, and cloud environments.
@@ -62,7 +62,7 @@ const Partner: React.FC = () => {
                   1
                 </span>
               </div>
-              <h3 className="text-[#fff] text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-orange-500 text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Expertise That<br />Scales Globally
               </h3>
               <p className="text-[#fff] text-base lg:text-lg max-w-xs">
@@ -76,7 +76,7 @@ const Partner: React.FC = () => {
                   2
                 </span>
               </div>
-              <h3 className="text-[#fff] text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-orange-500 text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Unlock New<br />Revenue Streams
               </h3>
               <p className="text-[#fff] text-base lg:text-lg max-w-xs">
@@ -90,7 +90,7 @@ const Partner: React.FC = () => {
                   3
                 </span>
               </div>
-              <h3 className="text-[#fff] text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
+              <h3 className="text-orange-500 text-xl lg:text-2xl font-bold mb-4" style={{ fontFamily: "inherit" }}>
                 Accelerate Market<br />Differentiation
               </h3>
               <p className="text-[#fff] text-base lg:text-lg max-w-xs">
@@ -101,7 +101,7 @@ const Partner: React.FC = () => {
         </div>
         {/* Trusted Partners section */}
         <div className="w-full bg-[#000] py-8 lg:py-12 flex flex-col items-center">
-          <h2 className="text-[#fff] font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-12 text-center" style={{ fontFamily: "inherit" }}>
+          <h2 className="text-orange-500 font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-12 text-center" style={{ fontFamily: "inherit" }}>
             Trusted Partners
           </h2>
           <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 px-4">
@@ -125,7 +125,7 @@ const Partner: React.FC = () => {
         </div>
         {/* Types of Partners section */}
         <div className="w-full bg-[#000] py-20 flex flex-col items-center">
-          <h2 className="text-[#fff] font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
+          <h2 className="text-orange-500 font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-4 text-center" style={{ fontFamily: "inherit" }}>
             The Types of Partners We Work With
           </h2>
           <div className="max-w-6xl w-full grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10 px-4 pt-8">
@@ -134,7 +134,7 @@ const Partner: React.FC = () => {
               <span className="flex items-center justify-center w-24 h-24 rounded-full bg-[#ff6b00] mb-6">
                 <UserGroupIcon className="w-12 h-12 text-[#fff]" />
               </span>
-              <div className="text-[#fff] text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
+              <div className="text-orange-500 text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
                 Tech Alliance<br />Partners
               </div>
             </div>
@@ -143,7 +143,7 @@ const Partner: React.FC = () => {
               <span className="flex items-center justify-center w-24 h-24 rounded-full bg-[#ff6b00] mb-6">
                 <UsersIcon className="w-12 h-12 text-[#fff]" />
               </span>
-              <div className="text-[#fff] text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
+              <div className="text-orange-500 text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
                 Channel<br />Partners
               </div>
             </div>
@@ -152,7 +152,7 @@ const Partner: React.FC = () => {
               <span className="flex items-center justify-center w-24 h-24 rounded-full bg-[#ff6b00] mb-6">
                 <LockClosedIcon className="w-12 h-12 text-[#fff]" />
               </span>
-              <div className="text-[#fff] text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
+              <div className="text-orange-500 text-xl font-bold text-center" style={{ fontFamily: "inherit" }}>
                 Managed<br />Services
               </div>
             </div>

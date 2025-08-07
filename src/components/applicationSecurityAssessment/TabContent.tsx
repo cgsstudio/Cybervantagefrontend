@@ -347,7 +347,7 @@ export default function SecurityTestingSection() {
     <div className="container mx-auto text-white pt-10" id='applicationsecurity'>
       {/* Header Section */}
       <div id='explore-now' className="text-center mb-12 px-8">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500 line-heading-tight">
           Application Security Assesment, <br />Tailored For Every Platform
         </h2>
         <p className="text-white-400 text-lg max-w-5xl mx-auto mb-2">

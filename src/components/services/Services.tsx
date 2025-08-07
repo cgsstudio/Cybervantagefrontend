@@ -162,25 +162,25 @@ const SERVICES = {
       description: 'Emulate sophisticated fraud techniques to uncover exploitable paths in digital finance ecosystems.',
       icon: Ser22,
       isHighlighted: true,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#fraud-red-teaming',
     },
     {
       title: 'Open Banking Security',
       description: 'Secure APIs and integrations in open banking platforms against tampering and abuse.',
       icon: Ser21,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#open-banking-security',
     },
     {
       title: 'ATM Security Assessment',
       description: 'Test ATM hardware, software, and network connectivity for physical and logical vulnerabilities.',
       icon: Ser23,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#atm-security-assessment',
     },
     {
       title: 'IoT Security for Banking & Finance',
       description: 'Identify security risks in connected payment and banking IoT ecosystems.',
       icon: Ser20,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#iot-security-for-banking---finance',
     },
     
   ],
@@ -278,13 +278,13 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 md:pb-12 lg:px-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-start mb-12 our-service-main">
   <div className="basis-full md:basis-1/2 max-w-full md:max-w-xl">
-    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight heading42-main" data-aos="fade-right">
+    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight heading42-main text-orange-500" data-aos="fade-right">
       Our Services And Offerings
     </h2>
   </div>
   <div className="basis-full md:basis-1/2" data-aos="fade-left">
     <h3 className="text-2xl font-semibold text-white-500 mb-2">
-      Why settle for 'secure enough'?
+      Why Settle For 'Secure Enough'?
     </h3>
     <p className="text-white-300">
       Our in-depth assessments dig deep into your systems to expose hidden risks and build ironclad defenses, ensuring your defenses are not just strong, but future-proof.

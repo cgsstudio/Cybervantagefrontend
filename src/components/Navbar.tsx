@@ -213,12 +213,12 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
 
           {/* Mobile Menu */}
           {isMobileMenuOpen && (
-            <div className="xl:hidden py-4 border-t border-gray-800 bg-black w-screen absolute left-0">
+            <div className="xl:hidden py-4 border-t border-gray-800 bg-black w-screen absolute left-0 min-h-screen">
               <div className="flex flex-col space-y-2 items-center text-center w-full px-4">
                 <Link to="/#home" className="w-full">
                   <button
                     onClick={() => handleMobileNavigate('home')}
-                    className="w-full text-white hover:text-[#CA6200] transition-colors py-2 text-center"
+                    className="w-full text-2xl font-bold text-white hover:text-[#CA6200] transition-colors py-2 text-center"
                   >
                     Home
                   </button>
@@ -227,7 +227,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 <Link to="/about" className="w-full">
                   <button
                     onClick={() => handleMobileNavigate('about')}
-                    className="w-full text-white hover:text-[#CA6200] transition-colors py-2 text-center"
+                    className="w-full text-2xl font-bold text-white hover:text-[#CA6200] transition-colors py-2 text-center"
                   >
                     About Us
                   </button>
@@ -236,7 +236,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 {/* Assurance Services Accordion */}
                 <div className="w-full">
                   <button
-                    className="w-full flex items-center justify-center text-white font-medium py-2 text-center hover:text-[#CA6200] transition-colors"
+                    className="w-full flex items-center justify-center text-white font-bold text-2xl py-2 text-center hover:text-[#CA6200] transition-colors"
                     onClick={() => toggleAccordion('assurance')}
                   >
                     <span>Assurance Services</span>
@@ -291,7 +291,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 {/* Advisory Services Accordion */}
                 <div className="w-full">
                   <button
-                    className="w-full flex items-center justify-center text-white font-medium py-2 text-center hover:text-[#CA6200] transition-colors"
+                    className="w-full flex items-center justify-center text-white text-2xl font-bold py-2 text-center hover:text-[#CA6200] transition-colors"
                     onClick={() => toggleAccordion('advisory')}
                   >
                     <span>Advisory Services</span>
@@ -314,7 +314,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 {/* Audits Accordion */}
                 <div className="w-full">
                   <button
-                    className="w-full flex items-center justify-center text-white font-medium py-2 text-center hover:text-[#CA6200] transition-colors"
+                    className="w-full flex items-center justify-center text-white text-2xl font-bold py-2 text-center hover:text-[#CA6200] transition-colors"
                     onClick={() => toggleAccordion('audits')}
                   >
                     <span>Audits</span>
@@ -353,7 +353,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 <Link to="/partner">
                   <button
                     onClick={() => handleMobileNavigate('partner')}
-                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-center"
+                    className="text-white hover:text-[#CA6200] transition-colors py-2 text-2xl font-bold text-center"
                   >
                     Partnerships
                   </button>
@@ -362,7 +362,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                 <Link to="/contact-us">
                   <button
                     onClick={() => handleMobileNavigate('contact')}
-                    className="bg-gradient-to-r from-red-500 to-orange-500 text-white px-4 py-2 rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-200 mt-2 text-center"
+                    className="bg-gradient-to-r from-red-500 to-orange-500 text-white text-2xl px-4 py-2 rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-200 mt-2 text-center font-bold"
                   >
                     Contact Us
                   </button>

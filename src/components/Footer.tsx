@@ -13,9 +13,9 @@ const Footer = () => {
   return (
     <footer className="bg-primery text-white py-10">
       <div className="container mx-auto py-6 px-4 2xl:px-0">
-        <div className="flex flex-wrap md:flex-nowrap gap-8">
-          {/* Logo and Description - 35% */}
-          <div className="w-full md:basis-[35%]">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          {/* Logo and Description Column - 4 columns wide */}
+          <div className="w-full md:col-span-4">
             <div className="flex items-center space-x-3">
               <Link to="/">
               <img
@@ -25,7 +25,7 @@ const Footer = () => {
               />
               </Link>
             </div>
-            <p className="mt-4 text-white-400">
+            <p className="mt-4 text-white-400 md:pr-8">
               Cyber Vantage provides end-to-end cybersecurity services that enhance your security maturity. From application and cloud security to red teaming and compliance audits, we strengthen your defenses and improve your organizations's overall security posture, ensuring your business stays one step ahead of cyber risks.
             </p>
             <div className="flex space-x-4 mt-6">
@@ -33,10 +33,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links - 20% */}
-          <div className="w-full md:basis-[20%]">
-            <h3 className="text-xl font-semibold text-orange-500">Assurance Services</h3>
-            <ul className="mt-4 space-y-2">
+          {/* Assurance Services Column - 3 columns wide */}
+          <div className="w-full md:col-span-3">
+            <h3 className="text-xl font-semibold text-orange-500 mb-6">Assurance Services</h3>
+            <ul className="space-y-3">
               <li>
                 <Link to="/application-security-assessment" className="text-white-400 hover:text-orange-500">
                   Application Security Assessment
@@ -66,28 +66,28 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links Duplicate - 20% */}
-          <div className="w-full md:basis-[20%]">
-            <h3 className="text-xl font-semibold text-orange-500">Audits</h3>
-            <ul className="mt-4 space-y-2 mb-4">
+          {/* Audits Column - 2 columns wide */}
+          <div className="w-full md:col-span-2">
+            <h3 className="text-xl font-semibold text-orange-500 mb-6">Audits</h3>
+            <ul className="space-y-3">
               <li>
-                <Link to="/#about" className="text-white-400 hover:text-orange-500">
+                <Link to="/audits#iso27001" className="text-white-400 hover:text-orange-500">
                   ISO 27001
                 </Link>
               </li>
               <li>
-                <Link to="/#services" className="text-white-400 hover:text-orange-500">
+                <Link to="/audits#pci-dss" className="text-white-400 hover:text-orange-500">
                   PCI DSS
                 </Link>
               </li>
               <li>
-                <Link to="/#support" className="text-white-400 hover:text-orange-500">
+                <Link to="/audits#soc2" className="text-white-400 hover:text-orange-500">
                   SOC 2
                 </Link>
               </li>
-              <li className="pt-4">
-                <Link to="/advisory-services" className="text-orange-500">
-                  Advisory Services
+              <li className="pt-6">
+                <Link to="/vciso" className="text-orange-500">
+                  Virtual CISO
                 </Link>
               </li>
               <li>
@@ -103,10 +103,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info - 25% */}
-          <div className="w-full md:basis-[25%]">
-            <h3 className="text-xl font-semibold text-orange-500">Contact Info</h3>
-            <ul className="mt-4 space-y-4">
+          {/* Contact Info Column - 3 columns wide */}
+          <div className="w-full md:col-span-3">
+            <h3 className="text-xl font-semibold text-orange-500 mb-6">Contact Info</h3>
+            <ul className="space-y-4">
               {/* Email */}
               <li className="flex items-center space-x-3">
                 <img

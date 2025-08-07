@@ -21,7 +21,7 @@ const DigitalFinanceHero = () => {
                     <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
                         <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
                             <div>
-                                <h2 className="font-semibold text-white mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
+                                <h2 className="font-semibold text-orange-500 mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
                                     Securing the Digital Vault, Before Someone Else Makes a Withdrawal
                                 </h2>
                                 {/* <h2 className='font-bold text-white mt-4 text-2xl'>Banks get breached. Wallets get drained. And cybercriminals don’t take holidays. We test your digital finance ecosystem like real attackers would—minus the criminal record.

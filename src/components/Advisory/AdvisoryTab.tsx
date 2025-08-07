@@ -147,7 +147,7 @@ export default function AdvisoryTab() {
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-6 heading-h1-main">
-          Why Choose a vCISO? (Benefits)
+          Why Choose a vCISO?
         </h2>
       </div>
 

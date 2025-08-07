@@ -41,19 +41,13 @@ const TwoColumnContent = ({
   <div
     className={`mt-4 max-w-${maxWidth} lg:text-left flex flex-col items-center lg:items-start`}
   >
-    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4">
+    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-4">
       {title}
     </h2>
 
     <div className="space-y-4">
       {content}
     </div>
-
-    <Link to="/#">
-      <button className="gradient-bg mt-6 contact-btn px-6 py-2 text-lg font-semibold transition-all duration-200 transform hover:scale-105">
-        Read More
-      </button>
-    </Link>
   </div>
 </div>
 
@@ -138,17 +132,17 @@ const AboutPage = () => {
             }
           `}</style>
           <nav className="flex items-center justify-center whitespace-nowrap min-w-max">
-            <Link to="#about-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">About Us</Link>
+            <Link to="#about-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">About Us</Link>
             <span className="mx-4 text-gray-500">|</span>
-            <Link to="#our-global-presence" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Our Global Presence</Link>
+            <Link to="#our-global-presence" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">Our Global Presence</Link>
             <span className="mx-4 text-gray-500">|</span>
-            <Link to="#our-values" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Our Values</Link>
+            <Link to="#our-values" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">Our Values</Link>
             <span className="mx-4 text-gray-500">|</span>
-            <Link to="#why-choose-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Why Choose Us</Link>
+            <Link to="#why-choose-us" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">Why Choose Us</Link>
             <span className="mx-4 text-gray-500">|</span>
-            <Link to="#certificate" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">Cerifications</Link>
+            <Link to="#certificate" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">Cerifications</Link>
             <span className="mx-4 text-gray-500">|</span>
-            <Link to="#what-we-do" className="text-white text-lg font-medium focus:outline-none hover:text-orange-400 transition">What We Do</Link>
+            <Link to="#what-we-do" className="text-white text-lg font-medium focus:outline-none hover:text-orange-500 transition">What We Do</Link>
           </nav>
         </div>
       </div>
@@ -158,7 +152,7 @@ const AboutPage = () => {
 
       {/* Big Title Section */}
       <div className="container mx-auto px-4 py-16 lg:py-16 xl:py-20">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-4 text-center">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-4 text-center">
           Relentless In Defense.<br />Human In Approach.<br />Global In Reach.
         </h2>
       </div>

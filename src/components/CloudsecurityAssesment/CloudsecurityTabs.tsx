@@ -321,7 +321,7 @@ const CloudsecurityTabs = () => {
       <div id="explore-now" className="container mx-auto px-8 pt-8 lg:pt-10">
         {/* Header Section - visible on all screens */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500">
             Cloud Security Assessment Services
           </h2>
           <p className="text-White-400 text-lg max-w-6xl mx-auto">
