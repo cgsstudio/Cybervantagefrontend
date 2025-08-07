@@ -159,6 +159,10 @@ const tabHeaders = {
   }
 };
 
+const generateTabId = (tabName: string) => {
+  return tabName.toLowerCase().replace(/[\s&]/g, '-');
+};
+
 export default function FinanceTabContent() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [expandedTabs, setExpandedTabs] = useState<string[]>([]);
@@ -173,11 +177,22 @@ export default function FinanceTabContent() {
 
   const isTabExpanded = (tab: string) => expandedTabs.includes(tab);
 
+  // Add useEffect for hash navigation
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchingTab = tabs.find(tab => generateTabId(tab) === hash);
+      if (matchingTab) {
+        setActiveTab(matchingTab);
+      }
+    }
+  }, []);
+
   return (
     <div className="container mx-auto text-white pt-10 px-4 sm:px-6 lg:px-8" id='digitalfinance'>
       {/* Header Section */}
       <div id="explore-now" className="text-center mb-12">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500 line-heading-tight">
           Digital Finance and Banking Services
         </h2>
         <p className="text-white-400 text-lg max-w-5xl mx-auto">
@@ -192,7 +207,11 @@ export default function FinanceTabContent() {
           {tabs.map((tab, i) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              id={generateTabId(tab)}
+              onClick={() => {
+                setActiveTab(tab);
+                window.history.pushState(null, '', `#${generateTabId(tab)}`);
+              }}
               className={`flex flex-col items-center transition-all duration-300 relative z-0 ${
                 activeTab === tab 
                   ? 'text-white'
@@ -234,7 +253,7 @@ export default function FinanceTabContent() {
         {/* Tab Header Section */}
         <div className="max-w-7xl mx-auto mt-16 mb-12">
           <div className="text-center space-y-4 max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-orange-500">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 ">
               {tabHeaders[activeTab].title}
             </h2>
             {tabHeaders[activeTab].subTitle && (
@@ -290,7 +309,11 @@ export default function FinanceTabContent() {
         {tabs.map((tab, i) => (
           <div key={tab} className="w-full">
             <button
-              onClick={() => toggleTab(tab)}
+              id={`mobile-${generateTabId(tab)}`}
+              onClick={() => {
+                toggleTab(tab);
+                window.history.pushState(null, '', `#${generateTabId(tab)}`);
+              }}
               className="w-full p-[2px] rounded-lg transition-all duration-300"
               style={{
                 background: isTabExpanded(tab)

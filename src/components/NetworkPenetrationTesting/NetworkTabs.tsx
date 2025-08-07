@@ -209,7 +209,7 @@ const SecurityTestingSection = () => {
       <div id="explore-now" className="container mx-auto px-8 pt-8 lg:pt-10">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500">
             Network Penetration Testing That Thinks Like an Attacker Because Your Network Has No Walls Anymore
           </h2>
           <p className="text-white-400 text-lg max-w-5xl mx-auto">

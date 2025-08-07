@@ -154,7 +154,7 @@ const HeroSection = ({
               className="bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
               onClick={onButtonClick}
             >
-              {buttonText}
+              <a href='#explore-now'>{buttonText}</a>
             </button>
           </div>
         </div>
@@ -404,16 +404,38 @@ const Audits = () => {
     }
   }, [location.state]);
 
+  // Update useEffect to handle hash navigation
+  useEffect(() => {
+    // Handle direct URL with hash
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      // Set active tab based on hash
+      if (hash === 'iso27001' || hash === 'pci-dss' || hash === 'soc2') {
+        setActiveTab(hash);
+        // Scroll to the section after a short delay to ensure content is rendered
+        setTimeout(() => {
+          const element = document.getElementById(hash);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
+      }
+    }
+  }, [location.hash]); // React to hash changes
+
   const handleExploreClick = () => {
     // Handle button click logic here
     console.log('Explore button clicked');
   };
 
-  // Navigation click handler
+  // Modify handleNavClick to update URL hash
   const handleNavClick = (id: string) => {
     setActiveTab(id);
-    // Optionally scroll to top of tab section
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.history.pushState(null, '', `#${id}`);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   };
 
   // ISO 27001 Content
@@ -438,7 +460,7 @@ const Audits = () => {
 
   // PCI DSS Content
   const pciDssContent = (
-    <p className="text-[#CFC9C9] text-base max-w-xl">
+    <p className="text-[#ffffff] text-base max-w-xl">
       The Payment Card Industry Data Security Standard (PCI DSS) is a mandatory compliance framework for any business that stores, processes, or transmits cardholder data. Created by major card brands (Visa, Mastercard, AMEX, etc.), PCI DSS enforces robust security controls to prevent fraud and data breaches in the payment ecosystem. The current version, PCI DSS v4.0, includes new requirements for encryption, authentication, continuous monitoring, and risk management.
     </p>
   );
@@ -446,10 +468,10 @@ const Audits = () => {
   // SOC 2 Content
   const soc2Content = (
     <>
-      <p className="text-[#CFC9C9] mb-4">
+      <p className="text-[#ffffff] mb-4">
         SOC 2 (System and Organization Controls) is a voluntary compliance standard developed by the AICPA (American Institute of Certified Public Accountants). It applies to service organizations that process, manage, or store customer data, particularly in cloud-based environments.
       </p>
-      <p className="text-[#CFC9C9] mb-4">
+      <p className="text-[#ffffff] mb-4">
         SOC 2 focuses on five Trust Service Criteria:
       </p>
       <ul className="list-disc list-inside text-white mb-4 pl-2">
@@ -459,7 +481,7 @@ const Audits = () => {
         <li>Confidentiality</li>
         <li>Privacy</li>
       </ul>
-      <p className="text-[#CFC9C9]">
+      <p className="text-[#ffffff]">
         It is particularly relevant for SaaS, cloud service providers, financial tech companies, and data processors.
       </p>
     </>
@@ -533,6 +555,7 @@ const Audits = () => {
   return (
     <>
 
+
 <Breadcrumb 
       pageTitle="Audits"
       items={[
@@ -549,8 +572,8 @@ const Audits = () => {
         onButtonClick={handleExploreClick}
       />
 
-      {/* Navigation Section (restored UI, tab logic) */}
-      <div className="w-full  py-8">
+      {/* Navigation Section */}
+      <div id='explore-now' className="w-full  py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-7xl mx-auto">
             {auditTabs.map((tab) => (
@@ -583,6 +606,7 @@ const Audits = () => {
                     <p className='text-center'>{tab.description}</p>
                   </div>
                   <button
+                    id={`nav-${tab.id}`}
                     onClick={() => handleNavClick(tab.id)}
                     className="gradient-bg  px-6 py-2 font-semibold mt-4 transition-all duration-200 transform hover:scale-105 rounded-full"
                     style={{
@@ -602,14 +626,14 @@ const Audits = () => {
       {/* Tabbed Content */}
       <div className="w-full">
         {activeTab === 'iso27001' && (
-          <div id="iso27001" ref={isoRef}>
+          <div id="iso27001">
             <SectionHeader
-              title="ISO 27001 AUDIT SERVICES"
+              title="ISO 27001 Audit Services"
               subtitle="Build a resilient security posture with the global standard for information security"
             />
 
             <TwoColumnContent
-              title="WHAT IS ISO 27001?"
+              title="What is ISO 27001?"
               content={iso27001Content}
               image={sec02}
               imageAlt="ISO 27001 Audit Illustration"
@@ -637,7 +661,7 @@ const Audits = () => {
         )}
 
         {activeTab === 'pci-dss' && (
-          <div id="pci-dss" ref={pciRef}>
+          <div id="pci-dss">
             <SectionHeader
               title="PCI DSS Audit Services"
               subtitle="Secure your payment systems and gain customer trust with PCI DSS compliance."
@@ -673,14 +697,14 @@ const Audits = () => {
         )}
 
         {activeTab === 'soc2' && (
-          <div id="soc2" ref={soc2Ref}>
+          <div id="soc2">
             <SectionHeader
-              title="SOC 2 AUDIT SERVICES"
+              title="SOC 2 Audit Services"
               subtitle="Earn the trust of clients, investors, and partners by demonstrating operational integrity."
             />
 
             <TwoColumnContent
-              title="WHAT IS SOC 2?"
+              title="What is SOC 2?"
               content={soc2Content}
               image={sec08}
               imageAlt="SOC 2 Audit Services Illustration"

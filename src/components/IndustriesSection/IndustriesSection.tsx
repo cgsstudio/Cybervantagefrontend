@@ -76,7 +76,7 @@ const IndustriesSection = () => {
             className="col-span-1 xl:col-span-2 max-w-2xl "
             data-aos="fade-right"
           >
-            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight text-center xl:text-left heading42-main ">
+            <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight text-center xl:text-left heading42-main text-orange-500">
               Industries We Support
             </h2>
             <p className="text-white-300 mb-7 text-center xl:text-left">
@@ -94,7 +94,7 @@ const IndustriesSection = () => {
           >
             <div className="industry-card mb-4">
               <img className="industry-icon mb-2" src={firstIndustry.icon} alt={firstIndustry.title} />
-              <h3 className="text-lg font-bold text-white main-text-bold">{firstIndustry.title}</h3>
+              <h3 className="text-lg font-bold text-orange-500 main-text-bold">{firstIndustry.title}</h3>
               <p className="text-gray-300 text-sm text-main-light">{firstIndustry.description}</p>
             </div>
           </div>
@@ -106,7 +106,7 @@ const IndustriesSection = () => {
           {remainingIndustries.map((industry, index) => (
             <div key={index} className="industry-card mb-4">
               <img className="industry-icon mb-2" src={industry.icon} alt={industry.title} />
-              <h3 className="text-lg font-bold text-white main-text-bold">{industry.title}</h3>
+              <h3 className="text-lg font-bold text-orange-500 main-text-bold">{industry.title}</h3>
               <p className="text-gray-300 text-sm text-main-light">{industry.description}</p>
             </div>
           ))}

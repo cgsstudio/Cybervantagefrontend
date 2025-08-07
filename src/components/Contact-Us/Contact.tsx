@@ -56,9 +56,9 @@ const Contact = () => {
           <div className="flex flex-col lg:flex-row  justify-between gap-12">
             
             {/* Hero Section - Left Side */}
-            <div className="flex-1 text-white max-w-3xl text-center lg:text-left">
+            <div className="flex-1 text-orange-500 max-w-3xl text-center lg:text-left">
               <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] font-bold mb-6 leading-tight ">
-                Let's make security your competitive advantage.
+                Let's Make Security Your Competitive Advantage.
               </h1>
               <p className="text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed">
                 We're here to answer your questions, provide guidance, or kickstart a security engagement, wherever you are in the world.
@@ -204,7 +204,7 @@ const Contact = () => {
       </div>
       {/* Talk To Us Directly Section */}
       <div className="w-full flex flex-col items-center justify-center py-12 px-8">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-10 text-center">Talk To Us Directly</h2>
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-10 text-center">Talk To Us Directly</h2>
         <div className="w-full container flex flex-col md:flex-row gap-4 xl:gap-8 justify-center items-stretch">
           {/* Card 1: Call Us */}
           <div className="flex-1 min-w-[220px] lg:min-w-[260px] bg-[#181818] rounded-xl p-4 xl:p-8 flex flex-col items-center justify-center relative"
