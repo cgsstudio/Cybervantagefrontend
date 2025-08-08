@@ -317,7 +317,7 @@ const Navbar = ({ currentPage, onPageChange }: NavbarProps = {}) => {
                     className="w-full flex items-center justify-center text-white text-2xl font-bold py-2 text-center hover:text-[#CA6200] transition-colors"
                     onClick={() => toggleAccordion('audits')}
                   >
-                    <span>Audits</span>
+                    <span><a href="/audits">Audits</a></span>
                     <ChevronDown className={`w-4 h-4 ml-2 transition-transform ${openAccordion === 'audits' ? 'rotate-180' : ''}`} />
                   </button>
                   {openAccordion === 'audits' && (

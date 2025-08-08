@@ -104,22 +104,22 @@ const Partner: React.FC = () => {
           <h2 className="text-orange-500 font-semibold text-4xl lg:text-5xl 2xl:text-6xl mb-12 text-center" style={{ fontFamily: "inherit" }}>
             Trusted Partners
           </h2>
-          <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 px-4">
+          <div className="max-w-6xl w-full grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-8 md:gap-10 px-4">
             {/* Row 1 */}
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
-              <img src={partner1} alt="Torq" className="w-auto h-full " />
+              <img src={partner1} alt="Torq" className="w-auto" />
             </div>
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
-              <img src={partner2} alt="Torq" className="w-auto h-full " />
+              <img src={partner2} alt="Torq" className="w-auto " />
             </div>
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
-              <img src={partner3} alt="Torq" className="w-auto h-full " />
+              <img src={partner3} alt="Torq" className="w-auto h-full" />
             </div>
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
               <img src={partner4} alt="Torq" className="w-auto h-full " />
             </div>
             <div className="bg-[#fff] rounded-xl flex items-center justify-center h-32 p-4">
-              <img src={partner5} alt="Torq" className="w-auto h-full " />
+              <img src={partner5} alt="Torq" className="w-auto " />
             </div>
           </div>
         </div>
