@@ -143,16 +143,16 @@ export default function AdvisoryTab() {
 
 
   
-    <div className="container mx-auto min-h-screen text-white py-20" id='digitalfinance'>
+    <div className="container mx-auto px-8 text-white py-8 lg:py-16" id='digitalfinance'>
       {/* Header Section */}
       <div className="text-center mb-12">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 mb-6 heading-h1-main">
-          Why Choose a vCISO? (Benefits)
+          Why Choose a vCISO?
         </h2>
       </div>
 
       {/* Grid Section */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-24">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 mb-24">
         {tabs.map((tab, i) => (
           <button
             key={tab}
@@ -164,7 +164,7 @@ export default function AdvisoryTab() {
             }}
           >
             <div
-              className="rounded-md bg-[#1F1F1F] p-6 h-full w-full flex flex-col items-center justify-center min-h-[350px] hover:bg-black transition-all duration-300"
+              className="rounded-md bg-[#1F1F1F] p-6 h-full w-full flex flex-col items-center min-h-[200px] md:min-h-[300px] hover:bg-black transition-all duration-300"
               style={{
                 borderRadius: 6,
               }}
@@ -180,7 +180,7 @@ export default function AdvisoryTab() {
       </div>
 
       {/* Content Section */}
-      <div className="container mx-auto mt-16 px-4">
+      <div className="container mx-auto mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side: Content */}
           <div className="space-y-8">

@@ -151,6 +151,10 @@ const tabContent = {
   ],
 };
 
+const generateTabId = (tabName: string) => {
+  return tabName.toLowerCase().replace(/[\s–]/g, '-');
+};
+
 const getTabIcon = (tabName) => {
   switch(tabName) {
     case 'DNS Security': return <Shield className="w-5 h-5" />;
@@ -190,12 +194,22 @@ const SecurityTestingSection = () => {
 
   const currentTabContent = React.useMemo(() => tabContent[activeTab], [activeTab]);
 
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchingTab = tabs.find(tab => generateTabId(tab) === hash);
+      if (matchingTab) {
+        setActiveTab(matchingTab);
+      }
+    }
+  }, []);
+
   return (
     <div className="text-white" id='networksecurity'>
       <div id="explore-now" className="container mx-auto px-8 pt-8 lg:pt-10">
         {/* Header Section */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white">
+          <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500">
             Network Penetration Testing That Thinks Like an Attacker Because Your Network Has No Walls Anymore
           </h2>
           <p className="text-white-400 text-lg max-w-5xl mx-auto">
@@ -210,7 +224,11 @@ const SecurityTestingSection = () => {
             {tabs.map((tab, i) => (
               <button
                 key={tab}
-                onClick={() => setActiveTab(tab)}
+                id={generateTabId(tab)}
+                onClick={() => {
+                  setActiveTab(tab);
+                  window.history.pushState(null, '', `#${generateTabId(tab)}`);
+                }}
                 className={`flex flex-col items-center transition-all duration-300 relative z-0 ${
                   activeTab === tab 
                     ? 'text-white'
@@ -395,7 +413,11 @@ const SecurityTestingSection = () => {
           {tabs.map((tab, i) => (
             <div key={tab} className="w-full">
               <button
-                onClick={() => toggleTab(tab)}
+                id={`mobile-${generateTabId(tab)}`}
+                onClick={() => {
+                  toggleTab(tab);
+                  window.history.pushState(null, '', `#${generateTabId(tab)}`);
+                }}
                 className="w-full p-[2px] rounded-lg transition-all duration-300"
                 style={{
                   background: isTabExpanded(tab)

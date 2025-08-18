@@ -23,7 +23,7 @@ const CybersecurityHero = () => {
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
               <div>
-                <h2 className="font-semibold text-white mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
+                <h2 className="font-semibold text-orange-500 mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
                   Test Your Application Before Hackers Do It for You
                 </h2>
                 {/* <h2 className='font-bold text-white mt-4 text-2xl'>Your app is your business. Don’t let bugs, breaches, or bad actors ruin the party. We’ll

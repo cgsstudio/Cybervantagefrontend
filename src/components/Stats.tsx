@@ -14,7 +14,7 @@ const Stats = () => {
 
   return (
     <section id="about" className='pt-16 md:pt-20 bg-black'>
-         <h2 className="fade-up-element text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white text-center mb-12 heading42-main" data-aos="fade-up" >
+         <h2 className="fade-up-element text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-orange-500 text-center mb-12 heading42-main" data-aos="fade-up" >
           Experience and Trust
         </h2>
        <div className="bg-gradient-to-r from-orange-500 to-purple-600 py-16 md:py-20 counter-bg">

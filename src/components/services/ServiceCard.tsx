@@ -27,7 +27,7 @@ const ServiceCard = ({ title, description, icon, isHighlighted }: ServiceCardPro
         </div>
       )}
       
-      <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
+      <h3 className="text-xl font-bold text-orange-500 mb-2">{title}</h3>
       <p className="text-white-300 text-base">{description}</p>
 
       {/* Add the golden effect text below the image */}

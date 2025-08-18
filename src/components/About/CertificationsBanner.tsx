@@ -14,7 +14,6 @@ import partner7 from '../../assest/image/about/about-partner-logos/image-1.svg';
 import partner8 from '../../assest/image/about/about-partner-logos/OSEP.D_R8bS1A_Z1JYK2E 1.svg';
 import partner9 from '../../assest/image/about/about-partner-logos/osee.svg';
 import partner11 from '../../assest/image/about/about-partner-logos/ceh.svg';
-import partner12 from '../../assest/image/about/about-partner-logos/Group-1287.svg';
 import partner13 from '../../assest/image/about/about-partner-logos/azure.svg';
 import partner14 from '../../assest/image/about/about-partner-logos/ccna-security.svg';
 import partner15 from '../../assest/image/about/about-partner-logos/aws-security.svg';
@@ -111,11 +110,6 @@ const CertificationsBanner = () => {
       id: 5,
       name: 'Partner 5',
       logo: partner11
-    },
-    {
-      id: 6,
-      name: 'Partner 6',
-      logo: partner12
     },
     {
       id: 7,

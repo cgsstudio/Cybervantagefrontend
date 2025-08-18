@@ -48,27 +48,27 @@ const SERVICES = {
       title: 'Advanced Penetration Testing',
       description: 'Simulate real-world attacker tactics to uncover weaknesses across people, processes, and technology.',
       icon: Ser1,
-      link: '/red-teaming#redteaming',
+      link: '/red-teaming#advanced-penetration-testing',
     },
     {
       title: 'DDoS Simulation',
       description: 'Assess your organization’s resilience against volumetric, application, and protocol-based denial-of-service attacks.',
       icon: Ser2,
       isHighlighted: true,
-      link: '/red-teaming#redteaming',
+      link: '/red-teaming#ddos-simulation',
     },
     {
       title: 'AI Red teaming',
       description: 'Stress-test AI models for prompt injection, model manipulation, and data leakage.',
       icon: Ser3,
-      link: '/red-teaming#redteaming',
+      link: '/red-teaming#ai-red-teaming',
     },
     {
       title: 'Zero Day Hunting',
       description: 'Discover unknown vulnerabilities in proprietary applications or systems before adversaries do.',
       icon: Ser4,
       isHighlighted: true,
-      link: '/red-teaming#redteaming',
+      link: '/red-teaming#zero-day-hunting',
     },
 
   ],
@@ -77,27 +77,27 @@ const SERVICES = {
       title: 'Web Application Security',
       description: 'Identify and remediate vulnerabilities in modern web applications through in-depth manual and automated testing.',
       icon: Ser5,
-      link: '/application-security-assessment#applicationsecurity?activeTab=web',
+      link: '/application-security-assessment#web-application-security',
     },
     {
       title: 'Mobile Application Security',
       description: 'Secure iOS and Android apps against reverse engineering, insecure storage, and runtime threats.',
       icon: Ser7,
       isHighlighted: true,
-      link: '/application-security-assessment#applicationsecurity?activeTab=mobile',
+      link: '/application-security-assessment#mobile-application-security',
     },
     {
       title: 'API Security',
       description: 'Assess exposed APIs for authentication, authorization, and business logic flaws.',
       icon: Ser8,
-      link: '/application-security-assessment#applicationsecurity',
+      link: '/application-security-assessment#api-security',
     },
     {
       title: 'Source Code Review',
       description: 'Analyze application source code for security flaws, logic errors, and hardcoded secrets.',
       icon: Ser9,
 
-      link: '/application-security-assessment#applicationsecurity',
+      link: '/application-security-assessment#source-code-review',
     },
  
   ],
@@ -106,26 +106,26 @@ const SERVICES = {
       title: 'DNS Security',
       description: 'Test for DNS misconfigurations, hijacking risks, and exposure of sensitive records.',
       icon: Ser11,
-      link: '/network-penetration-testing#networksecurity',
+      link: '/network-penetration-testing#dns-security',
     },
     {
       title: 'Firewall and Edge Devices',
       description: 'Evaluate the resilience of perimeter firewalls, routers, and IDS/IPS against targeted attacks.',
       icon: Ser12,
       isHighlighted: true,
-      link: '/network-penetration-testing#networksecurity',
+      link: '/network-penetration-testing#firewall-and-edge-devices',
     },
     {
       title: 'Corporate Proxy & Captive Portals',
       description: 'Analyze web filtering mechanisms, captive portals, and potential bypass techniques.',
       icon: Ser13,
-      link: '/network-penetration-testing#networksecurity',
+      link: '/network-penetration-testing#corporate-proxy-&-captive-portals',
     },
     {
       title: 'Remote Access – VPN and ZTNA Infrastructure',
       description: 'Validate the security of remote connectivity infrastructure including VPNs and Zero Trust implementations.',
       icon: Ser14,
-      link: '/network-penetration-testing#networksecurity',
+      link: '/network-penetration-testing#remote-access---vpn-and-ztna-infrastructure',
     }
   ],
   'Cloud Security': [
@@ -134,25 +134,25 @@ const SERVICES = {
       description: 'Evaluate the security posture of your container workloads and Kubernetes clusters.',
       icon: Ser15,
       isHighlighted: true,
-      link: '/cloud-security-assesment#cloudsecurity',
+      link: '/cloud-security-assesment#containers-and-kubernetes-security',
     },
     {
       title: 'Virtualization Infrastructure Security',
       description: 'Identify risks in virtualized environments including hypervisor misconfigurations and insecure VM setups.',
       icon: Ser16,
-      link: '/cloud-security-assesment#cloudsecurity',
+      link: '/cloud-security-assesment#virtualization-infrastructure-security',
     },
     {
       title: 'Public Cloud Security',
       description: 'Review cloud configurations and access controls across AWS, Azure, GCP, and Oracle Cloud.',
       icon: Ser17,
-      link: '/cloud-security-assesment#cloudsecurity',
+      link: '/cloud-security-assesment#public-cloud-security',
     },
     {
       title: 'SaaS Security',
       description: 'Assess SaaS platforms like Microsoft 365, Salesforce, and GitHub for configuration drift and data exposure.',
       icon: Ser18,
-      link: '/cloud-security-assesment#cloudsecurity',
+      link: '/cloud-security-assesment#saas-security',
     },
  
   ],
@@ -162,25 +162,25 @@ const SERVICES = {
       description: 'Emulate sophisticated fraud techniques to uncover exploitable paths in digital finance ecosystems.',
       icon: Ser22,
       isHighlighted: true,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#fraud-red-teaming',
     },
     {
       title: 'Open Banking Security',
       description: 'Secure APIs and integrations in open banking platforms against tampering and abuse.',
       icon: Ser21,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#open-banking-security',
     },
     {
       title: 'ATM Security Assessment',
       description: 'Test ATM hardware, software, and network connectivity for physical and logical vulnerabilities.',
       icon: Ser23,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#atm-security-assessment',
     },
     {
       title: 'IoT Security for Banking & Finance',
       description: 'Identify security risks in connected payment and banking IoT ecosystems.',
       icon: Ser20,
-      link: '/digital-finance-banking#digitalfinance',
+      link: '/digital-finance-banking#iot-security-for-banking---finance',
     },
     
   ],
@@ -278,13 +278,13 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 md:pb-12 lg:px-8 relative">
       <div className="flex flex-col md:flex-row justify-between items-start mb-12 our-service-main">
   <div className="basis-full md:basis-1/2 max-w-full md:max-w-xl">
-    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight heading42-main" data-aos="fade-right">
+    <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 leading-tight heading42-main text-orange-500" data-aos="fade-right">
       Our Services And Offerings
     </h2>
   </div>
   <div className="basis-full md:basis-1/2" data-aos="fade-left">
     <h3 className="text-2xl font-semibold text-white-500 mb-2">
-      Why settle for 'secure enough'?
+      Why Settle For 'Secure Enough'?
     </h3>
     <p className="text-white-300">
       Our in-depth assessments dig deep into your systems to expose hidden risks and build ironclad defenses, ensuring your defenses are not just strong, but future-proof.

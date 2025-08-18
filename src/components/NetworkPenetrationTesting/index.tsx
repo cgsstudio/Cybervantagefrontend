@@ -23,7 +23,7 @@ const NetworkPenetrationTesting = () => {
             {/* Left Content */}
             <div className="space-y-8 mt-4 md:mt-0 text-center lg:text-left">
               <div>
-                <h2 className="font-semibold text-white mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
+                <h2 className="font-semibold text-orange-500 mt-4 text-4xl lg:text-5xl 2xl:text-6xl">
                   Network Penetration Testing Services
                 </h2>
                 

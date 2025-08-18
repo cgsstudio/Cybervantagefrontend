@@ -312,9 +312,23 @@ const getTabIcon = (tabName) => {
   }
 };
 
+const generateTabId = (tabName: string) => {
+  return tabName.toLowerCase().replace(/\s+/g, '-');
+};
+
 export default function SecurityTestingSection() {
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [expandedTabs, setExpandedTabs] = useState<string[]>([]);
+
+  React.useEffect(() => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchingTab = tabs.find(tab => generateTabId(tab) === hash);
+      if (matchingTab) {
+        setActiveTab(matchingTab);
+      }
+    }
+  }, []);
 
   const toggleTab = (tab: string) => {
     setExpandedTabs(prev => 
@@ -333,7 +347,7 @@ export default function SecurityTestingSection() {
     <div className="container mx-auto text-white pt-10" id='applicationsecurity'>
       {/* Header Section */}
       <div id='explore-now' className="text-center mb-12 px-8">
-        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-white line-heading-tight">
+        <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold mb-4 text-orange-500 line-heading-tight">
           Application Security Assesment, <br />Tailored For Every Platform
         </h2>
         <p className="text-white-400 text-lg max-w-5xl mx-auto mb-2">
@@ -348,7 +362,11 @@ export default function SecurityTestingSection() {
           {tabs.map((tab, i) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab)}
+              id={generateTabId(tab)}
+              onClick={() => {
+                setActiveTab(tab);
+                window.history.pushState(null, '', `#${generateTabId(tab)}`);
+              }}
               className={`flex flex-col items-center transition-all duration-300 relative z-0 ${
                 activeTab === tab ? 'text-white' : 'text-gray-300 bg-black'
               }`}
@@ -433,7 +451,11 @@ export default function SecurityTestingSection() {
         {tabs.map((tab, i) => (
           <div key={tab} className="w-full">
             <button
-              onClick={() => toggleTab(tab)}
+              id={`${generateTabId(tab)}`}
+              onClick={() => {
+                toggleTab(tab);
+                window.history.pushState(null, '', `#${generateTabId(tab)}`);
+              }}
               className="w-full p-[2px] rounded-lg transition-all duration-300"
               style={{
                 background: isTabExpanded(tab)
