@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import mail from '../../assest/image/mail.svg'
 import phone from '../../assest/image/phone.svg'
 import Address from '../../assest/image/Address.svg'
@@ -9,6 +10,10 @@ import calendericon from '../../assest/image/about/calendar.png'
 import contactsvg from '../../assest/image/contactus/contact-svg.svg'
 import Breadcrumb from '../Breadcrums/Breadcrumb';
 
+// EmailJS Configuration
+const EMAILJS_SERVICE_ID = 'service_6u8396n'; // Replace with your EmailJS service ID
+const EMAILJS_TEMPLATE_ID = 'template_ugx265n'; // Replace with your EmailJS template ID
+const EMAILJS_PUBLIC_KEY = 'FH1vZhcDeN3Vg_-GD'; // Replace with your EmailJS public key
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +25,9 @@ const Contact = () => {
     requestType: 'Request a Proposal'
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -28,36 +36,80 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      // EmailJS template parameters
+      const templateParams = {
+        from_name: formData.fullName,
+        from_email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        request_type: formData.requestType,
+        message: formData.message,
+        to_name: 'CyberVantage Team', // You can customize this
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', response);
+      setSubmitStatus('success');
+      
+      // Reset form after successful submission
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+        requestType: 'Request a Proposal'
+      });
+
+      // Clear success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('');
+      }, 5000);
+
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      setSubmitStatus('error');
+      
+      // Clear error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus('');
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <div className="bg-black relative overflow-hidden">
-
-      {/* Gradient Banner with Contact Us Title */}
-      {/* <div className="w-full bg-gradient-to-r from-[#F57A00] to-[#7103A4] py-8 lg:py-16 flex items-center justify-center mt-[100px]">
-        <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Contact Us</h1>
-      </div> */}
       <Breadcrumb 
-      pageTitle="Contact Us"
-      items={[
-    { label: 'Contact Us', path: '/contact-us' },
-
-  ]} 
-/>
+        pageTitle="Contact Us"
+        items={[
+          { label: 'Contact Us', path: '/contact-us' },
+        ]} 
+      />
 
       {/* Add top padding to account for navbar height */}
       <div className="relative z-10 pt-20 pb-8 px-8 hero-banner">
         {/* Container with max-width and centered alignment to match navbar */}
         <div className="container mx-auto">
-          <div className="flex flex-col lg:flex-row  justify-between gap-12">
+          <div className="flex flex-col lg:flex-row justify-between gap-12">
             
             {/* Hero Section - Left Side */}
             <div className="flex-1 text-white max-w-3xl text-center lg:text-left">
-              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] font-bold mb-6 leading-tight ">
+              <h1 className="text-[34px] md:text-[42px] xl:text-[50px] 2xl:text-[75px] font-bold mb-6 leading-tight">
                 Let's make security your competitive advantage.
               </h1>
               <p className="text-lg lg:text-xl text-gray-300 mb-8 leading-relaxed">
@@ -81,14 +133,29 @@ const Contact = () => {
                   </button>
                 </a>
               </div>
-
-           
             </div>
 
             {/* Contact Form - Right Side */}
             <div className="flex-1 w-full lg:max-w-2xl pr-0 2xl:pr-8">
-              <div className="bg-[#FFFFFF1A] p-8 rounded-[10px] shadow-2xl ">
+              <div className="bg-[#FFFFFF1A] p-8 rounded-[10px] shadow-2xl">
                 <h2 className="text-2xl md:text-4xl font-bold text-[#F57A00] mb-6">Contact Us</h2>
+                
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mb-4 p-4 bg-green-600/20 border border-green-500 rounded-lg">
+                    <p className="text-green-400 text-sm">
+                      ✓ Message sent successfully! We'll get back to you soon.
+                    </p>
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="mb-4 p-4 bg-red-600/20 border border-red-500 rounded-lg">
+                    <p className="text-red-400 text-sm">
+                      ✗ Failed to send message. Please try again or contact us directly.
+                    </p>
+                  </div>
+                )}
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Full Name */}
@@ -101,8 +168,9 @@ const Contact = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
 
@@ -117,8 +185,9 @@ const Contact = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                     <div>
@@ -130,8 +199,9 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                        className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                         required
+                        disabled={isSubmitting}
                       />
                     </div>
                   </div>
@@ -146,8 +216,9 @@ const Contact = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                       required
+                      disabled={isSubmitting}
                     />
                   </div>
                   
@@ -160,8 +231,9 @@ const Contact = () => {
                       name="requestType"
                       value={formData.requestType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
+                      className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200"
                       required
+                      disabled={isSubmitting}
                     >
                       <option value="Request a Proposal">Request a Proposal</option>
                       <option value="Book a Security Assessment">Book a Security Assessment</option>
@@ -183,18 +255,32 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="w-full px-4 py-2 bg-[#3B3B3B]  rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 resize-none"
-                      
+                      className="w-full px-4 py-2 bg-[#3B3B3B] rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-200 resize-none"
+                      disabled={isSubmitting}
                     ></textarea>
                   </div>
-
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className=" bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg mt-6 px-12"
+                    disabled={isSubmitting}
+                    className={`bg-gradient-to-r from-orange-500 to-purple-600 hover:from-orange-600 hover:to-purple-700 text-white font-semibold py-4 rounded-lg transition-all duration-300 transform shadow-lg mt-6 px-12 ${
+                      isSubmitting 
+                        ? 'opacity-50 cursor-not-allowed' 
+                        : 'hover:scale-[1.02]'
+                    }`}
                   >
-                    Submit
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center">
+                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      'Submit'
+                    )}
                   </button>
                 </form>
               </div>
@@ -202,6 +288,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
       {/* Talk To Us Directly Section */}
       <div className="w-full flex flex-col items-center justify-center py-12 px-8">
         <h2 className="text-4xl lg:text-5xl 2xl:text-6xl font-semibold text-white mb-10 text-center">Talk To Us Directly</h2>
@@ -220,11 +307,11 @@ const Contact = () => {
             <div className="flex flex-col gap-1 items-center">
               <div className="flex items-center gap-2 text-white text-sm xl:text-base">
                 <img src={flag2} alt="UK Flag" className="w-7 h-5 rounded-sm" />
-                <a href="tel:+447405302956" className="hover:underline" >+44 7405302956 - UK</a>
+                <a href="tel:+447405302956" className="hover:underline">+44 7405302956 - UK</a>
               </div>
               <div className="flex items-center gap-2 text-white text-sm xl:text-base">
                 <img src={flag} alt="Netherlands Flag" className="w-7 h-5 rounded-sm" />
-                <a href="tel:+319701025921" className="hover:underline" >+31 9701025921 - Netherlands</a>
+                <a href="tel:+319701025921" className="hover:underline">+31 9701025921 - Netherlands</a>
               </div>
             </div>
           </div>
@@ -265,6 +352,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
       {/* Map Section */}
       <div className="w-full flex justify-center items-center py-16 px-8">
         <div className="w-full container h-[400px] md:h-[600px] bg-gray-800 rounded-2xl overflow-hidden shadow-2xl relative">
@@ -280,20 +368,6 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
             className="absolute inset-0 w-full h-full"
           ></iframe>
-          {/* Custom Marker Overlay */}
-          {/* <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[60%] z-10 pointer-events-none">
-            <svg width="64" height="80" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g filter="url(#shadow)">
-                <path d="M32 0C17.664 0 6 11.664 6 26C6 44.8 32 80 32 80C32 80 58 44.8 58 26C58 11.664 46.336 0 32 0Z" fill="#F57A00"/>
-                <circle cx="32" cy="28" r="13" fill="white"/>
-              </g>
-              <defs>
-                <filter id="shadow" x="0" y="0" width="64" height="80" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                  <feDropShadow dx="0" dy="4" stdDeviation="4" floodColor="#000" floodOpacity="0.2"/>
-                </filter>
-              </defs>
-            </svg>
-          </div> */}
         </div>
       </div>
     </div>
@@ -301,4 +375,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
